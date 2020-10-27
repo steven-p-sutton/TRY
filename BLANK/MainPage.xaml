@@ -8,7 +8,25 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Page.Resources>
+        <Style x:Key="Style1" TargetType="TextBlock">
+            <Setter Property="FontFamily" Value="Lucida Sans Unicode"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontSize" Value="21"/>
+            <Setter Property="Foreground" Value="Yellow"/>
+        </Style>
+        <Style x:Key="Style2" TargetType="Button">
+            <Setter Property="FontFamily" Value="Lucida Sans Unicode"/>
+            <Setter Property="FontStyle" Value="Italic"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Foreground" Value="HotPink"/>
+        </Style>
+    </Page.Resources>
 
-    </Grid>
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+        <TextBlock x:Name="textBlock1" Text="TextBlock 1" TextWrapping="Wrap" Style="{StaticResource Style1}"/>
+        <TextBlock x:Name="textBlock2" Text="TextBlock 2" TextWrapping="Wrap"/>
+        <Button Content="App Name And Version" Style="{StaticResource Style2}"/>
+    </StackPanel>
+ 
 </Page>
