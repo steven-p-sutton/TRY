@@ -1,4 +1,5 @@
 ﻿<Page
+    <!-- class x is bound to the class on the .cs source-->
     x:Class="BLANK.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -8,6 +9,9 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <!-- 
+    https://docs.microsoft.com/en-us/visualstudio/xaml-tools/how-to-create-and-apply-a-resource?view=vs-2019
+    -->
     <Page.Resources>
         <Style x:Key="Style1" TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Lucida Sans Unicode"/>
@@ -25,7 +29,8 @@
 
     <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
         <TextBlock x:Name="textBlock1" Text="TextBlock 1" TextWrapping="Wrap" Style="{StaticResource Style1}"/>
-        <TextBlock x:Name="textBlock2" Text="TextBlock 2" TextWrapping="Wrap"/>
+        <!-- Bind our x class variable s on the cs page to the TextBlock -->
+        <TextBlock x:Name="textBlock2" Text="{x:Bind s, Mode=OneWay}" TextWrapping="Wrap"/>
         <Button Content="App Name And Version" Style="{StaticResource Style2}"/>
     </StackPanel>
  

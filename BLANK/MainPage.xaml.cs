@@ -26,5 +26,19 @@ namespace BLANK
         {
             this.InitializeComponent();
         }
+        public string s = "Steve";
+    }
+
+    public class ShoppingCart : DependencyObject
+    {
+        public int ItemCount
+        {
+            get { return (int)GetValue(ItemCountProperty); }
+            set { SetValue(ItemCountProperty, value); }
+        }
+
+        public static readonly DependencyProperty ItemCountProperty =
+             DependencyProperty.Register("ItemCount", typeof(int),
+             typeof(ShoppingCart), new PropertyMetadata(0));
     }
 }
