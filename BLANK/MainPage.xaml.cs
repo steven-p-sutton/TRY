@@ -13,6 +13,8 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
+using WindowsTaskSnippets.AppVersionAndTitle;  // LIBRARY project
+
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace BLANK
@@ -27,18 +29,13 @@ namespace BLANK
             this.InitializeComponent();
         }
         public string s = "Steve";
+        public string _AppName      = AppVersionAndTitle.AppName;
+        public string _AppVersion   = AppVersionAndTitle.AppVersion;
+
+        //public void AppName()
+        //{
+        //    _AppName = AppVersionAndTitle.AppName;
+        //}
     }
 
-    public class ShoppingCart : DependencyObject
-    {
-        public int ItemCount
-        {
-            get { return (int)GetValue(ItemCountProperty); }
-            set { SetValue(ItemCountProperty, value); }
-        }
-
-        public static readonly DependencyProperty ItemCountProperty =
-             DependencyProperty.Register("ItemCount", typeof(int),
-             typeof(ShoppingCart), new PropertyMetadata(0));
-    }
 }
