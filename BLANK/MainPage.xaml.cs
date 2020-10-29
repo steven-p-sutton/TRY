@@ -28,14 +28,6 @@ namespace BLANK
         {
             this.InitializeComponent();
         }
-        public string s = "Steve";
-        public string _AppName      = AppVersionAndTitle.AppName;
-        public string _AppVersion   = AppVersionAndTitle.AppVersion;
-
-        //public void AppName()
-        //{
-        //    _AppName = AppVersionAndTitle.AppName;
-        //}
     }
 
 }
