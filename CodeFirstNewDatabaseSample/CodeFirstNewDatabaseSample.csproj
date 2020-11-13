@@ -57,6 +57,15 @@
   <ItemGroup>
     <Compile Include="Blog.cs" />
     <Compile Include="BloggingContext.cs" />
+    <Compile Include="Migrations\202011132129326_InitialCreate.cs" />
+    <Compile Include="Migrations\202011132129326_InitialCreate.designer.cs">
+      <DependentUpon>202011132129326_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011132309450_AddUrl.cs" />
+    <Compile Include="Migrations\202011132309450_AddUrl.designer.cs">
+      <DependentUpon>202011132309450_AddUrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +73,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202011132129326_InitialCreate.resx">
+      <DependentUpon>202011132129326_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011132309450_AddUrl.resx">
+      <DependentUpon>202011132309450_AddUrl.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
