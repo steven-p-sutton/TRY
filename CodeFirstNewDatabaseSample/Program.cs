@@ -1,7 +1,4 @@
-﻿using System;
-using System.Linq;
-
-// Microsoft Entity Framework
+﻿// Microsoft Entity Framework
 //		https://docs.microsoft.com/en-us/ef/
 
 //		Entity Framework 6

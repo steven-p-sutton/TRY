@@ -1,8 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿// Microsoft Entity Framework
+//		https://docs.microsoft.com/en-us/ef/
+//
+//		Entity Framework 6
+//			https://docs.microsoft.com/en-us/ef/ef6/
+//			Get started with Entity Framework 6
+//
+//          Tutorial
+//              https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database
+//              1. Create an Existing Database
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database#1-create-an-existing-database
+//              2. Create the Application
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database#2-create-the-application
+//              3. Reverse Engineer Model
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database#3-reverse-engineer-model
+//              4. Reading & Writing Data
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database#4-reading--writing-data
+//              5Using Code First Migrations to an Existing Database
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database#using-code-first-migrations-to-an-existing-database
+// 
 
 namespace CodeFirstExistingDatabaseSample
 {
