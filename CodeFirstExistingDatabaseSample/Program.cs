@@ -19,6 +19,9 @@
 //                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database#using-code-first-migrations-to-an-existing-database
 // 
 
+using System;
+using System.Linq;
+
 namespace CodeFirstExistingDatabaseSample
 {
     class Program

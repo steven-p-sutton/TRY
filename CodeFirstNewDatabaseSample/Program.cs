@@ -43,6 +43,9 @@
 //                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/new-database#7-fluent-api
 //                                 
 
+using System;
+using System.Linq;
+
 namespace CodeFirstNewDatabaseSample
 {
     class Program
