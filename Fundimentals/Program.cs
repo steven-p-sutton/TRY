@@ -54,6 +54,20 @@ using System.Threading.Tasks;
 //                  https://docs.microsoft.com/en-us/visualstudio/extensibility/internals/project-types?view=vs-2019
 //              Create SQL Server Database Project With Visual Studio
 //                  https://www.c-sharpcorner.com/article/create-sql-server-database-project-with-visual-studio/
+//          
+//          Creating a Model
+//              https://docs.microsoft.com/en-us/ef/ef6/modeling/
+//              
+//              Use Code First - Database
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/new-database
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/existing-database
+//              Fluent API - Relationships
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/fluent/relationships
+//              Code First Data Annotations
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/data-annotations
+//              Relationships - EF Designer
+//                  https://docs.microsoft.com/en-us/ef/ef6/modeling/designer/relationships
+//              
 //                  
 //Code First Data Annotations
 //				https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/data-annotations
