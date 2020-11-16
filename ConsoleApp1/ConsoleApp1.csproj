@@ -73,6 +73,7 @@
     <Compile Include="CodeFirstNewDatabaseAnnotations\Blog.cs" />
     <Compile Include="CodeFirstNewDatabaseAnnotations\Model1.cs" />
     <Compile Include="CodeFirstNewDatabaseAnnotations\Post.cs" />
+    <Compile Include="CodeFirstNewDatabaseAnnotations\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
