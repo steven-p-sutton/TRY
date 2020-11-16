@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fundimentals", "Fundimental
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "School", "School\School.sqlproj", "{D721BE93-637E-4F40-901E-B283B2E34DFA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp1", "ConsoleApp1\ConsoleApp1.csproj", "{65B7F253-F92C-46A7-91CF-5920E9F73A50}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -137,6 +139,26 @@ Global
 		{D721BE93-637E-4F40-901E-B283B2E34DFA}.Release|x86.ActiveCfg = Release|Any CPU
 		{D721BE93-637E-4F40-901E-B283B2E34DFA}.Release|x86.Build.0 = Release|Any CPU
 		{D721BE93-637E-4F40-901E-B283B2E34DFA}.Release|x86.Deploy.0 = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|ARM.Build.0 = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|x64.Build.0 = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Debug|x86.Build.0 = Debug|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|ARM.ActiveCfg = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|ARM.Build.0 = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|ARM64.Build.0 = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|x64.ActiveCfg = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|x64.Build.0 = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|x86.ActiveCfg = Release|Any CPU
+		{65B7F253-F92C-46A7-91CF-5920E9F73A50}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
