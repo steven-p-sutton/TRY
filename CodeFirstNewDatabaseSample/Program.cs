@@ -12,6 +12,7 @@
 //                  https://docs.microsoft.com/en-us/ef/ef6/modeling/code-first/workflows/new-database#1-create-the-application
 //              
 //                  Database is created in SQLExpress when app is run first time
+//                  (LocalDb)\MSSQLLocalDB
 //
 //                      VS2019/Server Explorer
 //                                SERVER = laptop-qr0qpgvq\localdb#ec7f3d87.master.dbo (enterd as (LocalDB)\MSSQLLocalDB
