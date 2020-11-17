@@ -1,17 +1,17 @@
-﻿using System;
+﻿using ConsoleApp2.EFDesignerExistDatabase;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleApp1.CodeFirstNewDatabaseAnnotations;
 
-namespace ConsoleApp1
+namespace ConsoleApp2
 {
     class Program
     {
         static void Main(string[] args)
         {
-            using (var db = new Model1())
+            using (var db = new Entities())
             {
                 // Create and save a new Blog
                 Console.Write("Enter a name for a new Blog: ");
