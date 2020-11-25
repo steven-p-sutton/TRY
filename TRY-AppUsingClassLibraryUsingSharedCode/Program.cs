@@ -7,11 +7,13 @@ namespace nsAppUsingClassLibraryUsingSharedCode
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
             csClassLibraryUsingSharedCode a = new csClassLibraryUsingSharedCode();
+
             a.sClassLibraryUsingSharedCode = "Hello ClassLibraryUsingSharedCode World!";
-            //csSharedCode.
             Console.WriteLine(a.sClassLibraryUsingSharedCode);
+
+            a.sharedClass.sSharedClass = "Hello csSharedClass World!";
+            Console.WriteLine(a.sharedClass.sSharedClass);
         }
     }
 }
