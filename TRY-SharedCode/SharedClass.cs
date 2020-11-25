@@ -1,5 +1,10 @@
 ﻿
-    public class csSharedClass
+public class csSharedClass
+{
+    private string _sSharedClass = "csSharedClass";
+    public string sSharedClass
     {
-        public string sSharedClass { get; set; }
+        get { return _sSharedClass; }
+        set { _sSharedClass = value; }
     }
+}

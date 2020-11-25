@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>TRY_AppUsingBothClassLibrarieEachUsingSharedCode</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TRY-AnotherClassLibraryUsingSahredCode\TRY-AnotherClassLibraryUsingSharedCode.csproj" />
+    <ProjectReference Include="..\TRY-ClassLibraryUsingSharedCode\TRY-ClassLibraryUsingSharedCode.csproj" />
+  </ItemGroup>
+
+</Project>

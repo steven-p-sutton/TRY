@@ -12,8 +12,10 @@ namespace nsAppUsingClassLibraryUsingSharedCode
             a.sClassLibraryUsingSharedCode = "Hello ClassLibraryUsingSharedCode World!";
             Console.WriteLine(a.sClassLibraryUsingSharedCode);
 
-            a.sharedClass.sSharedClass = "Hello csSharedClass World!";
-            Console.WriteLine(a.sharedClass.sSharedClass);
+            csSharedClass b = new csSharedClass();
+
+            b.sSharedClass = "Hello csSharedClass World!";
+            Console.WriteLine(b.sSharedClass);
         }
     }
 }
