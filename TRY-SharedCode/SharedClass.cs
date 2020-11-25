@@ -1,10 +1,14 @@
 ﻿
-public class csSharedClass
-{
-    private string _sSharedClass = "csSharedClass";
-    public string sSharedClass
+#if _csSharedClass_
+#else
+#define _csSharedClass_
+    public class csSharedClass
     {
-        get { return _sSharedClass; }
-        set { _sSharedClass = value; }
+        private string _sSharedClass = "csSharedClass";
+        public string sSharedClass
+        {
+            get { return _sSharedClass; }
+            set { _sSharedClass = value; }
+        }
     }
-}
+#endif
