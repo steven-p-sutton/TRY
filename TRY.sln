@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRY-AppUsingClassLibraryUsi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRY-AppUsingAnotherClassLibraryUsingSharedCode", "TRY-AppUsingAnotherClassLibraryUsingSharedCode\TRY-AppUsingAnotherClassLibraryUsingSharedCode.csproj", "{E78C5DCC-AE52-458B-A14A-5A716946C097}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TRY-AppUsingBothClassLibrarieEachUsingSharedCode", "TRY-AppUsingBothClassLibrarieEachUsingSharedCode\TRY-AppUsingBothClassLibrarieEachUsingSharedCode.csproj", "{22978C26-5A8E-4E7D-8A5C-294260942372}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		TRY-SharedCode\TRY-SharedCode.projitems*{2ae0dd3d-1495-440c-a270-f463772bf8fb}*SharedItemsImports = 13
@@ -352,6 +354,26 @@ Global
 		{E78C5DCC-AE52-458B-A14A-5A716946C097}.Release|x64.Build.0 = Release|Any CPU
 		{E78C5DCC-AE52-458B-A14A-5A716946C097}.Release|x86.ActiveCfg = Release|Any CPU
 		{E78C5DCC-AE52-458B-A14A-5A716946C097}.Release|x86.Build.0 = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|ARM.Build.0 = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|ARM64.Build.0 = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|x64.Build.0 = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Debug|x86.Build.0 = Debug|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|ARM.ActiveCfg = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|ARM.Build.0 = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|ARM64.Build.0 = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|x64.ActiveCfg = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|x64.Build.0 = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|x86.ActiveCfg = Release|Any CPU
+		{22978C26-5A8E-4E7D-8A5C-294260942372}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
