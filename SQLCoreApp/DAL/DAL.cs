@@ -26,6 +26,10 @@ namespace SQLCoreApp.DAL
                     con.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
 
+                    // Have to convert string to DateOffset outside of the WidgetModel 
+                    // constructor so use Date varible define here and assigned in the 
+                    // read processinbg loop below
+
                     DateTimeOffset Date = new DateTimeOffset();
 
                     while (rdr.Read())
