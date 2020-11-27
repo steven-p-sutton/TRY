@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TRY-AnotherClassLibraryUsingSahredCode\TRY-AnotherClassLibraryUsingSharedCode.csproj" />
     <ProjectReference Include="..\TRY-ClassLibraryUsingSharedCode\TRY-ClassLibraryUsingSharedCode.csproj" />
   </ItemGroup>
 
