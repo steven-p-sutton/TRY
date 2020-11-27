@@ -35,7 +35,7 @@ namespace SQLCoreApp.DAL
                         listWidgetModel.Add(new WidgetModel
                         {
                             Id = Convert.ToInt32(rdr[0]),
-                            Date = Date, // Using TryParse above
+                            Date = Date, // see TryParse(rdr[1].ToString()) above
                             Name = rdr[2].ToString(),
                             Count = Convert.ToInt32(rdr[3]),
                             Secret = rdr[4].ToString()
