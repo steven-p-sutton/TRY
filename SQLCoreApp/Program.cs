@@ -103,11 +103,11 @@ namespace SQLCoreApp
         }
         static void PrintCountries()
         {
-            var countryDAL = new CountryDAL(_iconfiguration);
-            var listCountryModel = countryDAL.GetList();
-            listCountryModel.ForEach(item =>
+            var WidgetDAL = new WidgetDAL(_iconfiguration);
+            var listWidgetModel = WidgetDAL.GetList();
+            listWidgetModel.ForEach(item =>
             {
-                Console.WriteLine(item.Country);
+                Console.WriteLine(item.Name);
             });
             Console.WriteLine("Press any key to stop.");
             Console.ReadKey();

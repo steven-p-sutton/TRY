@@ -1,8 +1,10 @@
-﻿CREATE PROCEDURE [dbo].[SP_COUNTRY_GET_LIST]  
+﻿CREATE PROCEDURE [dbo].[SP_WIDGET_GET_LIST]  
 AS  
    BEGIN  
-   SELECT id  
-         ,country  
-         ,active 
-   FROM Country  
+   SELECT [Id]  
+         ,[Date]  
+         ,[Name]
+         ,[Count]
+         ,[Secret]
+   FROM Widget  
 END  

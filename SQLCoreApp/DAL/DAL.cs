@@ -7,31 +7,39 @@ using SQLCoreApp.Model;
 
 namespace SQLCoreApp.DAL
 {
-    public class CountryDAL
+    public class WidgetDAL
     {
         private string _connectionString;
-        public CountryDAL(IConfiguration iconfiguration)
+        public WidgetDAL(IConfiguration iconfiguration)
         {
             _connectionString = iconfiguration.GetConnectionString("Default");
         }
-        public List<CountryModel> GetList()
+        public List<WidgetModel> GetList()
         {
-            var listCountryModel = new List<CountryModel>();
+            var listWidgetModel = new List<WidgetModel>();
             try
             {
                 using (SqlConnection con = new SqlConnection(_connectionString))
                 {
-                    SqlCommand cmd = new SqlCommand("SP_COUNTRY_GET_LIST", con);
+                    SqlCommand cmd = new SqlCommand("SP_WIDGET_GET_LIST", con);
                     cmd.CommandType = CommandType.StoredProcedure;
                     con.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
+
+                    Boolean b = false;
+                    DateTimeOffset d = new DateTimeOffset();
+
                     while (rdr.Read())
                     {
-                        listCountryModel.Add(new CountryModel
+                        b = DateTimeOffset.TryParse(rdr[1].ToString(), out d);
+
+                        listWidgetModel.Add(new WidgetModel
                         {
                             Id = Convert.ToInt32(rdr[0]),
-                            Country = rdr[1].ToString(),
-                            Active = Convert.ToBoolean(rdr[2])
+                            Date = d,
+                            Name = rdr[2].ToString(),
+                            Count = Convert.ToInt32(rdr[3]),
+                            Secret = rdr[4].ToString()
                         });
                     }
                 }
@@ -40,7 +48,7 @@ namespace SQLCoreApp.DAL
             {
                 throw ex;
             }
-            return listCountryModel;
+            return listWidgetModel;
         }
     }
 }
