@@ -14,9 +14,9 @@ namespace SQLCoreApp.DAL
         {
             _connectionString = iconfiguration.GetConnectionString("Default");
         }
-        public List<WidgetObject> GetList()
+        public List<WidgetModel> GetList()
         {
-            var listWidgetObject = new List<WidgetObject>();
+            var listWidgetModel = new List<WidgetModel>();
             try
             {
                 using (SqlConnection con = new SqlConnection(_connectionString))
@@ -32,7 +32,7 @@ namespace SQLCoreApp.DAL
                     {
                         DateTimeOffset.TryParse(rdr[1].ToString(), out Date);
 
-                        listWidgetObject.Add(new WidgetObject
+                        listWidgetModel.Add(new WidgetModel
                         {
                             Id = Convert.ToInt32(rdr[0]),
                             Date = Date, // see TryParse(rdr[1].ToString()) above
@@ -47,7 +47,7 @@ namespace SQLCoreApp.DAL
             {
                 throw ex;
             }
-            return listWidgetObject;
+            return listWidgetModel;
         }
     }
 }

@@ -92,7 +92,7 @@ namespace SQLCoreApp
         static void Main(string[] args)
         {
             GetAppSettingsFile();
-            PrintCountries();
+            PrintWidgets();
         }
         static void GetAppSettingsFile()
         {
@@ -101,11 +101,11 @@ namespace SQLCoreApp
                                  .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             _iconfiguration = builder.Build();
         }
-        static void PrintCountries()
+        static void PrintWidgets()
         {
             var WidgetDAL = new WidgetDAL(_iconfiguration);
-            var listWidgetObject = WidgetDAL.GetList();
-            listWidgetObject.ForEach(item =>
+            var listWidgetModel = WidgetDAL.GetList();
+            listWidgetModel.ForEach(item =>
             {
                 Console.WriteLine(item.Name);
             });
