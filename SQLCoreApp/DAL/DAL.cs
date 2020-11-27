@@ -26,17 +26,16 @@ namespace SQLCoreApp.DAL
                     con.Open();
                     SqlDataReader rdr = cmd.ExecuteReader();
 
-                    Boolean b = false;
-                    DateTimeOffset d = new DateTimeOffset();
+                    DateTimeOffset Date = new DateTimeOffset();
 
                     while (rdr.Read())
                     {
-                        b = DateTimeOffset.TryParse(rdr[1].ToString(), out d);
+                        DateTimeOffset.TryParse(rdr[1].ToString(), out Date);
 
                         listWidgetModel.Add(new WidgetModel
                         {
                             Id = Convert.ToInt32(rdr[0]),
-                            Date = d,
+                            Date = Date, // Using TryParse above
                             Name = rdr[2].ToString(),
                             Count = Convert.ToInt32(rdr[3]),
                             Secret = rdr[4].ToString()
