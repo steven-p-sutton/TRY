@@ -12,8 +12,13 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
-  <Import Project="..\..\WIDGET\WIDGET-Model\WIDGET-Model.projitems" Label="Shared" />
-
-  <Import Project="..\..\WIDGET\UTILITY-Model\UTILITY-Model.projitems" Label="Shared" />
+  <ItemGroup>
+    <Reference Include="UTILITY-Model-Core">
+      <HintPath>..\..\WIDGET\UTILITY-Model-Core\bin\Debug\netcoreapp3.1\UTILITY-Model-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="WIDGET-Model-Core">
+      <HintPath>..\..\WIDGET\WIDGET-Model-Core\bin\Debug\netcoreapp3.1\WIDGET-Model-Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>

@@ -13,17 +13,7 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SQL-Database", "SQL-Databas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DONT-PANIC", "..\DONT-PANIC\DONT-PANIC\DONT-PANIC.csproj", "{01FE4581-C914-4C43-B47B-B7AA99EE2D60}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "WIDGET-Model", "..\WIDGET\WIDGET-Model\WIDGET-Model.shproj", "{2CA43E1C-8B19-4C5E-AFAF-8F1446A8E21E}"
-EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "UTILITY-Model", "..\WIDGET\UTILITY-Model\UTILITY-Model.shproj", "{FCA7B907-8F52-4A0D-8D51-3AD681A202E5}"
-EndProject
 Global
-	GlobalSection(SharedMSBuildProjectFiles) = preSolution
-		..\WIDGET\WIDGET-Model\WIDGET-Model.projitems*{2ca43e1c-8b19-4c5e-afaf-8f1446a8e21e}*SharedItemsImports = 13
-		..\WIDGET\UTILITY-Model\UTILITY-Model.projitems*{dc350ee4-0e9f-4763-abe1-53bd847bf8bf}*SharedItemsImports = 5
-		..\WIDGET\WIDGET-Model\WIDGET-Model.projitems*{dc350ee4-0e9f-4763-abe1-53bd847bf8bf}*SharedItemsImports = 5
-		..\WIDGET\UTILITY-Model\UTILITY-Model.projitems*{fca7b907-8f52-4a0d-8d51-3ad681a202e5}*SharedItemsImports = 13
-	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM
