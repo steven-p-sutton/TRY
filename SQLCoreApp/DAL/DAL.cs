@@ -12,7 +12,8 @@ namespace SQLCoreApp.DAL
         private string _connectionString;
         public CountryDAL(IConfiguration iconfiguration)
         {
-            _connectionString = iconfiguration.GetConnectionString("Default");
+            //_connectionString = iconfiguration.GetConnectionString("Default");
+            _connectionString = "Server=LAPTOP-QR0QPGVQ; Database=SQL-Database; Integrated Security=SSPI;";
         }
         public List<CountryModel> GetList()
         {
