@@ -104,8 +104,8 @@ namespace SQLCoreApp
         static void PrintCountries()
         {
             var WidgetDAL = new WidgetDAL(_iconfiguration);
-            var listWidgetModel = WidgetDAL.GetList();
-            listWidgetModel.ForEach(item =>
+            var listWidgetObject = WidgetDAL.GetList();
+            listWidgetObject.ForEach(item =>
             {
                 Console.WriteLine(item.Name);
             });

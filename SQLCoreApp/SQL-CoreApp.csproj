@@ -12,4 +12,8 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
+  <Import Project="..\..\WIDGET\WIDGET-Model\WIDGET-Model.projitems" Label="Shared" />
+
+  <Import Project="..\..\WIDGET\UTILITY-Model\UTILITY-Model.projitems" Label="Shared" />
+
 </Project>
