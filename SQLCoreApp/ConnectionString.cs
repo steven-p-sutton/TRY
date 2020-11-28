@@ -30,7 +30,7 @@ namespace SQLCoreApp
         public string Server { get; set; }
         public string Database { get; set; }
         public bool IntegratedSecurity { get; set; }
-        public string IntegratedSecurity { get; set; }
+        //public string IntegratedSecurity { get; set; }
 
         public override string ToString()
         {

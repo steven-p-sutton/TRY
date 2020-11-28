@@ -12,24 +12,14 @@ namespace SQLCoreApp.DAL
         private string _connectionString;
         public WidgetDAL(IConfiguration iconfiguration)
         {
-            //ConnectionStringBuilder myConnectionString = new ConnectionStringBuilder();
-
-            //myConnectionString.Server = iconfiguration.GetConnectionString("Server");
-            //myConnectionString.Database = iconfiguration.GetConnectionString("Database");
+            Boolean b = bool.TryParse(iconfiguration.GetConnectionString("Integrated Security"), out b);
 
             ConnectionStringBuilder myConnectionString = new ConnectionStringBuilder
             {
                 Server = iconfiguration.GetConnectionString("Server"),
                 Database = iconfiguration.GetConnectionString("Database"),
-                IntegratedSecurity = iconfiguration.GetConnectionString("Integrated Security")
+                IntegratedSecurity = b
             };
-
-            Boolean b = false;
-
-            if (bool.TryParse(iconfiguration.GetConnectionString("Integrated Security"), out b))
-            {
-                myConnectionString.IntegratedSecurity = b;
-            }
 
             _connectionString = myConnectionString.ToString();
         }
