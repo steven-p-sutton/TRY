@@ -12,7 +12,15 @@ namespace SQLCoreApp.DAL
         private string _connectionString;
         public WidgetDAL(IConfiguration iconfiguration)
         {
-            _connectionString = iconfiguration.GetConnectionString("Default");
+            //_connectionString = iconfiguration.GetConnectionString("Default");
+
+            ConnectionStringBuilder myConnectionString = new ConnectionStringBuilder();
+
+            myConnectionString.Server = "LAPTOP-QR0QPGVQ";
+            myConnectionString.Database = "Widget";
+            myConnectionString.IntegratedSecurity = true;
+
+            _connectionString = myConnectionString.Mine;
         }
         public List<WidgetModel> GetList()
         {
