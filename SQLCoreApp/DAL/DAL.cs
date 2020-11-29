@@ -18,7 +18,7 @@ namespace SQLCoreApp.DAL
             bool b = false;
             bool.TryParse(iconfiguration.GetConnectionString("Integrated Security"), out b);
 
-            ConnectionMSSQLStringBuilder myConnectionString = new ConnectionMSSQLStringBuilder
+            ConnectionLocalDBStringBuilder myConnectionString = new ConnectionLocalDBStringBuilder
             {
                 Server = iconfiguration.GetConnectionString("Server"),
                 Database = iconfiguration.GetConnectionString("Database"),

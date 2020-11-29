@@ -69,4 +69,7 @@
   <ItemGroup>
     <RefactorLog Include="SQL-Database.refactorlog" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="dbo\Data\Widget.sql" />
+  </ItemGroup>
 </Project>
