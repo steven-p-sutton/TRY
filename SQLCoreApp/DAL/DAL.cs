@@ -9,16 +9,22 @@ namespace SQLCoreApp.DAL
 {
     public class WidgetDAL
     {
+
+        // Lets use a ConnectionStringBuilder class for the database type chosen
+
         private string _connectionString;
         public WidgetDAL(IConfiguration iconfiguration)
         {
-            Boolean b = bool.TryParse(iconfiguration.GetConnectionString("Integrated Security"), out b);
+            bool b = false;
+            bool.TryParse(iconfiguration.GetConnectionString("Integrated Security"), out b);
 
             ConnectionMSSQLStringBuilder myConnectionString = new ConnectionMSSQLStringBuilder
             {
                 Server = iconfiguration.GetConnectionString("Server"),
                 Database = iconfiguration.GetConnectionString("Database"),
-                IntegratedSecurity = b
+                IntegratedSecurity = b,
+                UserName = iconfiguration.GetConnectionString("UserName"),
+                Password = iconfiguration.GetConnectionString("Password")
             };
 
             _connectionString = myConnectionString.ToString();

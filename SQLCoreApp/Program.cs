@@ -59,33 +59,14 @@ conn.Open();
 
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-//using ConsoleApp.Model;
+//using System.Collections.Generic;
+//using System.Data;
+//using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using SQLCoreApp.DAL;
 
 namespace SQLCoreApp
 {
-   /*
-    * class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-
-            //SqlConnection conn = new SqlConnection();
-            //conn.ConnectionString =
-            //  "Data Source=LAPTOP-QR0QPGVQ;" +
-            //  "Initial Catalog=Widget;" +
-            //  "Integrated Security=SSPI;";
-            //conn.Open();
-            //
-        }
-    }
-}
-*/
     class Program
     {
         private static IConfiguration _iconfiguration;
