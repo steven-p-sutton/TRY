@@ -2,11 +2,14 @@
 
 namespace SQLCoreApp
 {
-    //public class ConnectionStringBuilder
-    //{
-     //   public string ToString()
-    //    {
-    //        return "";
-    //    }
-    //}
+    public class ConnectionStringBuilder
+    {
+        public ConnectionStringBuilder()
+        {
+        }
+        public override string ToString()
+       {
+            return String.Empty;
+       }
+    }
 }

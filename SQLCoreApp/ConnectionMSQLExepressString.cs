@@ -2,12 +2,12 @@
 
 namespace SQLCoreApp
 {
-    public class ConnectionMSSQLStringBuilder: ConnectionStringBuilder
+    public class ConnectionMSSQLExpressStringBuilder: ConnectionStringBuilder
     {
-        public ConnectionMSSQLStringBuilder()
+        public ConnectionMSSQLExpressStringBuilder()
         {
         }
-        public ConnectionMSSQLStringBuilder (string Server, string Database, string IntegratedSecurity)
+        public ConnectionMSSQLExpressStringBuilder(string Server, string Database, string IntegratedSecurity)
         {
             this.Server = Server;
             this.Database = Database;

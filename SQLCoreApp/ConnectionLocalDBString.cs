@@ -2,12 +2,12 @@
 
 namespace SQLCoreApp
 {
-    public class ConnectionMSSQLStringBuilder: ConnectionStringBuilder
+    public class ConnectionLocalDBStringBuilder: ConnectionStringBuilder
     {
-        public ConnectionMSSQLStringBuilder()
+        public ConnectionLocalDBStringBuilder()
         {
         }
-        public ConnectionMSSQLStringBuilder (string Server, string Database, string IntegratedSecurity)
+        public ConnectionLocalDBStringBuilder(string Database, string IntegratedSecurity)
         {
             this.Server = Server;
             this.Database = Database;
@@ -18,7 +18,7 @@ namespace SQLCoreApp
                 this.IntegratedSecurity = b;
             }
         }
-        public string Server { get; set; }
+        public string Server = "LocalDB\\(MSSQLLocalDb)";
         public string Database { get; set; }
         public bool IntegratedSecurity { get; set; }
         public override string ToString()
