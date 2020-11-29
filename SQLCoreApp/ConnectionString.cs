@@ -9,12 +9,6 @@ namespace SQLCoreApp
         public ConnectionStringBuilder()
         {
         }
-        /*public ConnectionStringBuilder(string Server, string Database, bool IntegratedSecurity)
-        {
-            this.Server = Server;
-            this.Database = Database;
-            this.IntegratedSecurity = IntegratedSecurity;
-        }*/
         public ConnectionStringBuilder(string Server, string Database, string IntegratedSecurity)
         {
             this.Server = Server;
@@ -30,8 +24,6 @@ namespace SQLCoreApp
         public string Server { get; set; }
         public string Database { get; set; }
         public bool IntegratedSecurity { get; set; }
-        //public string IntegratedSecurity { get; set; }
-
         public override string ToString()
         {
                 string s = string.Empty;
@@ -46,5 +38,10 @@ namespace SQLCoreApp
                 }
                 return s;
         }
+    }
+
+    public class ConnectionMSSQLStringBuilder : ConnectionStringBuilder
+    {
+
     }
 }
