@@ -20,7 +20,7 @@ namespace SQLCoreApp.DAL
 
             ConnectionLocalDBStringBuilder myConnectionString = new ConnectionLocalDBStringBuilder
             {
-                Server = iconfiguration.GetConnectionString("Server"),
+                //Server = iconfiguration.GetConnectionString("Server"),
                 Database = iconfiguration.GetConnectionString("Database"),
                 IntegratedSecurity = b,
                 UserName = iconfiguration.GetConnectionString("UserName"),
