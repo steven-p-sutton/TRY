@@ -4,23 +4,25 @@ namespace SQLCoreApp
 {
     public class ConnectionLocalDBStringBuilder: ConnectionStringBuilder
     {
-        public ConnectionLocalDBStringBuilder(string Database, string IntegratedSecurity)
+        public ConnectionLocalDBStringBuilder(string Database)
         {
-            //this.Server = "(LocalDB)\\MSSQLLocalDB";
-            Boolean b = false;
             this.Database = Database;
-            bool.TryParse(IntegratedSecurity, out b);
-            this.IntegratedSecurity = b;
+            this.IntegratedSecurity = true;
             this.UserName = String.Empty;
             this.Password = String.Empty;
         }
+        public ConnectionLocalDBStringBuilder(string Database, string UserName, string Password)
+        {
+            this.Database = Database;
+            this.IntegratedSecurity = false;
+            this.UserName = UserName;
+            this.Password = Password;
+        }
         public ConnectionLocalDBStringBuilder(string Database, string IntegratedSecurity, string UserName, string Password)
         {
-            //this.Server = "(LocalDB)\\MSSQLLocalDB";
-            Boolean b = false;
             this.Database = Database;
+            Boolean b = false;
             bool.TryParse(IntegratedSecurity, out b);
-            this.IntegratedSecurity = b;
             this.UserName = UserName;
             this.Password = Password;
         }
