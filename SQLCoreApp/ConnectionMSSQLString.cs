@@ -4,9 +4,6 @@ namespace SQLCoreApp
 {
     public class ConnectionMSSQLStringBuilder: ConnectionStringBuilder
     {
-        public ConnectionMSSQLStringBuilder()
-        {
-        }
         public ConnectionMSSQLStringBuilder (string Server, string Database, string IntegratedSecurity)
         {
             this.Server = Server;

@@ -18,14 +18,14 @@ namespace SQLCoreApp.DAL
             bool b = false;
             bool.TryParse(iconfiguration.GetConnectionString("Integrated Security"), out b);
 
-            ConnectionLocalDBStringBuilder myConnectionString = new ConnectionLocalDBStringBuilder
-            {
+            ConnectionLocalDBStringBuilder myConnectionString = new ConnectionLocalDBStringBuilder("Widget", "True", "", "");
+            /*{
                 //Server = iconfiguration.GetConnectionString("Server"),
                 Database = iconfiguration.GetConnectionString("Database"),
                 IntegratedSecurity = b,
                 UserName = iconfiguration.GetConnectionString("UserName"),
                 Password = iconfiguration.GetConnectionString("Password")
-            };
+            };*/
 
             _connectionString = myConnectionString.ToString();
         }

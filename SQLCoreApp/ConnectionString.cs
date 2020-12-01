@@ -12,11 +12,8 @@ namespace SQLCoreApp
 {
     public class ConnectionStringBuilder
     {
-        public ConnectionStringBuilder()
+        public override string ToString() // also: => FirstName + "  " + ID;
         {
-        }
-        public override string ToString()
-       {
             return String.Empty;
        }
     }

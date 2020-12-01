@@ -4,9 +4,6 @@ namespace SQLCoreApp
 {
     public class ConnectionLocalDBStringBuilder: ConnectionStringBuilder
     {
-        public ConnectionLocalDBStringBuilder()
-        {
-        }
         public ConnectionLocalDBStringBuilder(string Database, string IntegratedSecurity)
         {
             //this.Server = "(LocalDB)\\MSSQLLocalDB";
@@ -32,7 +29,7 @@ namespace SQLCoreApp
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IntegratedSecurity { get; set; }
-        public override string ToString()
+        public override string ToString() // also: => FirstName + "  " + ID;
         {
             string s = string.Empty;
 
