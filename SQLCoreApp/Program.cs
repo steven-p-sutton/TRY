@@ -55,7 +55,10 @@ conn.Open();
 //      https://docs.microsoft.com/en-us/previous-versions/aspnet/jj653752(v=vs.110)
 //  Connection strings and models (EntityFramework)
 //      https://docs.microsoft.com/en-us/ef/ef6/fundamentals/configuring/connection-strings?redirectedfrom=MSDN
-
+//  SQL Server 2012 Express LocalDB
+//      https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/hh510202(v=sql.110)?redirectedfrom=MSDN#starting-localdb-and-connecting-to-localdb
+//  Database Features
+//      https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/hh230827(v=sql.110)
 
 using System;
 using System.IO;

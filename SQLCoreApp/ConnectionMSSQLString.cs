@@ -2,33 +2,37 @@
 
 namespace SQLCoreApp
 {
-    public class ConnectionMSSQLStringBuilder: ConnectionStringBuilder
+    public class ConnectionMSSQLStringBuilder : ConnectionStringBuilder
     {
-        public ConnectionMSSQLStringBuilder (string Server, string Database, string IntegratedSecurity)
+        public ConnectionMSSQLStringBuilder()
         {
-            this.Server = Server;
-            this.Database = Database;
-
-            Boolean b = false;
-            if (bool.TryParse(IntegratedSecurity, out b))
-            {
-                this.IntegratedSecurity = b;
-            }
-
+            this.Server = "LocalDB";
+            this.Database = "MSSQLLocalDb";
+            this.IntegratedSecurity = true;
             this.UserName = String.Empty;
             this.Password = String.Empty;
         }
-        public ConnectionMSSQLStringBuilder(string Server, string Database, string IntegratedSecurity, string UserName, string Password)
+        public ConnectionMSSQLStringBuilder(string Server)
+        {
+            this.Server = Server;
+            this.Database = "MSSQLLocalDb";
+            this.IntegratedSecurity = true;
+            this.UserName = String.Empty;
+            this.Password = String.Empty;
+        }
+        public ConnectionMSSQLStringBuilder (string Server, string Database)
         {
             this.Server = Server;
             this.Database = Database;
-
-            Boolean b = false;
-            if (bool.TryParse(IntegratedSecurity, out b))
-            {
-                this.IntegratedSecurity = b;
-            }
-
+            this.IntegratedSecurity = true;
+            this.UserName = String.Empty;
+            this.Password = String.Empty;
+        }
+        public ConnectionMSSQLStringBuilder(string Server, string Database, string UserName, string Password)
+        {
+            this.Server = Server;
+            this.Database = Database;
+            this.IntegratedSecurity = false;
             this.UserName = UserName;
             this.Password = Password;
         }

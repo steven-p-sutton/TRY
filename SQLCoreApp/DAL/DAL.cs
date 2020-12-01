@@ -15,48 +15,35 @@ namespace SQLCoreApp.DAL
         private string _connectionString;
         public WidgetDAL(IConfiguration iconfiguration)
         {
-            //bool b = false;
-            //bool.TryParse(iconfiguration.GetConnectionString("Integrated Security"), out b);
-
-            ConnectionLocalDBStringBuilder myConnectionString1 = new ConnectionLocalDBStringBuilder
+            ConnectionMSSQLStringBuilder myConnectionString0 = new ConnectionMSSQLStringBuilder
             (
-                //"Widget", "True", "", ""
-                iconfiguration.GetConnectionString("Database")
+            );
+            _connectionString = myConnectionString0.ToString();
 
+            ConnectionMSSQLStringBuilder myConnectionString1 = new ConnectionMSSQLStringBuilder
+            (
+                iconfiguration.GetConnectionString("Server")
             );
             _connectionString = myConnectionString1.ToString();
 
-            ConnectionLocalDBStringBuilder myConnectionString2 = new ConnectionLocalDBStringBuilder
+            ConnectionMSSQLStringBuilder myConnectionString2 = new ConnectionMSSQLStringBuilder
             (
-                //"Widget", "True", "", ""
-                iconfiguration.GetConnectionString("Database"),
-                iconfiguration.GetConnectionString("UserName"),
-                iconfiguration.GetConnectionString("Password")
+                iconfiguration.GetConnectionString("Server"),
+                iconfiguration.GetConnectionString("Database")
             );
-            _connectionString = myConnectionString2.ToString();
 
-            ConnectionLocalDBStringBuilder myConnectionString3 = new ConnectionLocalDBStringBuilder
-            (
-                //"Widget", "True", "", ""
-                iconfiguration.GetConnectionString("Database"),
-                iconfiguration.GetConnectionString("Integrated Security"),
-                iconfiguration.GetConnectionString("UserName"),
-                iconfiguration.GetConnectionString("Password")
-            );
-            _connectionString = myConnectionString3.ToString();
+            _connectionString = myConnectionString2.ToString();
 
             ConnectionMSSQLStringBuilder myConnectionString4 = new ConnectionMSSQLStringBuilder
             (
                 iconfiguration.GetConnectionString("Server"),
                 iconfiguration.GetConnectionString("Database"),
-                iconfiguration.GetConnectionString("Integrated Security"),
                 iconfiguration.GetConnectionString("UserName"),
                 iconfiguration.GetConnectionString("Password")
             );
+
             _connectionString = myConnectionString4.ToString();
 
-            // The one going out
-            _connectionString = myConnectionString4.ToString();
         }
         public List<WidgetModel> GetList()
         {
