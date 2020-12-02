@@ -55,44 +55,28 @@ conn.Open();
 //      https://docs.microsoft.com/en-us/previous-versions/aspnet/jj653752(v=vs.110)
 //  Connection strings and models (EntityFramework)
 //      https://docs.microsoft.com/en-us/ef/ef6/fundamentals/configuring/connection-strings?redirectedfrom=MSDN
-
+//  SQL Server 2012 Express LocalDB
+//      https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/hh510202(v=sql.110)?redirectedfrom=MSDN#starting-localdb-and-connecting-to-localdb
+//  Database Features
+//      https://docs.microsoft.com/en-us/previous-versions/sql/sql-server-2012/hh230827(v=sql.110)
 
 using System;
 using System.IO;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.SqlClient;
-//using ConsoleApp.Model;
+//using System.Collections.Generic;
+//using System.Data;
+//using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 using SQLCoreApp.DAL;
 
 namespace SQLCoreApp
 {
-   /*
-    * class Program
-    {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-
-            //SqlConnection conn = new SqlConnection();
-            //conn.ConnectionString =
-            //  "Data Source=LAPTOP-QR0QPGVQ;" +
-            //  "Initial Catalog=Widget;" +
-            //  "Integrated Security=SSPI;";
-            //conn.Open();
-            //
-        }
-    }
-}
-*/
     class Program
     {
         private static IConfiguration _iconfiguration;
         static void Main(string[] args)
         {
             GetAppSettingsFile();
-            PrintCountries();
+            PrintWidgets();
         }
         static void GetAppSettingsFile()
         {
@@ -101,13 +85,13 @@ namespace SQLCoreApp
                                  .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true);
             _iconfiguration = builder.Build();
         }
-        static void PrintCountries()
+        static void PrintWidgets()
         {
-            var countryDAL = new CountryDAL(_iconfiguration);
-            var listCountryModel = countryDAL.GetList();
-            listCountryModel.ForEach(item =>
+            var WidgetDAL = new WidgetDAL(_iconfiguration);
+            var listWidgetModel = WidgetDAL.GetList();
+            listWidgetModel.ForEach(item =>
             {
-                Console.WriteLine(item.Country);
+                Console.WriteLine(item.Name);
             });
             Console.WriteLine("Press any key to stop.");
             Console.ReadKey();
