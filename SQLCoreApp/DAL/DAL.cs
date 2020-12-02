@@ -46,7 +46,7 @@ namespace SQLCoreApp.DAL
             _connectionString = myConnectionString4.ToString();
 
             // Decide which one to use in connection
-            _connectionString = myConnectionString2.ToString();
+            _connectionString = myConnectionString1.ToString();
         }
         public List<WidgetModel> GetList()
         {
