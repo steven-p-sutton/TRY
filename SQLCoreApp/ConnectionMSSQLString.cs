@@ -4,29 +4,34 @@ namespace SQLCoreApp
 {
     public class ConnectionMSSQLStringBuilder : ConnectionStringBuilder
     {
-        public ConnectionMSSQLStringBuilder()
+        private string Server { get; set; }
+        private string Database { get; set; }
+        private string UserName { get; set; }
+        private string Password { get; set; }
+        private bool IntegratedSecurity { get; set; }
+        public ConnectionMSSQLStringBuilder(string Database)
         {
-            this.Server = "LocalDB";
-            this.Database = "MSSQLLocalDb";
+            this.Server = "(LocalDB)\\MSSQLLocalDB";
+            this.Database = Database;
             this.IntegratedSecurity = true;
             this.UserName = String.Empty;
             this.Password = String.Empty;
         }
-        public ConnectionMSSQLStringBuilder(string Server)
-        {
-            this.Server = Server;
-            this.Database = "MSSQLLocalDb";
-            this.IntegratedSecurity = true;
-            this.UserName = String.Empty;
-            this.Password = String.Empty;
-        }
-        public ConnectionMSSQLStringBuilder (string Server, string Database)
+        public ConnectionMSSQLStringBuilder(string Server, string Database)
         {
             this.Server = Server;
             this.Database = Database;
             this.IntegratedSecurity = true;
             this.UserName = String.Empty;
             this.Password = String.Empty;
+        }
+        public ConnectionMSSQLStringBuilder(string Database, string UserName, string Password)
+        {
+            this.Server = "(LocalDB)\\MSSQLLocalDB";
+            this.Database = Database;
+            this.IntegratedSecurity = false;
+            this.UserName = UserName;
+            this.Password = Password;
         }
         public ConnectionMSSQLStringBuilder(string Server, string Database, string UserName, string Password)
         {
@@ -36,11 +41,6 @@ namespace SQLCoreApp
             this.UserName = UserName;
             this.Password = Password;
         }
-        public string Server { get; set; }
-        public string Database { get; set; }
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        public bool IntegratedSecurity { get; set; }
         public override string ToString()
         {
             string s = string.Empty;

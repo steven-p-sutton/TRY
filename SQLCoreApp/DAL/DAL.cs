@@ -15,14 +15,9 @@ namespace SQLCoreApp.DAL
         private string _connectionString;
         public WidgetDAL(IConfiguration iconfiguration)
         {
-            ConnectionMSSQLStringBuilder myConnectionString0 = new ConnectionMSSQLStringBuilder
-            (
-            );
-            _connectionString = myConnectionString0.ToString();
-
             ConnectionMSSQLStringBuilder myConnectionString1 = new ConnectionMSSQLStringBuilder
             (
-                iconfiguration.GetConnectionString("Server")
+                iconfiguration.GetConnectionString("Database")
             );
             _connectionString = myConnectionString1.ToString();
 
@@ -31,8 +26,15 @@ namespace SQLCoreApp.DAL
                 iconfiguration.GetConnectionString("Server"),
                 iconfiguration.GetConnectionString("Database")
             );
-
             _connectionString = myConnectionString2.ToString();
+
+            ConnectionMSSQLStringBuilder myConnectionString3 = new ConnectionMSSQLStringBuilder
+            (
+                iconfiguration.GetConnectionString("Database"),
+                iconfiguration.GetConnectionString("UserName"),
+                iconfiguration.GetConnectionString("Password")
+            );
+            _connectionString = myConnectionString3.ToString();
 
             ConnectionMSSQLStringBuilder myConnectionString4 = new ConnectionMSSQLStringBuilder
             (
@@ -41,9 +43,10 @@ namespace SQLCoreApp.DAL
                 iconfiguration.GetConnectionString("UserName"),
                 iconfiguration.GetConnectionString("Password")
             );
-
             _connectionString = myConnectionString4.ToString();
 
+            // Decide which one to use in connection
+            _connectionString = myConnectionString2.ToString();
         }
         public List<WidgetModel> GetList()
         {

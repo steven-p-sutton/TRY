@@ -11,22 +11,36 @@ namespace TRY
         static void Main(string[] args)
         {
             Console.WriteLine("TRY");
-            A A1 = new A();
-            B B1 = new B();
-            A1.a = "A1.a";
+            A A0 = new A();
+            Console.WriteLine(A0.a);
+
+            A A1 = new A("1st");
             Console.WriteLine(A1.a);
-            B1.a = "B1.a";
-            Console.WriteLine(B1.a);
-            B1.b = "B1.b";
-            Console.WriteLine(B1.b);
+
+            A A2 = new A("First", "Second");
+            Console.WriteLine(A2.a);
+
+            A A3 = new A
+            {
+                a = "1"
+            };
+            Console.WriteLine(A3.a);
         }
     }
     public class A
     {
+        public A()
+        {
+        }
+        public A(string one)
+        {
+            a = one;
+        }
+        public A(string one, string two)
+        {
+            a = one + " " + two;
+        }
         public string a;
     }
-    public class B : A
-    {
-        public string b;
-    }
 }
+  
