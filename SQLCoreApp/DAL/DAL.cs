@@ -9,7 +9,6 @@ namespace SQLCoreApp.DAL
 {
     public class WidgetDAL
     {
-
         // Lets use a ConnectionStringBuilder class for the database type chosen
 
         private string _connectionString;
@@ -45,8 +44,19 @@ namespace SQLCoreApp.DAL
             );
             _connectionString = myConnectionString4.ToString();
 
+            ConnectionMSSQLStringBuilder myConnectionString5 = new ConnectionMSSQLStringBuilder
+            (
+                "(LocalDB)\\MSSQLLocalDB",
+                "Widget",
+                "Widget",
+                "widget"
+            );
+            _connectionString = myConnectionString5.ToString();
+
             // Decide which one to use in connection
-            _connectionString = myConnectionString1.ToString();
+            _connectionString = myConnectionString5.ToString();
+
+
         }
         public List<WidgetModel> GetList()
         {
