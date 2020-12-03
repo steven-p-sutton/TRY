@@ -16,8 +16,8 @@ namespace SQLCoreApp.DAL
         {
             ConnectionMSSQLStringBuilder myConnectionString1 = new ConnectionMSSQLStringBuilder
             (
-                iconfiguration.GetConnectionString("Database")
-            );
+                iconfiguration.GetSection("ConnectionStringsMSQL1")["Database"]
+            ) ;
             _connectionString = myConnectionString1.ToString();
 
             ConnectionMSSQLStringBuilder myConnectionString2 = new ConnectionMSSQLStringBuilder
