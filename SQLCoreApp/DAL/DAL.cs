@@ -19,6 +19,7 @@ namespace SQLCoreApp.DAL
                 iconfiguration.GetSection("ConnectionStringsMSQL1")["Database"]
             ) ;
             _connectionString = myConnectionString1.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 1, _connectionString);
 
             ConnectionMSSQLStringBuilder myConnectionString2 = new ConnectionMSSQLStringBuilder
             (
@@ -26,6 +27,7 @@ namespace SQLCoreApp.DAL
                 iconfiguration.GetConnectionString("Database")
             );
             _connectionString = myConnectionString2.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 2, _connectionString);
 
             ConnectionMSSQLStringBuilder myConnectionString3 = new ConnectionMSSQLStringBuilder
             (
@@ -34,6 +36,7 @@ namespace SQLCoreApp.DAL
                 iconfiguration.GetConnectionString("Password")
             );
             _connectionString = myConnectionString3.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 3, _connectionString);
 
             ConnectionMSSQLStringBuilder myConnectionString4 = new ConnectionMSSQLStringBuilder
             (
@@ -43,20 +46,21 @@ namespace SQLCoreApp.DAL
                 iconfiguration.GetConnectionString("Password")
             );
             _connectionString = myConnectionString4.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 4, _connectionString);
 
             ConnectionMSSQLStringBuilder myConnectionString5 = new ConnectionMSSQLStringBuilder
             (
                 "(LocalDB)\\MSSQLLocalDB",
                 "Widget",
-                "Widget",
-                "widget"
+                "",
+                ""
             );
             _connectionString = myConnectionString5.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 5, _connectionString);
 
             // Decide which one to use in connection
             _connectionString = myConnectionString5.ToString();
-
-
+            Console.WriteLine("_connectionString -> myConnectionString{0} -> {1}", 5, _connectionString);
         }
         public List<WidgetModel> GetList()
         {
