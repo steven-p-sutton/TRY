@@ -24,7 +24,7 @@ namespace SQLCoreApp
             // No Username/Password, so Windows Authentication
             this.UserName = String.Empty;
             this.Password = String.Empty;
-            this.IntegratedSecurity = true;
+            //this.IntegratedSecurity = true;
         }
         public ConnectionMSSQLStringBuilder(string Server, string Database)
         {
@@ -42,7 +42,7 @@ namespace SQLCoreApp
             // No Username/Password, so Windows Authentication
             this.UserName = String.Empty;
             this.Password = String.Empty;
-            this.IntegratedSecurity = true;
+            //this.IntegratedSecurity = true;
         }
         public ConnectionMSSQLStringBuilder(string Database, string UserName, string Password)
         {
@@ -59,9 +59,9 @@ namespace SQLCoreApp
             // Database always required
             this.Database = Database;
             // Username/Password, so SQL Server authentication
-            this.IntegratedSecurity = false;
             this.UserName = UserName;
             this.Password = Password;
+            //this.IntegratedSecurity = false;
         }
         public ConnectionMSSQLStringBuilder(string Server, string Database, string UserName, string Password)
         {
@@ -81,25 +81,51 @@ namespace SQLCoreApp
             // Username/Password, so SQL Server authentication
             this.UserName = UserName;
             this.Password = Password;
-            this.IntegratedSecurity = false;
+            //this.IntegratedSecurity = false;
         }
         public override string ToString()
         {
             string s = string.Empty;
+            string d = string.Empty;
+            string i = string.Empty;
+            string u = string.Empty;
+            string p = string.Empty;
+            string result = string.Empty;
 
-            s = String.Format("Server={0}; Database={1};", this.Server, this.Database);
-
-            if (this.IntegratedSecurity)
-            {
-                // Windows Authentication
-                s = s + " Integrated Security=SSPI;";
-            }
+            // Server
+            if ((this.Server != string.Empty) && (this.Server != null) && (this.Server != ""))
+                s = this.Server;
             else
-            {
+                s = "(LocalDB)\\MSSQLLocalDB";
+
+            // Database
+            d = this.Database;
+
+            // UserName 
+            u = this.UserName;
+
+            // Password
+            p = this.Password;
+
+            // Build the final output string 
+            if ((s != string.Empty) && (s != null) && (s != ""))
+                result = result + String.Format("Server={0};", s);
+
+            if ((d!= string.Empty) && (d != null) && (d != ""))
+                result = result + String.Format("Database ={0};", d);
+
+            // Determine Authentication mode from presence of username & password
+            if ( (this.UserName != string.Empty) && (this.UserName != null) && (this.UserName != "")
+              && (this.Password != string.Empty) && (this.Password != null) && (this.Password != "") )
+
                 // SQL Server Authentication
-                s = s + String.Format(" User Id= {0}; Password={1};", this.UserName, this.Password);
-            }
-            return s;
+                result = result + String.Format(" User Id= {0}; Password={1};", u, p);
+            else
+                // Windows Authentication
+                result = result + " Integrated Security=SSPI;";
+
+            // Output the final string
+            return result;
         }
     }
 }

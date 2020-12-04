@@ -50,8 +50,8 @@ namespace SQLCoreApp.DAL
 
             ConnectionMSSQLStringBuilder myConnectionString5 = new ConnectionMSSQLStringBuilder
             (
-                "(LocalDB)\\MSSQLLocalDB",
-                "Widget",
+                "",
+                "",
                 "",
                 ""
             );
