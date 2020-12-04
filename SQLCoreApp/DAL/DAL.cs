@@ -75,8 +75,8 @@ namespace SQLCoreApp.DAL
             Console.WriteLine("myConnectionString{0} -> {1}", 6, _connectionString);
 
             // Decide which one to use in connection
-            _connectionString = myConnectionString5.ToString();
-            Console.WriteLine("_connectionString -> myConnectionString{0} -> {1}", 5, _connectionString);
+            _connectionString = myConnectionString2.ToString();
+            Console.WriteLine("_connectionString -> myConnectionString{0} -> {1}", 2, _connectionString);
         }
         public List<WidgetModel> GetList()
         {
