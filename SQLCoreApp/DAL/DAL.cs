@@ -14,49 +14,65 @@ namespace SQLCoreApp.DAL
         private string _connectionString;
         public WidgetDAL(IConfiguration iconfiguration)
         {
+            //Just the database, therefore localDB with Windows Authentication
             ConnectionMSSQLStringBuilder myConnectionString1 = new ConnectionMSSQLStringBuilder
             (
                 iconfiguration.GetSection("ConnectionStringsMSQL1")["Database"]
             ) ;
             _connectionString = myConnectionString1.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 1, _connectionString);
-
+ 
+            // Server,therefore MS-SQL, username & passoword not present, therefore Windows Authenication
             ConnectionMSSQLStringBuilder myConnectionString2 = new ConnectionMSSQLStringBuilder
             (
-                iconfiguration.GetConnectionString("Server"),
-                iconfiguration.GetConnectionString("Database")
+                iconfiguration.GetSection("ConnectionStringsMSQL2")["Server"],
+                iconfiguration.GetSection("ConnectionStringsMSQL2")["Database"]
             );
             _connectionString = myConnectionString2.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 2, _connectionString);
 
+            // No server, therefore LocalDB, Username & password, therefore SQL Auntentication
             ConnectionMSSQLStringBuilder myConnectionString3 = new ConnectionMSSQLStringBuilder
             (
-                iconfiguration.GetConnectionString("Database"),
-                iconfiguration.GetConnectionString("UserName"),
-                iconfiguration.GetConnectionString("Password")
+                iconfiguration.GetSection("ConnectionStringsMSQL3")["Database"],
+                iconfiguration.GetSection("ConnectionStringsMSQL3")["UserName"],
+                iconfiguration.GetSection("ConnectionStringsMSQL3")["Password"]
             );
             _connectionString = myConnectionString3.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 3, _connectionString);
 
+            // All items in config are present
             ConnectionMSSQLStringBuilder myConnectionString4 = new ConnectionMSSQLStringBuilder
             (
-                iconfiguration.GetConnectionString("Server"),
-                iconfiguration.GetConnectionString("Database"),
-                iconfiguration.GetConnectionString("UserName"),
-                iconfiguration.GetConnectionString("Password")
+                iconfiguration.GetSection("ConnectionStringsMSQL4")["Server"],
+                iconfiguration.GetSection("ConnectionStringsMSQL4")["Database"],
+                iconfiguration.GetSection("ConnectionStringsMSQL4")["UserName"],
+                iconfiguration.GetSection("ConnectionStringsMSQL4")["Password"]
             );
             _connectionString = myConnectionString4.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 4, _connectionString);
 
+            // All items in config are present, but empty
             ConnectionMSSQLStringBuilder myConnectionString5 = new ConnectionMSSQLStringBuilder
             (
-                "",
-                "",
-                "",
-                ""
+                iconfiguration.GetSection("ConnectionStringsMSQL5")["Server"],
+                iconfiguration.GetSection("ConnectionStringsMSQL5")["Database"],
+                iconfiguration.GetSection("ConnectionStringsMSQL5")["UserName"],
+                iconfiguration.GetSection("ConnectionStringsMSQL5")["Password"]
             );
             _connectionString = myConnectionString5.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 5, _connectionString);
+
+            // Missing config items
+            ConnectionMSSQLStringBuilder myConnectionString6 = new ConnectionMSSQLStringBuilder
+            (
+                iconfiguration.GetSection("ConnectionStringsMSQL6")["Server"],
+                iconfiguration.GetSection("ConnectionStringsMSQL6")["Database"],
+                iconfiguration.GetSection("ConnectionStringsMSQL6")["UserName"],
+                iconfiguration.GetSection("ConnectionStringsMSQL6")["Password"]
+            );
+            _connectionString = myConnectionString6.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 6, _connectionString);
 
             // Decide which one to use in connection
             _connectionString = myConnectionString5.ToString();
