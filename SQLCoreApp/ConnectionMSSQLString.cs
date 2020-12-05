@@ -98,7 +98,10 @@ namespace SQLCoreApp
                 s = "(LocalDB)\\MSSQLLocalDB";
 
             // Database
-            d = this.Database;
+            if ((this.Database != string.Empty) && (this.Database != null) && (this.Database != ""))
+                d = this.Database;
+            else
+                d = "LocalDB";
 
             // UserName 
             u = this.UserName;

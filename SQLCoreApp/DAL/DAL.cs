@@ -74,9 +74,19 @@ namespace SQLCoreApp.DAL
             _connectionString = myConnectionString6.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 6, _connectionString);
 
+            ConnectionMSSQLStringBuilder myConnectionString7 = new ConnectionMSSQLStringBuilder
+            (
+                "",
+                "",
+                "",
+                ""
+            );
+            _connectionString = myConnectionString7.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 7, _connectionString);
+
             // Decide which one to use in connection
-            _connectionString = myConnectionString2.ToString();
-            Console.WriteLine("_connectionString -> myConnectionString{0} -> {1}", 2, _connectionString);
+            _connectionString = myConnectionString6.ToString();
+            Console.WriteLine("USE THIS ONE !!!! myConnectionString{0} -> {1}", 6, _connectionString);
         }
         public List<WidgetModel> GetList()
         {
