@@ -63,7 +63,7 @@ namespace SQLCoreApp.DAL
             _connectionString = myConnectionString5.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 5, _connectionString);
 
-            // Missing config items
+            // Config items not present in config section
             ConnectionMSSQLStringBuilder myConnectionString6 = new ConnectionMSSQLStringBuilder
             (
                 iconfiguration.GetSection("ConnectionStringsMSQL6")["Server"],
@@ -74,6 +74,7 @@ namespace SQLCoreApp.DAL
             _connectionString = myConnectionString6.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 6, _connectionString);
 
+            // Hard coded (eg blanks) and not using config at all
             ConnectionMSSQLStringBuilder myConnectionString7 = new ConnectionMSSQLStringBuilder
             (
                 "",
@@ -81,8 +82,19 @@ namespace SQLCoreApp.DAL
                 "",
                 ""
             );
-            _connectionString = myConnectionString7.ToString();
+            _connectionString = myConnectionString6.ToString();
             Console.WriteLine("myConnectionString{0} -> {1}", 7, _connectionString);
+
+            // Config section not present in appsetting.json
+            ConnectionMSSQLStringBuilder myConnectionString8 = new ConnectionMSSQLStringBuilder
+            (
+                iconfiguration.GetSection("ConnectionStringsMSQL8")["Server"],
+                iconfiguration.GetSection("ConnectionStringsMSQL8")["Database"],
+                iconfiguration.GetSection("ConnectionStringsMSQL8")["UserName"],
+                iconfiguration.GetSection("ConnectionStringsMSQL8")["Password"]
+            );
+            _connectionString = myConnectionString7.ToString();
+            Console.WriteLine("myConnectionString{0} -> {1}", 8, _connectionString);
 
             // Decide which one to use in connection
             _connectionString = myConnectionString6.ToString();
