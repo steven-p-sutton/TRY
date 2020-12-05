@@ -8,13 +8,10 @@
 // Trusted Connection
 //      Server=myServerAddress;Database=myDataBase;Trusted_Connection=True;
 // 
-namespace SQLCoreApp
+public class ConnectionStringBuilder
 {
-    public class ConnectionStringBuilder
+    public override string ToString() // also: => FirstName + "  " + ID;
     {
-        public override string ToString() // also: => FirstName + "  " + ID;
-        {
-            return String.Empty;
-       }
+        return String.Empty;
     }
 }

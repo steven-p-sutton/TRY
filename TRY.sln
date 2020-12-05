@@ -13,7 +13,13 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "SQL-Database", "SQL-Databas
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DONT-PANIC", "..\DONT-PANIC\DONT-PANIC\DONT-PANIC.csproj", "{01FE4581-C914-4C43-B47B-B7AA99EE2D60}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "DATABASE-Model", "DATABASE-Model\DATABASE-Model.shproj", "{2BF435BA-2035-4D0C-84F7-C9D491B199E3}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DATABASE-Model\DATABASE-Model.projitems*{2bf435ba-2035-4d0c-84f7-c9d491b199e3}*SharedItemsImports = 13
+		DATABASE-Model\DATABASE-Model.projitems*{dc350ee4-0e9f-4763-abe1-53bd847bf8bf}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|ARM = Debug|ARM

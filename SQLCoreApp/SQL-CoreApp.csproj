@@ -21,4 +21,6 @@
     </Reference>
   </ItemGroup>
 
+  <Import Project="..\DATABASE-Model\DATABASE-Model.projitems" Label="Shared" />
+
 </Project>
