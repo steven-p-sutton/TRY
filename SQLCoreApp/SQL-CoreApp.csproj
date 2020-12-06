@@ -13,6 +13,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="DATABASE-Model-Core">
+      <HintPath>..\..\INFRASTRUCTURE\DATABASE-Model-Core\bin\Debug\netcoreapp3.1\DATABASE-Model-Core.dll</HintPath>
+    </Reference>
     <Reference Include="UTILITY-Model-Core">
       <HintPath>..\..\WIDGET\UTILITY-Model-Core\bin\Debug\netcoreapp3.1\UTILITY-Model-Core.dll</HintPath>
     </Reference>
@@ -20,7 +23,5 @@
       <HintPath>..\..\WIDGET\WIDGET-Model-Core\bin\Debug\netcoreapp3.1\WIDGET-Model-Core.dll</HintPath>
     </Reference>
   </ItemGroup>
-
-  <Import Project="..\DATABASE-Model\DATABASE-Model.projitems" Label="Shared" />
 
 </Project>
