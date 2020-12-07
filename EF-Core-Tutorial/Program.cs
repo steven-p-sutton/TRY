@@ -1,4 +1,5 @@
 ﻿using System;
+using DB_Context.Models;
 
 // This is based oin the Tutotial here ->
 //      https://www.yogihosting.com/conventions-entity-framework-core/
