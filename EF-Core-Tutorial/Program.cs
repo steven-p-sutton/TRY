@@ -1,6 +1,7 @@
 ﻿using System;
 using DB_Context.Models;
 using Microsoft.EntityFrameworkCore.Design;
+using Microsoft.EntityFrameworkCore;
 
 
 // This is based oin the Tutotial here ->
@@ -26,6 +27,16 @@ namespace EF_Core_Tutorial
         static void Main(string[] args)
         {
             Console.WriteLine("Hello EF-Core_Tutorial World!");
+
+            using (var context = new CompanyContext())
+            {
+                var dept = new Department()
+                {
+                    Name = "Designing"
+                };
+                context.Entry(dept).State = EntityState.Added;
+                context.SaveChanges();
+            }
         }
     }
 }
