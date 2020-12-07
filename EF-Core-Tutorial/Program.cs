@@ -1,5 +1,7 @@
 ﻿using System;
 using DB_Context.Models;
+using Microsoft.EntityFrameworkCore.Design;
+
 
 // This is based oin the Tutotial here ->
 //      https://www.yogihosting.com/conventions-entity-framework-core/
@@ -10,6 +12,7 @@ using DB_Context.Models;
 //      - Microsoft.EntityFrameworkCore.SqlServer
 //      - dotnet tool install --global dotnet-ef 
 //        (dotnet tool update --global dotnet-ef)
+//      - Microsoft.EntityFrameworkCore.Design
 // Database First
 //      https://www.yogihosting.com/database-first-approach-entity-framework-core/
 // DBContext Class

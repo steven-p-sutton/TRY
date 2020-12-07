@@ -15,13 +15,16 @@ namespace DB_Context.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"(LocalDB)\MSSQLLOCALDb=;Database=Company;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer(@"Server=LAPTOP-QR0QPGVQ;Database=Company;Integrated Security=SSPI;");
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // To migrate changes to database 'PM> dotnet ef migrations add Migration1'
+            // To migrate changes to database 
+            // PM> set-location -LiteralPath 'C:\Users\steve\Documents\Visual Studio Work\TRY\EF-Core-Tutorial'
+            // PM> dotnet ef migrations add Migration1
+            // PM> dotnet ef database update
 
             modelBuilder.Entity<Department>(entity =>
             {
