@@ -49,6 +49,9 @@ namespace EF_Core_Tutorial
 
             Console.WriteLine("Read Records");
             await ef.ReadRecords();
+
+            Console.WriteLine("Read Related Records");
+            await ef.ReadRelatedRecords();
         }
     }
     public class TryEF
@@ -64,7 +67,6 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.Add(dept);
-                //context.SaveChanges();
                 await context.SaveChangesAsync();
             }
         }
@@ -79,7 +81,6 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.AddRange(dept1, dept2, dept3);
-                //context.SaveChanges();
                 await context.SaveChangesAsync();
             }
         }
@@ -102,18 +103,41 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.Add(emp);
-                //context.SaveChanges();
                 await context.SaveChangesAsync();
             }
         }
         public async Task ReadRecords()
         {
-            // Reading Records
+            // Reading Record
 
             using (var context = new CompanyContext())
             {
-                var emp = await context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
-                //var emp = context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
+                // Eager Loading
+                var emp = await context.Employee.Where
+                (
+                    e => e.Name == "Matt"
+                )
+                .FirstOrDefaultAsync();
+            }
+        }
+        public async Task ReadRelatedRecords()
+        {
+            // SELECT[e].[Id], [e].[Designation], [e].[Name], [e.Department].[Id], [e.Department].[Name]
+            // FROM[Employee] AS[e]
+            // LEFT JOIN[Department] AS[e.Department] ON[e].[DepartmentId] = [e.Department].[Id]
+            // WHERE[e].[Name] = N'Matt'
+
+            using (var context = new CompanyContext())
+            {
+                // Eager Loading  Related record for Deparment read at time of reading Employee
+                var emp = await context.Employee.Where
+                (
+                    e => e.Name == "Matt"
+                )
+                .Include(s => s.Department)
+                .FirstOrDefaultAsync();
+
+
             }
         }
     }
