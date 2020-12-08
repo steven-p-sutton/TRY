@@ -3,6 +3,7 @@ using DB_Context.Models;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System.Linq;
 
 
 // This is based oin the Tutotial here ->
@@ -35,12 +36,28 @@ namespace EF_Core_Tutorial
         static void Main(string[] args)
         {
             Console.WriteLine("Hello EF-Core-Tutorial World!");
+            TryEF ef = new TryEF();
 
-            var dept = new Department();
+            Console.WriteLine("Insert Single Record");
+            ef.InsertSingleRecord();
 
+            Console.WriteLine("Insert Multiple Records");
+            ef.InsertMultipleRecords();
+
+            ef.InsertRelatedRecords();
+            Console.WriteLine("Insert single Record");
+
+            Console.WriteLine("Read Records");
+            ef.ReadRecords();
+        }
+    }
+    public class TryEF
+    {
+        public void InsertSingleRecord()
+        {
             // Insert/Create a Single Record
 
-            dept = new Department()
+            var dept = new Department()
             {
                 Name = "Designing"
             };
@@ -50,7 +67,9 @@ namespace EF_Core_Tutorial
                 context.SaveChanges();
                 //await context.SaveChangesAsync();
             }
-
+        }
+        public void InsertMultipleRecords()
+        {
             // Inserting/Creating Multiple Records
 
             var dept1 = new Department() { Name = "Development" };
@@ -63,10 +82,12 @@ namespace EF_Core_Tutorial
                 context.SaveChanges();
                 //await context.SaveChangesAsync();
             }
-
+        }
+        public void InsertRelatedRecords()
+        {
             // Inserting Related Records
 
-            dept = new Department()
+            var dept = new Department()
             {
                 Name = "Admin"
             };
@@ -84,9 +105,16 @@ namespace EF_Core_Tutorial
                 context.SaveChanges();
                 //await context.SaveChangesAsync();
             }
+        }
+        public void ReadRecords()
+        {
+            // Reading Records
 
-            // 
-
+            using (var context = new CompanyContext())
+            {
+                //var emp = await context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
+                var emp = context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
+            }
         }
     }
 }
