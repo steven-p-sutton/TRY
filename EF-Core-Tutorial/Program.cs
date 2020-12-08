@@ -33,27 +33,27 @@ namespace EF_Core_Tutorial
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Console.WriteLine("Hello EF-Core-Tutorial World!");
             TryEF ef = new TryEF();
 
             Console.WriteLine("Insert Single Record");
-            ef.InsertSingleRecord();
+            await ef.InsertSingleRecord();
 
             Console.WriteLine("Insert Multiple Records");
-            ef.InsertMultipleRecords();
+            await ef.InsertMultipleRecords();
 
-            ef.InsertRelatedRecords();
-            Console.WriteLine("Insert single Record");
+            Console.WriteLine("Insert Related Records");
+            await ef.InsertRelatedRecords();
 
             Console.WriteLine("Read Records");
-            ef.ReadRecords();
+            await ef.ReadRecords();
         }
     }
     public class TryEF
     {
-        public void InsertSingleRecord()
+        public async Task InsertSingleRecord()
         {
             // Insert/Create a Single Record
 
@@ -64,11 +64,11 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.Add(dept);
-                context.SaveChanges();
-                //await context.SaveChangesAsync();
+                //context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
-        public void InsertMultipleRecords()
+        public async Task InsertMultipleRecords()
         {
             // Inserting/Creating Multiple Records
 
@@ -79,11 +79,11 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.AddRange(dept1, dept2, dept3);
-                context.SaveChanges();
-                //await context.SaveChangesAsync();
+                //context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
-        public void InsertRelatedRecords()
+        public async Task InsertRelatedRecords()
         {
             // Inserting Related Records
 
@@ -102,18 +102,18 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.Add(emp);
-                context.SaveChanges();
-                //await context.SaveChangesAsync();
+                //context.SaveChanges();
+                await context.SaveChangesAsync();
             }
         }
-        public void ReadRecords()
+        public async Task ReadRecords()
         {
             // Reading Records
 
             using (var context = new CompanyContext())
             {
-                //var emp = await context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
-                var emp = context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
+                var emp = await context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
+                //var emp = context.Employee.Where(e => e.Name == "Matt").FirstOrDefaultAsync();
             }
         }
     }
