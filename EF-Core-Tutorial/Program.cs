@@ -39,6 +39,7 @@ namespace EF_Core_Tutorial
             Console.WriteLine("Hello EF-Core-Tutorial World!");
             TryEF ef = new TryEF();
 
+            
             Console.WriteLine("Insert Single Record");
             await ef.InsertSingleRecord();
 
@@ -65,6 +66,9 @@ namespace EF_Core_Tutorial
             
             //Console.WriteLine("Update Related Records");
             //await ef.UpdateRelatedRecords();
+            
+            //Console.WriteLine("Delete Record");
+            //await ef.DeleteRecord();
         }
     }
     public class TryEF
@@ -202,7 +206,7 @@ namespace EF_Core_Tutorial
         {
             var dept = new Department()
             {
-                Id = 1,
+                Id = 37,
                 Name = "Designing"
             };
 
@@ -216,19 +220,19 @@ namespace EF_Core_Tutorial
         {
             var dept1 = new Department()
             {
-                Id = 1,
+                Id = 36,
                 Name = "New Designing"
             };
 
             var dept2 = new Department()
             {
-                Id = 2,
+                Id = 37,
                 Name = "New Research"
             };
 
             var dept3 = new Department()
             {
-                Id = 3,
+                Id = 38,
                 Name = "New HR"
             };
 
@@ -258,6 +262,19 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.Update(emp);
+                await context.SaveChangesAsync();
+            }
+        }
+        public async Task DeleteRecord()
+        {
+            var dept = new Department()
+            {
+                Id = 1002
+            };
+
+            using (var context = new CompanyContext())
+            {
+                context.Remove(dept);
                 await context.SaveChangesAsync();
             }
         }
