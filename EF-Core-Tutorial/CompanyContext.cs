@@ -23,10 +23,18 @@ namespace DB_Context.Models
         {
             // To migrate changes to database 
             // PM> set-location -LiteralPath 'C:\Users\steve\Documents\Visual Studio Work\TRY\EF-Core-Tutorial'
-            // PM> dotnet ef migrations add Migration1
+            // PM> dotnet ef migrations add <MigrationName>
             // PM> dotnet ef database update
 
             modelBuilder.Entity<Department>(entity =>
+            {
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(50)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<Project>(entity =>
             {
                 entity.Property(e => e.Name)
                     .IsRequired()
@@ -47,10 +55,16 @@ namespace DB_Context.Models
                     .IsUnicode(false);
 
                 entity.HasOne(d => d.Department)
-                    .WithMany(p => p.Employee)
+                    .WithMany(e => e.Employee)
                     .HasForeignKey(d => d.DepartmentId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Employee_Department");
+
+                entity.HasOne(p => p.Project)
+                    .WithMany(e => e.Employee)
+                    .HasForeignKey(p =>p.ProjectId)
+                    .OnDelete(DeleteBehavior.ClientSetNull)
+                    .HasConstraintName("FK_Employee_Project");
             });
         }
     }

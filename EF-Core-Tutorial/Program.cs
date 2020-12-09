@@ -129,14 +129,23 @@ namespace EF_Core_Tutorial
 
             using (var context = new CompanyContext())
             {
-                // Eager Loading  Related record for Deparment read at time of reading Employee
-                var emp = await context.Employee.Where
+                // Eager Loading Related record for Deparment read at time of reading Employee
+                var empEager = await context.Employee.Where
                 (
                     e => e.Name == "Matt"
                 )
                 .Include(s => s.Department)
                 .FirstOrDefaultAsync();
 
+                // Eager Loading Related record for Deparment & Project read at time of reading Employee
+
+                var empEager2 = await context.Employee.Where
+                (
+                    e => e.Name == "Matt"
+                )
+                .Include(s => s.Department)
+                .Include(s => s.Project)
+                .FirstOrDefaultAsync();
 
             }
         }
