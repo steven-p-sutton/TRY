@@ -99,7 +99,7 @@ namespace EF_Core_Tutorial.Migrations
                     b.HasOne("DB_Context.Models.Project", "Project")
                         .WithMany("Employee")
                         .HasForeignKey("ProjectId")
-                        .HasConstraintName("FK_Employee_Project")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Department");

@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Core_Tutorial.Migrations
 {
     [DbContext(typeof(CompanyContext))]
-    [Migration("20201207144317_Migration1")]
-    partial class Migration1
+    [Migration("20201209072508_Migration2")]
+    partial class Migration2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -60,11 +60,34 @@ namespace EF_Core_Tutorial.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(100)");
 
+                    b.Property<int>("ProjectId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
 
                     b.HasIndex("DepartmentId");
 
+                    b.HasIndex("ProjectId");
+
                     b.ToTable("Employee");
+                });
+
+            modelBuilder.Entity("DB_Context.Models.Project", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Project");
                 });
 
             modelBuilder.Entity("DB_Context.Models.Employee", b =>
@@ -75,10 +98,23 @@ namespace EF_Core_Tutorial.Migrations
                         .HasConstraintName("FK_Employee_Department")
                         .IsRequired();
 
+                    b.HasOne("DB_Context.Models.Project", "Project")
+                        .WithMany("Employee")
+                        .HasForeignKey("ProjectId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.Navigation("Department");
+
+                    b.Navigation("Project");
                 });
 
             modelBuilder.Entity("DB_Context.Models.Department", b =>
+                {
+                    b.Navigation("Employee");
+                });
+
+            modelBuilder.Entity("DB_Context.Models.Project", b =>
                 {
                     b.Navigation("Employee");
                 });
