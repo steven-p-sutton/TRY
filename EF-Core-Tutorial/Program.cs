@@ -101,7 +101,7 @@ namespace EF_Core_Tutorial
             var rep = new Report()
             {
                 Name = "Report1",
-                Department = dept
+                Project = proj
             };
 
             var emp = new Employee()
@@ -168,8 +168,8 @@ namespace EF_Core_Tutorial
                     e => e.Name == "Matt"
                 )
                 .Include(s => s.Department)
-                .ThenInclude(r => r.Report)
                 .Include(s => s.Project)
+                .ThenInclude(r => r.Report)
                 .FirstOrDefaultAsync();
             }
         }

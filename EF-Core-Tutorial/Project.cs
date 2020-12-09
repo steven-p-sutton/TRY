@@ -10,5 +10,6 @@ namespace DB_Context.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public ICollection<Employee> Employee { get; set; }
+        public ICollection<Report> Report { get; set; }
     }
 }

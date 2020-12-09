@@ -74,11 +74,11 @@ namespace DB_Context.Models
                     .HasMaxLength(50)
                     .IsUnicode(false);
 
-                entity.HasOne(d => d.Department)
+                entity.HasOne(d => d.Project)
                     .WithMany(e => e.Report)
-                    .HasForeignKey(d => d.DepartmentId)
+                    .HasForeignKey(d => d.ProjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Report_Department");
+                    .HasConstraintName("FK_Report_Project");
             });
         }
     }
