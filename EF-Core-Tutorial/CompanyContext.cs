@@ -16,6 +16,9 @@ namespace DB_Context.Models
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(@"Server=LAPTOP-QR0QPGVQ;Database=Company;Integrated Security=SSPI;");
+
+                // NOT in optionsb#uilder !!!! - DON'T KNOW WHY
+                //optionsBuilder.UseLazyLoadingProxies().UseSqlServer(@"Server=LAPTOP-QR0QPGVQ;Database=Company;Integrated Security=SSPI;");
             }
         }
 

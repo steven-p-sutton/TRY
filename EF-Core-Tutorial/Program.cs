@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Collections.Generic;
 
 
 // This is based oin the Tutotial here ->
@@ -55,6 +56,15 @@ namespace EF_Core_Tutorial
 
             Console.WriteLine("Read Related Explicit Records");
             await ef.ReadRelatedEagerRecords();
+
+            Console.WriteLine("Update Record");
+            await ef.UpdateSingleRecord();
+
+            Console.WriteLine("Update Multiple Records");
+            await ef.UpdateMultipleRecords();            
+            
+            //Console.WriteLine("Update Related Records");
+            //await ef.UpdateRelatedRecords();
         }
     }
     public class TryEF
@@ -147,33 +157,24 @@ namespace EF_Core_Tutorial
             {
                 // Eager Loading Related record for Deparment read at time of reading Employee
 
-                var empEager = await context.Employee.Where
-                (
-                    e => e.Name == "Matt"
-                )
-                .Include(s => s.Department)
-                .FirstOrDefaultAsync();
+                var empEager = await context.Employee.Where(e => e.Name == "Matt")
+                    .Include(s => s.Department)
+                    .FirstOrDefaultAsync();
 
                 // Eager Loading Related record for Deparment & Project read at time of reading Employee
 
-                var empEager2 = await context.Employee.Where
-                (
-                    e => e.Name == "Matt"
-                )
-                .Include(s => s.Department)
-                .Include(s => s.Project)
-                .FirstOrDefaultAsync();
+                var empEager2 = await context.Employee.Where(e => e.Name == "Matt")
+                    .Include(s => s.Department)
+                    .Include(s => s.Project)
+                    .FirstOrDefaultAsync();
 
                 // Eager Loading Related record for Deparment & Project read at time of reading Employee
 
-                var empEager3 = await context.Employee.Where
-                (
-                    e => e.Name == "Matt"
-                )
-                .Include(s => s.Department)
-                .Include(s => s.Project)
-                .ThenInclude(r => r.Report)
-                .FirstOrDefaultAsync();
+                var empEager3 = await context.Employee.Where(e => e.Name == "Matt")
+                    .Include(s => s.Department)
+                    .Include(s => s.Project)
+                    .ThenInclude(r => r.Report)
+                    .FirstOrDefaultAsync();
             }
         }
         public async Task ReadRelatedExplicitRecords()
@@ -183,18 +184,81 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 // Read main Employee receord
-                var emp = await context.Employee.Where
-                (
-                    e => e.Name == "Matt"
-                )
-                .FirstOrDefaultAsync();
+                var emp = await context.Employee.Where(e => e.Name == "Matt")
+                    .FirstOrDefaultAsync();
 
                 // Choose to load related Department data
-                await context.Entry(emp).Reference
-                (
-                    s => s.Department
-                )
-                .LoadAsync();
+                await context.Entry(emp).Reference(s => s.Department)
+                    .LoadAsync();
+
+                // With selecive query this time
+                await context.Entry(emp).Reference(s => s.Department)
+                    .Query()
+                    .Where(s => s.Name == "Admin")
+                    .LoadAsync();
+            }
+        }
+        public async Task UpdateSingleRecord()
+        {
+            var dept = new Department()
+            {
+                Id = 1,
+                Name = "Designing"
+            };
+
+            using (var context = new CompanyContext())
+            {
+                context.Update(dept);
+                await context.SaveChangesAsync();
+            }
+        }
+        public async Task UpdateMultipleRecords()
+        {
+            var dept1 = new Department()
+            {
+                Id = 1,
+                Name = "New Designing"
+            };
+
+            var dept2 = new Department()
+            {
+                Id = 2,
+                Name = "New Research"
+            };
+
+            var dept3 = new Department()
+            {
+                Id = 3,
+                Name = "New HR"
+            };
+
+            List<Department> modifiedDept = new List<Department>() { dept1, dept2, dept3 };
+
+            using (var context = new CompanyContext())
+            {
+                context.UpdateRange(modifiedDept);
+                await context.SaveChangesAsync();
+            }
+        }
+        public async Task UpdateRelatedRecords()
+        {
+            var dept = new Department()
+            {
+                Id = 5,
+                Name = "Admin_1"
+            };
+
+            var emp = new Employee()
+            {
+                Id = 1,
+                Name = "Matt_1",
+                Designation = "Head_1",
+                Department = dept
+            };
+            using (var context = new CompanyContext())
+            {
+                context.Update(emp);
+                await context.SaveChangesAsync();
             }
         }
     }
