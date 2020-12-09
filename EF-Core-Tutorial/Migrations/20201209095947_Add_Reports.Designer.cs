@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Core_Tutorial.Migrations
 {
     [DbContext(typeof(CompanyContext))]
-    [Migration("20201209080752_AddFKs")]
-    partial class AddFKs
+    [Migration("20201209095947_Add_Reports")]
+    partial class Add_Reports
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -90,6 +90,29 @@ namespace EF_Core_Tutorial.Migrations
                     b.ToTable("Project");
                 });
 
+            modelBuilder.Entity("DB_Context.Models.Report", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<int>("DepartmentId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .IsUnicode(false)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("DepartmentId");
+
+                    b.ToTable("Report");
+                });
+
             modelBuilder.Entity("DB_Context.Models.Employee", b =>
                 {
                     b.HasOne("DB_Context.Models.Department", "Department")
@@ -101,7 +124,7 @@ namespace EF_Core_Tutorial.Migrations
                     b.HasOne("DB_Context.Models.Project", "Project")
                         .WithMany("Employee")
                         .HasForeignKey("ProjectId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .HasConstraintName("FK_Employee_Project")
                         .IsRequired();
 
                     b.Navigation("Department");
@@ -109,9 +132,22 @@ namespace EF_Core_Tutorial.Migrations
                     b.Navigation("Project");
                 });
 
+            modelBuilder.Entity("DB_Context.Models.Report", b =>
+                {
+                    b.HasOne("DB_Context.Models.Department", "Department")
+                        .WithMany("Report")
+                        .HasForeignKey("DepartmentId")
+                        .HasConstraintName("FK_Report_Department")
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
+
             modelBuilder.Entity("DB_Context.Models.Department", b =>
                 {
                     b.Navigation("Employee");
+
+                    b.Navigation("Report");
                 });
 
             modelBuilder.Entity("DB_Context.Models.Project", b =>

@@ -98,6 +98,12 @@ namespace EF_Core_Tutorial
                 Name = "Project1"
             };
 
+            var rep = new Report()
+            {
+                Name = "Report1",
+                Department = dept
+            };
+
             var emp = new Employee()
             {
                 Name = "Matt",
@@ -109,6 +115,7 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 context.Add(emp);
+                context.Add(rep);
                 await context.SaveChangesAsync();
             }
         }
@@ -136,13 +143,14 @@ namespace EF_Core_Tutorial
             using (var context = new CompanyContext())
             {
                 // Eager Loading Related record for Deparment read at time of reading Employee
+
                 var empEager = await context.Employee.Where
                 (
                     e => e.Name == "Matt"
                 )
                 .Include(s => s.Department)
                 .FirstOrDefaultAsync();
-
+            
                 // Eager Loading Related record for Deparment & Project read at time of reading Employee
 
                 var empEager2 = await context.Employee.Where
@@ -153,6 +161,16 @@ namespace EF_Core_Tutorial
                 .Include(s => s.Project)
                 .FirstOrDefaultAsync();
 
+                // Eager Loading Related record for Deparment & Project read at time of reading Employee
+
+                var empEager3 = await context.Employee.Where
+                (
+                    e => e.Name == "Matt"
+                )
+                .Include(s => s.Department)
+                .ThenInclude(r => r.Report)
+                .Include(s => s.Project)
+                .FirstOrDefaultAsync();
             }
         }
     }

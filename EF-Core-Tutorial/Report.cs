@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace DB_Context.Models
 {
-    public class Department
+    public class Report
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public ICollection<Employee> Employee { get; set; }
-        public ICollection<Report> Report { get; set; }
+        public int DepartmentId { get; set; }
+        public Department Department { get; set; }
     }
 }
