@@ -178,6 +178,24 @@ namespace EF_Core_Tutorial
         }
         public async Task ReadRelatedExplicitRecords()
         {
+            // Explicit Loading Related record for Deparmentm when its deemed right time to do so
+
+            using (var context = new CompanyContext())
+            {
+                // Read main Employee receord
+                var emp = await context.Employee.Where
+                (
+                    e => e.Name == "Matt"
+                )
+                .FirstOrDefaultAsync();
+
+                // Choose to load related Department data
+                await context.Entry(emp).Reference
+                (
+                    s => s.Department
+                )
+                .LoadAsync();
+            }
         }
     }
 }
