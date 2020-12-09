@@ -2,7 +2,7 @@
 
 namespace EF_Core_Tutorial.Migrations
 {
-    public partial class Migration2 : Migration
+    public partial class IntilalCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

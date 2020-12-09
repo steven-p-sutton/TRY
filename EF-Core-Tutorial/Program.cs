@@ -93,11 +93,17 @@ namespace EF_Core_Tutorial
                 Name = "Admin"
             };
 
+            var proj = new Project()
+            {
+                Name = "Project1"
+            };
+
             var emp = new Employee()
             {
                 Name = "Matt",
                 Designation = "Head",
-                Department = dept
+                Department = dept,
+                Project = proj
             };
 
             using (var context = new CompanyContext())

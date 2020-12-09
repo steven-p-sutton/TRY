@@ -60,11 +60,11 @@ namespace DB_Context.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Employee_Department");
 
-                /*entity.HasOne(p => p.Project)
+                entity.HasOne(p => p.Project)
                     .WithMany(e => e.Employee)
-                    .HasForeignKey(p =>p.ProjectId)
+                    .HasForeignKey(p => p.ProjectId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Employee_Project*/
+                    .HasConstraintName("FK_Employee_Project");
             });
         }
     }

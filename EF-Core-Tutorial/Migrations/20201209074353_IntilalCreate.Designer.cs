@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EF_Core_Tutorial.Migrations
 {
     [DbContext(typeof(CompanyContext))]
-    [Migration("20201209072508_Migration2")]
-    partial class Migration2
+    [Migration("20201209074353_IntilalCreate")]
+    partial class IntilalCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
