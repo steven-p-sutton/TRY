@@ -50,8 +50,11 @@ namespace EF_Core_Tutorial
             Console.WriteLine("Read Records");
             await ef.ReadRecords();
 
-            Console.WriteLine("Read Related Records");
-            await ef.ReadRelatedRecords();
+            Console.WriteLine("Read Related Eager Records");
+            await ef.ReadRelatedEagerRecords();
+
+            Console.WriteLine("Read Related Explicit Records");
+            await ef.ReadRelatedEagerRecords();
         }
     }
     public class TryEF
@@ -133,7 +136,7 @@ namespace EF_Core_Tutorial
                 .FirstOrDefaultAsync();
             }
         }
-        public async Task ReadRelatedRecords()
+        public async Task ReadRelatedEagerRecords()
         {
             // SELECT[e].[Id], [e].[Designation], [e].[Name], [e.Department].[Id], [e.Department].[Name]
             // FROM[Employee] AS[e]
@@ -150,7 +153,7 @@ namespace EF_Core_Tutorial
                 )
                 .Include(s => s.Department)
                 .FirstOrDefaultAsync();
-            
+
                 // Eager Loading Related record for Deparment & Project read at time of reading Employee
 
                 var empEager2 = await context.Employee.Where
@@ -172,6 +175,9 @@ namespace EF_Core_Tutorial
                 .ThenInclude(r => r.Report)
                 .FirstOrDefaultAsync();
             }
+        }
+        public async Task ReadRelatedExplicitRecords()
+        {
         }
     }
 }
