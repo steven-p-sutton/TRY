@@ -4,7 +4,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace LINQ
 {
@@ -35,43 +34,17 @@ namespace LINQ
         }
         static void Main(string[] args)
         {
+            TryLINQ linq = new TryLINQ(Suits(), Ranks());
+
             Console.WriteLine("1. Create the Data Set ...");
 
             Console.WriteLine("1.1. Using query syntax ...");
-
-            /*
-             * The multiple from clauses produce a SelectMany, which creates a single sequence from 
-             * combining each element in the first sequence with each element in the second sequence. 
-             * The order is important for our purposes. The first element in the first source sequence 
-             * (Suits) is combined with every element in the second sequence (Ranks). This produces 
-             * all thirteen cards of first suit. That process is repeated with each element in the 
-             * first sequence (Suits). The end result is a deck of cards ordered by suits, followed 
-             * by values.
-             */
-
-            using (var startingDeck1 = from s in Suits()
-                                       from r in Ranks()
-                                       select new { Suit = s, Rank = r })
-            {
-                // Display each card that we've generated and placed in startingDeck in the console
-                foreach (var card in startingDeck1)
-                {
-                    Console.WriteLine(card);
-                }
-            }
+            linq.QuerySyntax();
 
             Console.WriteLine("1.2. Using method  syntax ...");
-
-            var startingDeck2 = Suits().SelectMany(suit => Ranks().Select(rank => new { Suit = suit, Rank = rank }));
-
-            // Display each card that we've generated and placed in startingDeck in the console
-            foreach (var card in startingDeck2)
-            {
-                Console.WriteLine(card);
-            }
+            linq.MethodSyntax();
 
             Console.WriteLine("2. Manipulate the Order ...");
-
 
         }
     }
