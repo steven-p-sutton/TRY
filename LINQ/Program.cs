@@ -49,14 +49,15 @@ namespace LINQ
              * by values.
              */
 
-            var startingDeck1 = from s in Suits()
-                               from r in Ranks()
-                               select new { Suit = s, Rank = r };
-
-            // Display each card that we've generated and placed in startingDeck in the console
-            foreach (var card in startingDeck1)
+            using (var startingDeck1 = from s in Suits()
+                                       from r in Ranks()
+                                       select new { Suit = s, Rank = r })
             {
-                Console.WriteLine(card);
+                // Display each card that we've generated and placed in startingDeck in the console
+                foreach (var card in startingDeck1)
+                {
+                    Console.WriteLine(card);
+                }
             }
 
             Console.WriteLine("1.2. Using method  syntax ...");
