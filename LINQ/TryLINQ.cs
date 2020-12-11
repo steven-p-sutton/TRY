@@ -60,7 +60,6 @@ namespace LINQ
                 Console.WriteLine(card);
             }
         }
-
         public void ManipulateOrder(string message)
         {
             /*
@@ -84,6 +83,34 @@ namespace LINQ
                 Console.WriteLine(message);
             }
 
+            foreach (var c in shuffle)
+            {
+                Console.WriteLine(c);
+            }
+        }
+        public void PipelineProcessing(string message)
+        {
+            var startingDeck = from s in l_suits
+                               from r in l_ranks
+                               select new { Suit = s, Rank = r };
+
+            if (message != null)
+            {
+                Console.WriteLine("BEFORE:" + message);
+            }
+
+            foreach (var c in startingDeck)
+            {
+                Console.WriteLine(c);
+            }
+            var top = startingDeck.Take(26);
+            var bottom = startingDeck.Skip(26);
+            var shuffle = top.InterleaveSequenceWith(bottom);
+
+            if (message != null)
+            {
+                Console.WriteLine("AFTER:" + message);
+            }
             foreach (var c in shuffle)
             {
                 Console.WriteLine(c);
