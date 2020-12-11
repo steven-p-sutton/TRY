@@ -38,14 +38,9 @@ namespace LINQ
 
             Console.WriteLine("1. Create the Data Set ...");
 
-            Console.WriteLine("1.1. Using query syntax ...");
-            linq.QuerySyntax();
-
-            Console.WriteLine("1.2. Using method  syntax ...");
-            linq.MethodSyntax();
-
-            Console.WriteLine("2. Manipulate the Order ...");
-
+            linq.QuerySyntax("1.1. Using query syntax ...");
+            linq.MethodSyntax("1.2. Using method  syntax ...");
+            linq.ManipulateOrder("2. Manipulate the Order ...");
         }
     }
 }
