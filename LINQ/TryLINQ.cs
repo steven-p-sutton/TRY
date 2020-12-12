@@ -97,9 +97,11 @@ namespace LINQ
         }
         public void PipelineProcessing(string message)
         {
-            var startingDeck = from s in l_suits
-                               from r in l_ranks
-                               select new { Suit = s, Rank = r };
+            var startingDeck = (from s in l_suits
+                                from r in l_ranks
+                                select new { Suit = s, Rank = r })
+                               .LogQuery("Starting Deck")
+                               .ToArray(); // used as cache to speed up processing
 
             if (message != null)
             {
@@ -134,7 +136,7 @@ namespace LINQ
             {
                 if (message != null)
                 {
-                    Console.WriteLine("UNSHUFFLE LOOP{0}:" + message, times);
+                    Console.WriteLine("UNSHUFFLE LOOP{0}:" + message, times+1);
                 }
 
                 //////////////////////////////////////////////////////////////////////
@@ -164,8 +166,9 @@ namespace LINQ
                                 .LogQuery("Bottom Half")
                                 .InterleaveSequenceWith(shuffle.Take(26)
                                 .LogQuery("Top Half"))
-                                .LogQuery("Shuffle #" + times.ToString());
-
+                                .LogQuery("Shuffle #" + times.ToString())
+                                .ToArray(); // used as cache to speed up processing 
+                ing
                 foreach (var card in shuffle)
                 {
                     Console.WriteLine(card);
@@ -175,7 +178,7 @@ namespace LINQ
 
             } while (!startingDeck.SequenceEquals(shuffle));
 
-            Console.WriteLine("UNSHUFFLED: {0}",times);
+            Console.WriteLine("UNSHUFFLED: in {0} loops",times+1);
         }
         public void Comparisons(string message)
         {
