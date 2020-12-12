@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using LinqFaroShuffle;
+using LinqFaroShuffle; //Extensions.sc
 
 namespace LINQ
 {
@@ -9,7 +9,6 @@ namespace LINQ
     {
         private IEnumerable<string> l_suits;
         private IEnumerable<string> l_ranks;
-
         public TryLINQ(IEnumerable<string> Suits, IEnumerable<string> Ranks)
         {
             l_suits = Suits;
@@ -43,7 +42,6 @@ namespace LINQ
                 Console.WriteLine(card);
             }
         }
-
         public void MethodSyntax(string message)
         {
             var startingDeck = l_ranks.SelectMany(suit => l_suits.Select(rank => new { Suit = suit, Rank = rank }));
@@ -115,6 +113,10 @@ namespace LINQ
             {
                 Console.WriteLine(c);
             }
+        }
+        public void Comparisons(string message)
+        {
+
         }
     }
 }
