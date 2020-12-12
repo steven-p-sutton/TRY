@@ -136,7 +136,35 @@ namespace LINQ
                 {
                     Console.WriteLine("UNSHUFFLE LOOP{0}:" + message, times);
                 }
-                shuffle = shuffle.Take(26).InterleaveSequenceWith(shuffle.Skip(26));
+
+                //////////////////////////////////////////////////////////////////////
+                // Out Shuffle - Simplistic shuffle
+                //////////////////////////////////////////////////////////////////////
+                // Without Logging
+                //      shuffle = shuffle.Take(26)
+                //              .InterleaveSequenceWith(shuffle.Skip(26));
+                // With logging
+                /*
+                        shuffle = shuffle.Take(26)
+                                .LogQuery("Top Half")
+                                .InterleaveSequenceWith(shuffle.Skip(26)
+                                .LogQuery("Bottom Half"))
+                                .LogQuery("Shuffle #" + times.ToString());
+                */
+
+                //////////////////////////////////////////////////////////////////////
+                // In Shuffle - soon hits a limit and we need to address this.
+                //////////////////////////////////////////////////////////////////////
+                // Without Logging
+                //      shuffle = shuffle.Skip(26)
+                //              .InterleaveSequenceWith(shuffle.Take(26));
+                // With logging
+                
+                        shuffle = shuffle.Skip(26)
+                                .LogQuery("Bottom Half")
+                                .InterleaveSequenceWith(shuffle.Take(26)
+                                .LogQuery("Top Half"))
+                                .LogQuery("Shuffle #" + times.ToString());
 
                 foreach (var card in shuffle)
                 {
