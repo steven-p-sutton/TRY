@@ -40,8 +40,8 @@ namespace LINQ
             //linq.QuerySyntax("1.1. Using query syntax ...");
             //linq.MethodSyntax("1.2. Using method  syntax ...");
             //linq.ManipulateOrder("2. Manipulate the Order ...");
-            //linq.PipelineProcessing("3. Shuffle the pack ...");
-            linq.Comparisons("4. ");
+            linq.PipelineProcessing("3. Shuffle & Unshuffle the pack ...");
+            //linq.Comparisons("4. ");
         }
     }
 }
