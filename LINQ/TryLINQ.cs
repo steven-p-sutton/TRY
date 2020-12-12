@@ -9,6 +9,15 @@ namespace LINQ
     {
         private IEnumerable<string> l_suits;
         private IEnumerable<string> l_ranks;
+        /*public class Pack
+        {
+            public IEnumerable<string> Suits;
+            public IEnumerable<string> Ranks;
+        }
+
+        private IEnumerable<Pack> l_pack;
+        */
+
         public TryLINQ(IEnumerable<string> Suits, IEnumerable<string> Ranks)
         {
             l_suits = Suits;
@@ -94,29 +103,56 @@ namespace LINQ
 
             if (message != null)
             {
-                Console.WriteLine("BEFORE:" + message);
+                Console.WriteLine("BEFORE SHUFFLE" + message);
             }
 
             foreach (var c in startingDeck)
             {
                 Console.WriteLine(c);
             }
+
+            // Shuffle the pack
+
             var top = startingDeck.Take(26);
             var bottom = startingDeck.Skip(26);
             var shuffle = top.InterleaveSequenceWith(bottom);
 
             if (message != null)
             {
-                Console.WriteLine("AFTER:" + message);
+                Console.WriteLine("AFTER SHUFFLE:" + message);
             }
             foreach (var c in shuffle)
             {
                 Console.WriteLine(c);
             }
+
+            // Determine number of shuffles done
+
+            var times = 0;
+
+            do
+            {
+                if (message != null)
+                {
+                    Console.WriteLine("UNSHUFFLE LOOP{0}:" + message, times);
+                }
+                shuffle = shuffle.Take(26).InterleaveSequenceWith(shuffle.Skip(26));
+
+                foreach (var card in shuffle)
+                {
+                    Console.WriteLine(card);
+                }
+                Console.WriteLine();
+                times++;
+
+            } while (!startingDeck.SequenceEquals(shuffle));
+
+            Console.WriteLine("UNSHUFFLED: {0}",times);
         }
         public void Comparisons(string message)
         {
-
+            // We can re-use the shuffle variable from earlier, or you can make a new one
+            var shuffle = new { Suit = l_suits, Rank = l_ranks }; // use existing one
         }
     }
 }
