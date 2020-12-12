@@ -2,6 +2,15 @@
 //   https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/working-with-linq
 // 
 
+/*
+ * Using LINQ queries to 
+ *  - aggregate data into a meaningful sequence 
+ *  - writing Extension methods to add our own custom functionality to LINQ queries 
+ *  - locating areas in our code where our LINQ queries might run into performance 
+ *    issues like degraded speed lazy and eager evaluation in regards to LINQ queries 
+ *    and the implications they might have on query performance
+ */
+
 using System;
 using System.Collections.Generic;
 
