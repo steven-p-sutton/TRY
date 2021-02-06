@@ -1,0 +1,10 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace TASKS
+{
+    public class Egg
+    {
+    }
+}
