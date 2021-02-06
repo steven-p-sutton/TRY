@@ -16,10 +16,13 @@ namespace TASKS
             Egg eggs = await eggsTask;
             Console.WriteLine("eggs are ready");
 
-            Bacon bacon = FryBaconAsync(3);
+            Task <Bacon> baconTask = FryBaconAsync(3);
+            Bacon bacon = await baconTask;
             Console.WriteLine("bacon is ready");
 
-            Toast toast = ToastBreadAsync(2);
+            Task <Toast> toastTask = ToastBreadAsync(2);
+            Toast toast = await toastTask;
+
             ApplyButter(toast);
             ApplyJam(toast);
             Console.WriteLine("toast is ready");
@@ -37,7 +40,7 @@ namespace TASKS
             Console.WriteLine("Putting jam on the toast");
         private static void ApplyButter(Toast toast) =>
             Console.WriteLine("Putting butter on the toast");
-        private static Toast ToastBreadAsync(int slices)
+        private static async Task<Toast> ToastBreadAsync(int slices)
         {
             for (int slice = 0; slice < slices; slice++)
             {
@@ -49,7 +52,7 @@ namespace TASKS
 
             return new Toast();
         }
-        private static Bacon FryBaconAsync(int slices)
+        private static async Task<Bacon> FryBaconAsync(int slices)
         {
             Console.WriteLine($"putting {slices} slices of bacon in the pan");
             Console.WriteLine("cooking first side of bacon...");
