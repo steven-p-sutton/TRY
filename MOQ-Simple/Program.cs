@@ -17,7 +17,7 @@ namespace MOQ_Simple
             // will prevent the real semantics being invoked. Instead the mock version will intercept and
             // the redfined, mocked, semantics invokded instead.
 
-            // Crated a mocked wrapper containg the object we want (Employee). In reality it hives the object's
+            // Created a mocked wrapper containg the object we want (Employee). In reality it hives the object's
             // interface and makes this available to define the mock semantics in a later step.
 
             var employee = new Mock<Employee>();
@@ -39,6 +39,9 @@ namespace MOQ_Simple
             Console.ReadLine();
         }
     }
+
+    // This is the object dependency of the test, that either we don't want, or can't use in our test. It is NOT
+    // the test subject, but instead the environment required.
 
     public class Employee
     {
