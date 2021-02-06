@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
@@ -11,6 +12,37 @@ using System.Threading.Tasks;
 //      Task<Egg> eggsTask = FryEggsAsync(2);
 //      Egg eggs = await eggsTask;
 // 4. Composition with tasks
+//      var eggsTask = FryEggsAsync(2);
+//      var baconTask = FryBaconAsync(3);
+//      var toastTask = ToastBreadAsync(2);
+//      var eggs = await eggsTask;
+//      Console.WriteLine("eggs are ready");
+//      var bacon = await baconTask;
+//      Console.WriteLine("bacon is ready");
+//      var toast = await toastTask;
+//      Console.WriteLine("toast is ready");
+// 5. Await tasks efficiently
+// v1.  await Task.WhenAll(eggsTask, baconTask, toastTask);
+// v2.  var breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
+/*      
+ *      while (breakfastTasks.Count > 0)
+        {
+            Task finishedTask = await Task.WhenAny(breakfastTasks);
+            if (finishedTask == eggsTask)
+            {
+                Console.WriteLine("eggs are ready");
+            }
+            else if (finishedTask == baconTask)
+            {
+                Console.WriteLine("bacon is ready");
+            }
+            else if (finishedTask == toastTask)
+            {
+                Console.WriteLine("toast is ready");
+            }
+            breakfastTasks.Remove(finishedTask);
+        }
+*/
 
 namespace TASKS
 {
@@ -23,16 +55,26 @@ namespace TASKS
 
             var eggsTask = FryEggsAsync(2);
             var baconTask = FryBaconAsync(3);
-            var toastTask = ToastBreadAsync(2);
+            var toastTask = MakeToastWithButterAndJamAsync(2);
 
-            var eggs = await eggsTask;
-            Console.WriteLine("eggs are ready");
-
-            var bacon = await baconTask;
-            Console.WriteLine("bacon is ready");
-
-            var toast = await toastTask;
-            Console.WriteLine("toast is ready");
+            var breakfastTasks = new List<Task> { eggsTask, baconTask, toastTask };
+            while (breakfastTasks.Count > 0)
+            {
+                Task finishedTask = await Task.WhenAny(breakfastTasks);
+                if (finishedTask == eggsTask)
+                {
+                    Console.WriteLine("eggs are ready");
+                }
+                else if (finishedTask == baconTask)
+                {
+                    Console.WriteLine("bacon is ready");
+                }
+                else if (finishedTask == toastTask)
+                {
+                    Console.WriteLine("toast is ready");
+                }
+                breakfastTasks.Remove(finishedTask);
+            }
 
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready"); 
