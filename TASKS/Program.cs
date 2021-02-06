@@ -7,18 +7,19 @@ namespace TASKS
 {
     class Program
     {
-        static void Main(string[] args)
+        static async Task Main(string[] args)
         {
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
 
-            Egg eggs = FryEggs(2);
+            Task<Egg> eggsTask = FryEggsAsync(2);
+            Egg eggs = await eggsTask;
             Console.WriteLine("eggs are ready");
 
-            Bacon bacon = FryBacon(3);
+            Bacon bacon = FryBaconAsync(3);
             Console.WriteLine("bacon is ready");
 
-            Toast toast = ToastBread(2);
+            Toast toast = ToastBreadAsync(2);
             ApplyButter(toast);
             ApplyJam(toast);
             Console.WriteLine("toast is ready");
@@ -36,7 +37,7 @@ namespace TASKS
             Console.WriteLine("Putting jam on the toast");
         private static void ApplyButter(Toast toast) =>
             Console.WriteLine("Putting butter on the toast");
-        private static Toast ToastBread(int slices)
+        private static Toast ToastBreadAsync(int slices)
         {
             for (int slice = 0; slice < slices; slice++)
             {
@@ -48,7 +49,7 @@ namespace TASKS
 
             return new Toast();
         }
-        private static Bacon FryBacon(int slices)
+        private static Bacon FryBaconAsync(int slices)
         {
             Console.WriteLine($"putting {slices} slices of bacon in the pan");
             Console.WriteLine("cooking first side of bacon...");
@@ -63,7 +64,7 @@ namespace TASKS
 
             return new Bacon();
         }
-        private static Egg FryEggs(int howMany)
+        private static async Task<Egg> FryEggsAsync(int howMany)
         {
             Console.WriteLine("Warming the egg pan...");
             Task.Delay(3000).Wait();
