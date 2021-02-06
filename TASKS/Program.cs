@@ -47,7 +47,7 @@ namespace TASKS
                 Console.WriteLine("Putting a slice of bread in the toaster");
             }
             Console.WriteLine("Start toasting...");
-            Task.Delay(3000).Wait();
+            await Task.Delay(3000);
             Console.WriteLine("Remove toast from toaster");
 
             return new Toast();
@@ -62,7 +62,7 @@ namespace TASKS
                 Console.WriteLine("flipping a slice of bacon");
             }
             Console.WriteLine("cooking the second side of bacon...");
-            Task.Delay(3000).Wait();
+            await Task.Delay(3000);
             Console.WriteLine("Put bacon on plate");
 
             return new Bacon();
@@ -70,10 +70,10 @@ namespace TASKS
         private static async Task<Egg> FryEggsAsync(int howMany)
         {
             Console.WriteLine("Warming the egg pan...");
-            Task.Delay(3000).Wait();
+            await Task.Delay(3000);
             Console.WriteLine($"cracking {howMany} eggs");
             Console.WriteLine("cooking the eggs ...");
-            Task.Delay(3000).Wait();
+            await Task.Delay(3000);
             Console.WriteLine("Put eggs on plate");
 
             return new Egg();
