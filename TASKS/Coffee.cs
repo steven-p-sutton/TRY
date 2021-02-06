@@ -6,5 +6,10 @@ namespace TASKS
 {
     public class Coffee
     {
+        public Coffee PourCoffee()
+        {
+            Console.WriteLine("Pouring coffee");
+            return new Coffee();
+        }
     }
 }
