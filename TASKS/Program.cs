@@ -3,6 +3,16 @@ using System.Threading.Tasks;
 
 // https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/
 
+// 1. Synchronus
+//      Egg eggs = FryEggs(2);
+// 2. Don't block, await instead
+//      Egg eggs = await FryEggsAsync(2);
+// 3. Start tasks concurrently
+//      Task<Egg> eggsTask = FryEggsAsync(2);
+//      Egg eggs = await eggsTask;
+// 4. 
+
+
 namespace TASKS
 {
     class Program
@@ -13,22 +23,21 @@ namespace TASKS
             Console.WriteLine("coffee is ready");
 
             Task<Egg> eggsTask = FryEggsAsync(2);
-            Egg eggs = await eggsTask;
-            Console.WriteLine("eggs are ready");
+            Task<Bacon> baconTask = FryBaconAsync(3);
+            Task<Toast> toastTask = ToastBreadAsync(2);
 
-            Task <Bacon> baconTask = FryBaconAsync(3);
-            Bacon bacon = await baconTask;
-            Console.WriteLine("bacon is ready");
-
-            Task <Toast> toastTask = ToastBreadAsync(2);
             Toast toast = await toastTask;
-
             ApplyButter(toast);
             ApplyJam(toast);
             Console.WriteLine("toast is ready");
-
             Juice oj = PourOJ();
             Console.WriteLine("oj is ready");
+
+            Egg eggs = await eggsTask;
+            Console.WriteLine("eggs are ready");
+            Bacon bacon = await baconTask;
+            Console.WriteLine("bacon is ready");
+
             Console.WriteLine("Breakfast is ready!");
         }
         private static Juice PourOJ()
