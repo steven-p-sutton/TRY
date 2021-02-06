@@ -10,8 +10,7 @@ using System.Threading.Tasks;
 // 3. Start tasks concurrently
 //      Task<Egg> eggsTask = FryEggsAsync(2);
 //      Egg eggs = await eggsTask;
-// 4. 
-
+// 4. Composition with tasks
 
 namespace TASKS
 {
@@ -22,22 +21,21 @@ namespace TASKS
             Coffee cup = PourCoffee();
             Console.WriteLine("coffee is ready");
 
-            Task<Egg> eggsTask = FryEggsAsync(2);
-            Task<Bacon> baconTask = FryBaconAsync(3);
-            Task<Toast> toastTask = ToastBreadAsync(2);
+            var eggsTask = FryEggsAsync(2);
+            var baconTask = FryBaconAsync(3);
+            var toastTask = ToastBreadAsync(2);
 
-            Toast toast = await toastTask;
-            ApplyButter(toast);
-            ApplyJam(toast);
-            Console.WriteLine("toast is ready");
-            Juice oj = PourOJ();
-            Console.WriteLine("oj is ready");
-
-            Egg eggs = await eggsTask;
+            var eggs = await eggsTask;
             Console.WriteLine("eggs are ready");
-            Bacon bacon = await baconTask;
+
+            var bacon = await baconTask;
             Console.WriteLine("bacon is ready");
 
+            var toast = await toastTask;
+            Console.WriteLine("toast is ready");
+
+            Juice oj = PourOJ();
+            Console.WriteLine("oj is ready"); 
             Console.WriteLine("Breakfast is ready!");
         }
         private static Juice PourOJ()
@@ -60,6 +58,14 @@ namespace TASKS
             Console.WriteLine("Remove toast from toaster");
 
             return new Toast();
+        }
+        static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
+        {
+            var toast = await ToastBreadAsync(number);
+            ApplyButter(toast);
+            ApplyJam(toast);
+
+            return toast;
         }
         private static async Task<Bacon> FryBaconAsync(int slices)
         {
