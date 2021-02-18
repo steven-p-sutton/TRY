@@ -25,11 +25,8 @@ namespace MOQ_Simple
             // Define the alternative, mocked, semantics for our object (Employee)
             // takes an int & returns a DateTime (see Employee class below)
 
-            employee.Setup(x => x.GetDateofJoining
-            (
-                It.IsAny<int>())
-            )
-            .Returns((int x) => DateTime.Now);
+            employee.Setup(x => x.GetDateofJoining(It.IsAny<int>()))
+                .Returns((int x) => DateTime.Now);
 
             // Define the test. In this case it uses the mocked object (Employee). It is important to understand that
             // the mocked object is not the test subject, but instead the environment required.
@@ -45,9 +42,6 @@ namespace MOQ_Simple
 
     public class Employee
     {
-        public virtual DateTime GetDateofJoining(int id)
-        {
-            throw new NotImplementedException();
-        }
+        public virtual DateTime GetDateofJoining(int id) {throw new NotImplementedException();}
     }
 }
