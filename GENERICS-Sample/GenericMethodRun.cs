@@ -10,8 +10,6 @@ namespace nsGenericMethod
             Console.WriteLine("Generic Method");
             Console.WriteLine("**************************************************************************");
 
-            var genericMethod = new GenericMethod();
-
             int a, b;
             char c, d;
             a = 10;
@@ -26,8 +24,8 @@ namespace nsGenericMethod
             Console.WriteLine("c = {0}, d = {1}", c, d);
 
             //call swap
-            genericMethod.Swap<int>(ref a, ref b);
-            genericMethod.Swap<char>(ref c, ref d);
+            GenericMethod.Swap<int>(ref a, ref b);
+            GenericMethod.Swap<char>(ref c, ref d);
 
             //display values after swap:
             Console.WriteLine("Int values after calling swap:");

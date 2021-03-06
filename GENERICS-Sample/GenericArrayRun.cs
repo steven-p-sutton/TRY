@@ -11,7 +11,7 @@ namespace nsGenericArray
             Console.WriteLine("**************************************************************************");
 
             //declaring an int array
-            GenericArray<int> intArray = new GenericArray<int>(5);
+            var intArray = new GenericArray<int>(5);
 
             //setting values
             for (int c = 0; c < 5; c++)

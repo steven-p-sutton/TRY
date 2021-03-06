@@ -6,21 +6,21 @@ namespace nsGenericDelegate
 {
     delegate T NumberChanger<T>(T n);
 
-    public class GenericDelegate
+    public static class GenericDelegate
     {
-        int num = 10;
+        static int num = 10;
 
-        public int AddNum(int p)
+        public static int AddNum(int p)
         {
             num += p;
             return num;
         }
-        public int MultNum(int q)
+        public static int MultNum(int q)
         {
             num *= q;
             return num;
         }
-        public int getNum()
+        public static int getNum()
         {
             return num;
         }

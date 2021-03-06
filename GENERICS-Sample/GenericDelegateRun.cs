@@ -12,20 +12,18 @@ namespace nsGenericDelegate
             Console.WriteLine("Generic Delegate");
             Console.WriteLine("**************************************************************************");
 
-            GenericDelegate genericDelegate = new GenericDelegate();
-
             //create delegate instances
-            NumberChanger<int> nc1 = new NumberChanger<int>(genericDelegate.AddNum);
-            NumberChanger<int> nc2 = new NumberChanger<int>(genericDelegate.MultNum);
+            NumberChanger<int> nc1 = new NumberChanger<int>(GenericDelegate.AddNum);
+            NumberChanger<int> nc2 = new NumberChanger<int>(GenericDelegate.MultNum);
 
             //calling the methods using the delegate objects
             nc1(25);
-            Console.WriteLine("Value of Num: {0}", genericDelegate.getNum());
+            Console.WriteLine("Value of Num: {0}", GenericDelegate.getNum());
 
             nc2(5);
-            Console.WriteLine("Value of Num: {0}", genericDelegate.getNum());
-            Console.WriteLine("\n");
+            Console.WriteLine("Value of Num: {0}", GenericDelegate.getNum());
 
+            Console.WriteLine("\n");
         }
     }
 }

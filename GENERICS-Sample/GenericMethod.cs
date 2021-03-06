@@ -1,8 +1,8 @@
 ﻿namespace nsGenericMethod
 {
-    class GenericMethod
+    static class GenericMethod
     {
-        public void Swap<T>(ref T lhs, ref T rhs)
+        public static void Swap<T>(ref T lhs, ref T rhs)
         {
             T temp;
             temp = lhs;
