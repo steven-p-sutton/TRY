@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace nsGenericMethod
+﻿namespace nsGenericMethod
 {
     class GenericMethod
     {
