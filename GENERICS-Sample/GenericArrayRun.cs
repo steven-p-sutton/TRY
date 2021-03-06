@@ -6,6 +6,10 @@ namespace nsGenericArray
     {
         public void Run()
         {
+            Console.WriteLine("**************************************************************************");
+            Console.WriteLine("Generic Array");
+            Console.WriteLine("**************************************************************************");
+
             //declaring an int array
             GenericArray<int> intArray = new GenericArray<int>(5);
 
@@ -38,8 +42,7 @@ namespace nsGenericArray
                 Console.Write(charArray.getItem(c) + " ");
             }
 
-            Console.WriteLine();
-            Console.ReadKey();
+            Console.WriteLine("\n");
         }
     }
 }

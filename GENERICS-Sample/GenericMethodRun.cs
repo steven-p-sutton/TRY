@@ -6,6 +6,10 @@ namespace nsGenericMethod
     {
         public void Run()
         {
+            Console.WriteLine("**************************************************************************");
+            Console.WriteLine("Generic Method");
+            Console.WriteLine("**************************************************************************");
+
             var genericMethod = new GenericMethod();
 
             int a, b;
@@ -31,7 +35,7 @@ namespace nsGenericMethod
             Console.WriteLine("Char values after calling swap:");
             Console.WriteLine("c = {0}, d = {1}", c, d);
 
-            Console.ReadKey();
+            Console.WriteLine("\n");
         }
     }
 }

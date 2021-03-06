@@ -8,7 +8,7 @@ class Program
     static void Main(string[] args)
     {
         var a = new GenericArrayRun();
-        //a.Run();
+        a.Run();
 
         var m = new GenericMethodRun();
         m.Run();
