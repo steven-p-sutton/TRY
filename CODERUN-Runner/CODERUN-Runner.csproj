@@ -6,4 +6,8 @@
     <RootNamespace>CODERUN_Runner</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
+  </ItemGroup>
+
 </Project>

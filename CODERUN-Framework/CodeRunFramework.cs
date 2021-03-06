@@ -8,7 +8,7 @@ namespace CODERUN
         public void Run();
     }
 
-    static class CodeRun
+    public static class CodeRun
     {
         public static void Run(ICodeRun code)
         {
