@@ -12,7 +12,11 @@ namespace MOQ_Simple
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(new MEmployee().Setup().Object.GetDateofJoining(1));
+            MockEmployee mockEmployee = new MockEmployee();
+            mockEmployee.Returns();
+            mockEmployee.Verifyable();
+
+            Console.WriteLine(mockEmployee.Get().Object.GetDateofJoining(1));
 
             Console.ReadLine();
         }
@@ -22,22 +26,27 @@ namespace MOQ_Simple
     {
         public virtual DateTime GetDateofJoining(int id) { throw new NotImplementedException(); }
     }
-    public class MEmployee
+    public class MockEmployee
     {
         private Mock<Employee> _mEmployee;
-        public MEmployee()
+  
+        public MockEmployee()
         {
             _mEmployee = new Mock<Employee>();
         }
-        public Mock<Employee> GetMEmployee()
+        public Mock<Employee> Get()
         {
             return _mEmployee;
         }
-        public Mock<Employee> Setup()
+        public void Returns()
         {
             _mEmployee.Setup(x => x.GetDateofJoining(It.IsAny<int>()))
                 .Returns((int x) => DateTime.Now);
-            return _mEmployee;
+        }
+        public void Verifyable()
+        {
+            _mEmployee.Setup(x => x.GetDateofJoining(It.IsAny<int>()))
+                .Verifiable();
         }
     }
 }
