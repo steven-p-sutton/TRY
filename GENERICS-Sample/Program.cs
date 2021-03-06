@@ -3,6 +3,8 @@ using nsGenericArray;
 using nsGenericMethod;
 using nsGenericDelegate;
 
+// Based on :https://www.tutorialspoint.com/csharp/csharp_generics.htm
+
 class Program
 {
     static void Main(string[] args)

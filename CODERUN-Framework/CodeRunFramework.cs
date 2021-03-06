@@ -2,9 +2,17 @@
 
 namespace CODERUN
 {
-    public interface CodeRunFramework
+    public interface ICodeRun
     {
-        public string Title { get; set; }
+        public string Title { get; }
         public void Run();
+    }
+
+    static class CodeRun
+    {
+        public static void Run(ICodeRun code)
+        {
+            code.Run();
+        }
     }
 }
