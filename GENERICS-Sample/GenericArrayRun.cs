@@ -2,7 +2,7 @@
 
 namespace nsGenericArray
 {
-    class GenericArrayTester
+    class GenericArrayRun
     {
         public void Run()
         {
