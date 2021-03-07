@@ -1,6 +1,9 @@
-﻿using CODERUN.Framework;
+﻿using CODERUN.Framework; // ICodeRun & 
 using CODERUN.Sample;
 using CODERUN.GenericArray;
+using CODERUN.GenericDelegate;
+using CODERUN.GenericMethod;
+
 
 namespace CODERUN.Runner
 {
@@ -8,11 +11,20 @@ namespace CODERUN.Runner
     {
         public static void Main(string[] args)
         {
+            // Each code module to run implenets the ICodeRunModule interface.
+            // Built as a .NET Core class library dll and refernced by itsnamespace
+            // Call CodeRunModule using CodeRunFramework.run(CodeRunModule)
             var cr = new SampleCodeRun();
-            CodeRun.Run(cr);
+            CodeRunFramework.Run(cr);
 
             var ga = new GenericArrayCodeRun();
-            CodeRun.Run(ga);
+            CodeRunFramework.Run(ga);
+
+            //var gd = new CODERUN.GenericDelegate.GenericDelegateCodeRun();
+            //CodeRunFramework.Run(gd);
+
+            //var gm = new CODERUN.GenericMethod.GenericMethodCodeRun();
+            //CodeRunFramework.Run(gm);
         }
     }
 }

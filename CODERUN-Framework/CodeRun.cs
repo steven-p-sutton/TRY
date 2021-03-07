@@ -2,15 +2,15 @@
 
 namespace CODERUN.Framework
 {
-    public interface ICodeRun
+    public interface ICodeRunModule
     {
         public string Title { get; }
         public void Run();
     }
 
-    public static class CodeRun
+    public class CodeRunFramework
     {
-        public static void Run(ICodeRun code)
+        public static void Run(ICodeRunModule code)
         {
             Console.WriteLine("*****************************************************************************");
             Console.WriteLine($"{code.Title}");

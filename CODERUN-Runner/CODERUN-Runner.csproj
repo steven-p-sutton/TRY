@@ -9,6 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
     <ProjectReference Include="..\CODERUN-GenericArray\CODERUN-GenericArray.csproj" />
+    <ProjectReference Include="..\CODERUN-GenericDelegate\CODERUN-GenericDelegate.csproj" />
+    <ProjectReference Include="..\CODERUN-GenericMethod\CODERUN-GenericMethod.csproj" />
     <ProjectReference Include="..\CODERUN-Sample\CODERUN-Sample.csproj" />
   </ItemGroup>
 

@@ -3,7 +3,7 @@ using CODERUN.Framework;
 
 namespace CODERUN.Sample
 {
-    public class SampleCodeRun : ICodeRun
+    public class SampleCodeRun : ICodeRunModule
     {
         public string Title
         {

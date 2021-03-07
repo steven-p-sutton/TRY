@@ -4,7 +4,7 @@ using nsGenericMethod;
 
 namespace CODERUN.GenericMethod
 {
-    public class GenericMethodRun: ICodeRun
+    public class GenericMethodRun: ICodeRunModule
     {
         public string Title
         {
@@ -25,9 +25,9 @@ namespace CODERUN.GenericMethod
             Console.WriteLine("Char values before calling swap:");
             Console.WriteLine("c = {0}, d = {1}", c, d);
 
-            //call swap
-            GenericMethod.Swap<int>(ref a, ref b);
-            GenericMethod.Swap<char>(ref c, ref d);
+            //call swap - why nsGenericMethod needed ?
+            nsGenericMethod.GenericMethod.Swap<int>(ref a, ref b);
+            nsGenericMethod.GenericMethod.Swap<char>(ref c, ref d);
 
             //display values after swap:
             Console.WriteLine("Int values after calling swap:");

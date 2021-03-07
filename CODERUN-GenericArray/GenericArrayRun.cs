@@ -4,7 +4,7 @@ using nsGenericArray;
 
 namespace CODERUN.GenericArray
 {
-    public class GenericArrayCodeRun : ICodeRun
+    public class GenericArrayCodeRun : ICodeRunModule
     {
         public string Title
         {
