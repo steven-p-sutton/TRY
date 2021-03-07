@@ -1,15 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CODERUN_Runner</RootNamespace>
+    <RootNamespace>CODERUN_GenericArray</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
-    <ProjectReference Include="..\CODERUN-GenericArray\CODERUN-GenericArray.csproj" />
-    <ProjectReference Include="..\CODERUN-Sample\CODERUN-Sample.csproj" />
   </ItemGroup>
 
 </Project>

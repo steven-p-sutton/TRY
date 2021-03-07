@@ -1,5 +1,6 @@
 ﻿using CODERUN.Framework;
 using CODERUN.Sample;
+using CODERUN.GenericArray;
 
 namespace CODERUN.Runner
 {
@@ -8,7 +9,10 @@ namespace CODERUN.Runner
         public static void Main(string[] args)
         {
             var cr = new SampleCodeRun();
-            CodeRun.Run(cr);     
+            CodeRun.Run(cr);
+
+            var ga = new GenericArrayCodeRun();
+            CodeRun.Run(ga);
         }
     }
 }

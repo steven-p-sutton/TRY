@@ -1,0 +1,41 @@
+﻿using System;
+using CODERUN.Framework;
+using nsGenericMethod;
+
+namespace CODERUN.GenericMethod
+{
+    public class GenericMethodRun: ICodeRun
+    {
+        public string Title
+        {
+            get { return "Generic Method"; }
+        }
+        public void Run()
+        {
+            int a, b;
+            char c, d;
+            a = 10;
+            b = 20;
+            c = 'I';
+            d = 'V';
+
+            //display values before swap:
+            Console.WriteLine("Int values before calling swap:");
+            Console.WriteLine("a = {0}, b = {1}", a, b);
+            Console.WriteLine("Char values before calling swap:");
+            Console.WriteLine("c = {0}, d = {1}", c, d);
+
+            //call swap
+            GenericMethod.Swap<int>(ref a, ref b);
+            GenericMethod.Swap<char>(ref c, ref d);
+
+            //display values after swap:
+            Console.WriteLine("Int values after calling swap:");
+            Console.WriteLine("a = {0}, b = {1}", a, b);
+            Console.WriteLine("Char values after calling swap:");
+            Console.WriteLine("c = {0}, d = {1}", c, d);
+
+            Console.WriteLine("\n");
+        }
+    }
+}
