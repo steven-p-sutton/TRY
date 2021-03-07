@@ -12,41 +12,60 @@ namespace MOQ_Simple
     {
         static void Main(string[] args)
         {
-            MockEmployee mockEmployee = new MockEmployee();
-            mockEmployee.Returns();
-            mockEmployee.Verifyable();
+            var employee = new MEmployee();
+            employee.Returns();
+            employee.Verifyable();
 
-            Console.WriteLine(mockEmployee.Get().Object.GetDateofJoining(1));
+            Console.WriteLine(employee.Mock().Object.GetDateOfJoining(1));
+
+            employee.Verify();
 
             Console.ReadLine();
         }
     }
 
-    public class Employee
+    public interface IEmployee
     {
-        public virtual DateTime GetDateofJoining(int id) { throw new NotImplementedException(); }
+        public DateTime GetDateOfJoining(int id);
     }
-    public class MockEmployee
+    public class Employee : IEmployee
+    {
+        public virtual DateTime GetDateOfJoining(int id) { throw new NotImplementedException(); }
+    }
+
+    public interface IMock
+    {
+        public Mock<Employee> Mock();
+        public void Returns();
+        public void Verifyable();
+        public void Verify();
+    }
+
+    public class MEmployee
     {
         private Mock<Employee> _mEmployee;
   
-        public MockEmployee()
+        public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
         }
-        public Mock<Employee> Get()
+        public Mock<Employee> Mock()
         {
             return _mEmployee;
         }
         public void Returns()
         {
-            _mEmployee.Setup(x => x.GetDateofJoining(It.IsAny<int>()))
+            _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                 .Returns((int x) => DateTime.Now);
         }
         public void Verifyable()
         {
-            _mEmployee.Setup(x => x.GetDateofJoining(It.IsAny<int>()))
+            _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                 .Verifiable();
+        }
+        public void Verify()
+        {
+            _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
         }
     }
 }
