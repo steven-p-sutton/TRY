@@ -35,13 +35,13 @@ namespace MOQ_Simple
 
     public interface IMock
     {
-        public Mock<Employee> Mock();
+        //public Mock<Employee> Mock();
         public void Returns();
         public void Verifyable();
-        public void Verify();
+        public void Verify(int n = 1);
     }
 
-    public class MEmployee
+    public class MEmployee : IMock
     {
         private Mock<Employee> _mEmployee;
   
@@ -63,9 +63,14 @@ namespace MOQ_Simple
             _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                 .Verifiable();
         }
-        public void Verify()
+        public void Verify(int n = 1)
         {
-            _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
+            if (n == 0)
+                _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
+            else if (n == 1)
+                _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
+            else
+                _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(n));
         }
     }
 }
