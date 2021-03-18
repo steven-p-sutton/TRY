@@ -13,8 +13,8 @@ namespace MOQ_Simple
         static void Main(string[] args)
         {
             var employee = new MEmployee();
-            //employee._mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>())).Returns((int x) => DateTime.Now);
-            employee.SetReturns();
+            employee.SetReturns = true;
+            //employee.SetVerifyable = true;
             Console.WriteLine(employee.Mock.Object.GetDateOfJoining(1));
             employee.DoAssert();
 
@@ -32,8 +32,8 @@ namespace MOQ_Simple
     public interface IMock
     {
         //public Mock<Employee> Mock();
-        public void SetReturns();
-        public void SetVerifyable();
+        //public Mock<Employee> SetReturns;
+        //public void SetVerifyable();
         public void DoVerify(int n = 1);
     }
     public class MEmployee : IMock
@@ -51,18 +51,15 @@ namespace MOQ_Simple
         public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
-            this.SetReturns();
+            //this.SetReturns();
+            //this.SetReturns = 0; // tmp
             this.SetVerifyable();
             _initlal = DateTime.Now;
             _verify = 1;
         }
-        //public Mock<Employee> Mock()
-        //{
-        //    //_mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>())).Returns((int x) => DateTime.Now);
-        //    return _mEmployee;
-        //}
-        public void SetReturns()
+        public bool SetReturns
         {
+            set =>
                _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Returns((int x) => DateTime.Now);
         }
