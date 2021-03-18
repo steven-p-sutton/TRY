@@ -27,6 +27,16 @@ namespace nsEmployee
                      .Returns((int x) => DateTime.MinValue);
             }
         }
+        public override bool ReturnsAsync
+        {
+            set
+            {
+                if (value)
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
+                else
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
+            }
+        }
         public override bool Verifyable
         {
             set
@@ -37,6 +47,13 @@ namespace nsEmployee
                 else
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
             }
+        }
+        public override void Throws(Exception exception, string message)
+        {
+            _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+            .Throws(new Exception(message));
+
+            this.message = message;
         }
         public override int Verify
         {

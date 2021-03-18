@@ -16,10 +16,11 @@ namespace MOQ_Simple
 
             employee.Verifyable = true;
             employee.Returns = true;
+            employee.Throws(new Exception(), "Hello world");
 
             Console.WriteLine(employee.Mock.Object.GetDateOfJoining(1));
 
-            employee.Verify = 1;
+            employee.Verify = 0;
 
             Console.ReadLine();
         }
