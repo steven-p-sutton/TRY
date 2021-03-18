@@ -2,42 +2,32 @@
 using Moq;
 using Mock;
 
-namespace Employee
+namespace nsEmployee
 {
-    public class MEmployee
+    public class MEmployee : IMock
     {
-        public Mock<Employee> _mEmployee;
-
-        public MEmployee()
-        {
-            _mEmployee = new Mock<Employee>();
-        }
-        public Mock<Employee> Mock
-        {
-            get => _mEmployee;
-        }
-        public bool Returns
+        public override bool Returns
         {
             set =>
-               _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+               _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Returns((int x) => DateTime.Now);
         }
-        public bool Verifyable
+        public override bool Verifyable
         {
             set =>
-                _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+                _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Verifiable();
         }
-        public int Verify
+        public override int Verify
         {
             set
             {
                 if (value == 0)
-                    _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
+                    _mMock.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
                 else if (value == 1)
-                    _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
+                    _mMock.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
                 else
-                    _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(value));
+                    _mMock.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(value));
             }
         }
     }

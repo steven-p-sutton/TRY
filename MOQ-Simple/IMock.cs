@@ -1,9 +1,21 @@
-﻿namespace Mock
+﻿using Moq;
+using nsEmployee;
+
+namespace Mock
 {
-    public abstract class IMock
+    public class IMock
     {
-        public abstract bool Verifyable { set; }
-        public abstract bool Returns { set; }
-        public abstract int Verify { set; }
+        public Mock<Employee> _mMock;
+        public IMock()
+        {
+            _mMock = new Mock<Employee>();
+        }
+        public Mock<Employee> Mock
+        {
+            get => _mMock;
+        }
+        public virtual bool Verifyable { set; get; }
+        public virtual bool Returns { set; get; }
+        public virtual int Verify { set; get; }
     }
 }
