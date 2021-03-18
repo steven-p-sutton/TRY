@@ -6,6 +6,15 @@ namespace nsEmployee
 {
     public class MEmployee : IMock
     {
+        public Mock<Employee> _mMock;
+        public MEmployee()
+        {
+            _mMock = new Mock<Employee>();
+        }
+        public Mock<Employee> Mock
+        {
+            get => _mMock;
+        }
         public override bool Returns
         {
             set =>
