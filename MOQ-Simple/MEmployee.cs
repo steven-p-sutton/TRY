@@ -17,15 +17,26 @@ namespace nsEmployee
         }
         public override bool Returns
         {
-            set =>
-               _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-                    .Returns((int x) => DateTime.Now);
+            set
+            {
+                if (value)
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+                     .Returns((int x) => DateTime.Now);
+                else
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+                     .Returns((int x) => DateTime.MinValue);
+            }
         }
         public override bool Verifyable
         {
-            set =>
-                _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+            set
+            {
+                if (value)
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Verifiable();
+                else
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
+            }
         }
         public override int Verify
         {

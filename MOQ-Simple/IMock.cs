@@ -8,10 +8,9 @@ namespace Mock
     //public class IMock<T>
     public class IMock
     {
-        //public Mock<T> _mMock;
-        //public IMock()
+        //public <T> _mMock;
         //{
-        //    _mMock = new Mock<T>();
+        //    _mMock = new <T>();
         //}
         //public Mock<T> Mock
         //{
