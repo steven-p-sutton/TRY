@@ -32,8 +32,8 @@ namespace MOQ_Simple
     public interface IMock
     {
         //public Mock<Employee> Mock();
-        public void Returns();
-        public void Verifyable();
+        public void Returns(bool yes = true);
+        public void Verifyable(bool yes = true);
         public void Verify(int n = 1);
     }
 
@@ -46,16 +46,16 @@ namespace MOQ_Simple
         public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
-            this.Returns();
-            this.Verifyable();
+            this.Returns(true);
+            this.Verifyable(true);
             _initlal = DateTime.Now;
             _verify = 1;
         }
-        public MEmployee(DateTime initial, int verify)
+        public MEmployee(DateTime initial, int verify = 1, bool yesVerifyable = true, bool yesReturns = true)
         {
             _mEmployee = new Mock<Employee>();
-            this.Returns();
-            this.Verifyable();
+            this.Returns(yesReturns);
+            this.Verifyable(yesVerifyable);
             _initlal = initial;
             _verify = verify;
         }
@@ -63,15 +63,21 @@ namespace MOQ_Simple
         {
             return _mEmployee;
         }
-        public void Returns()
+        public void Returns(bool yes = true)
         {
-            _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-                .Returns((int x) => DateTime.Now);
+            //if (yes)
+                _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+                    .Returns((int x) => DateTime.Now);
+            //else
+            //    _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
         }
-        public void Verifyable()
+        public void Verifyable(bool yes = true)
         {
-            _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-                .Verifiable();
+            //if (yes)
+                _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+                    .Verifiable();
+            //else
+            //    _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
         }
         public void Verify(int n)
         {
