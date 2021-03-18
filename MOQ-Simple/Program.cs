@@ -41,9 +41,6 @@ namespace MOQ_Simple
     {
         public Mock<Employee> _mEmployee;
 
-        //public DateTime _initlal;
-        //public int _verify;
-
         public Mock<Employee> Mock
         {
             get => _mEmployee;
@@ -52,8 +49,6 @@ namespace MOQ_Simple
         public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
-            //_initlal = DateTime.Now;
-            //_verify = 1;
         }
         public bool Returns
         {
@@ -69,17 +64,18 @@ namespace MOQ_Simple
         }
         public int Verify
         {
-            set =>
-               // if (value == 0)
-               //     _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
-               // else if (n == 1)
+            set
+            {
+                if (value == 0)
+                     _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
+                else if (value == 1)
                     _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
-               // else
-               //     _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(n));
+                else
+                    _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(value));
+            }
         }
         public void Assert()
         {
-            //this.Verify = _verify;
         }
     }
 }
