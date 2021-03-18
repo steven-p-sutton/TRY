@@ -1,4 +1,4 @@
-﻿namespace MOQ_Simple
+﻿namespace Mock
 {
     public abstract class IMock
     {

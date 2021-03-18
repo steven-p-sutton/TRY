@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MOQ_Simple
+namespace Employee
 {
     public class Employee : IEmployee
     {

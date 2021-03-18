@@ -1,7 +1,8 @@
 ﻿using System;
 using Moq;
+using Mock;
 
-namespace MOQ_Simple
+namespace Employee
 {
     public class MEmployee
     {
