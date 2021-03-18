@@ -13,8 +13,8 @@ namespace MOQ_Simple
         static void Main(string[] args)
         {
             var employee = new MEmployee();
+            employee.SetVerifyable = true;
             employee.SetReturns = true;
-            //employee.SetVerifyable = true;
             Console.WriteLine(employee.Mock.Object.GetDateOfJoining(1));
             employee.DoAssert();
 
@@ -53,7 +53,7 @@ namespace MOQ_Simple
             _mEmployee = new Mock<Employee>();
             //this.SetReturns();
             //this.SetReturns = 0; // tmp
-            this.SetVerifyable();
+            //this.SetVerifyable();
             _initlal = DateTime.Now;
             _verify = 1;
         }
@@ -63,8 +63,9 @@ namespace MOQ_Simple
                _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Returns((int x) => DateTime.Now);
         }
-        public void SetVerifyable()
+        public bool SetVerifyable
         {
+            set =>
                 _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Verifiable();
         }
