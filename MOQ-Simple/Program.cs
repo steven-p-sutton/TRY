@@ -13,11 +13,13 @@ namespace MOQ_Simple
         static void Main(string[] args)
         {
             var employee = new MEmployee();
+
             employee.Verifyable = true;
             employee.Returns = true;
+
             Console.WriteLine(employee.Mock.Object.GetDateOfJoining(1));
+
             employee.Verify = 1;
-            employee.Assert();
 
             Console.ReadLine();
         }
@@ -35,20 +37,18 @@ namespace MOQ_Simple
         public abstract bool Verifyable { set; }
         public abstract bool Returns { set; }
         public abstract int Verify { set; }
-        public abstract void Assert();
     }
     public class MEmployee
     {
         public Mock<Employee> _mEmployee;
 
-        public Mock<Employee> Mock
-        {
-            get => _mEmployee;
-        }
-
         public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
+        }
+        public Mock<Employee> Mock
+        {
+            get => _mEmployee;
         }
         public bool Returns
         {
@@ -73,9 +73,6 @@ namespace MOQ_Simple
                 else
                     _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(value));
             }
-        }
-        public void Assert()
-        {
         }
     }
 }
