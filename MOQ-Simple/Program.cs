@@ -13,13 +13,14 @@ namespace MOQ_Simple
         static void Main(string[] args)
         {
             var employee = new MEmployee();
-            Console.WriteLine(employee.Mock().Object.GetDateOfJoining(1));
-            employee.Assert();
+            //employee._mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>())).Returns((int x) => DateTime.Now);
+            employee.SetReturns();
+            Console.WriteLine(employee.Mock.Object.GetDateOfJoining(1));
+            employee.DoAssert();
 
             Console.ReadLine();
         }
     }
-
     public interface IEmployee
     {
         public DateTime GetDateOfJoining(int id);
@@ -28,58 +29,49 @@ namespace MOQ_Simple
     {
         public virtual DateTime GetDateOfJoining(int id) { throw new NotImplementedException(); }
     }
-
     public interface IMock
     {
         //public Mock<Employee> Mock();
-        public void Returns(bool yes = true);
-        public void Verifyable(bool yes = true);
-        public void Verify(int n = 1);
+        public void SetReturns();
+        public void SetVerifyable();
+        public void DoVerify(int n = 1);
     }
-
     public class MEmployee : IMock
     {
-        private Mock<Employee> _mEmployee;
-        private DateTime _initlal;
-        private int _verify;
+        public Mock<Employee> _mEmployee;
+
+        public DateTime _initlal;
+        public int _verify;
+
+        public Mock<Employee> Mock
+        {
+            get => _mEmployee;
+        }
 
         public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
-            this.Returns(true);
-            this.Verifyable(true);
+            this.SetReturns();
+            this.SetVerifyable();
             _initlal = DateTime.Now;
             _verify = 1;
         }
-        public MEmployee(DateTime initial, int verify = 1, bool yesVerifyable = true, bool yesReturns = true)
+        //public Mock<Employee> Mock()
+        //{
+        //    //_mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>())).Returns((int x) => DateTime.Now);
+        //    return _mEmployee;
+        //}
+        public void SetReturns()
         {
-            _mEmployee = new Mock<Employee>();
-            this.Returns(yesReturns);
-            this.Verifyable(yesVerifyable);
-            _initlal = initial;
-            _verify = verify;
-        }
-        public Mock<Employee> Mock()
-        {
-            return _mEmployee;
-        }
-        public void Returns(bool yes = true)
-        {
-            //if (yes)
-                _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+               _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Returns((int x) => DateTime.Now);
-            //else
-            //    _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
         }
-        public void Verifyable(bool yes = true)
+        public void SetVerifyable()
         {
-            //if (yes)
                 _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Verifiable();
-            //else
-            //    _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
         }
-        public void Verify(int n)
+        public void DoVerify(int n)
         {
             if (n == 0)
                 _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
@@ -88,9 +80,9 @@ namespace MOQ_Simple
             else
                 _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(n));
         }
-        public void Assert()
+        public void DoAssert()
         {
-            this.Verify(_verify);
+            this.DoVerify(_verify);
         }
     }
 }
