@@ -13,12 +13,8 @@ namespace MOQ_Simple
         static void Main(string[] args)
         {
             var employee = new MEmployee();
-            employee.Returns();
-            employee.Verifyable();
-
             Console.WriteLine(employee.Mock().Object.GetDateOfJoining(1));
-
-            employee.Verify();
+            employee.Assert();
 
             Console.ReadLine();
         }
@@ -44,10 +40,24 @@ namespace MOQ_Simple
     public class MEmployee : IMock
     {
         private Mock<Employee> _mEmployee;
-  
+        private DateTime _initlal;
+        private int _verify;
+
         public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
+            this.Returns();
+            this.Verifyable();
+            _initlal = DateTime.Now;
+            _verify = 1;
+        }
+        public MEmployee(DateTime initial, int verify)
+        {
+            _mEmployee = new Mock<Employee>();
+            this.Returns();
+            this.Verifyable();
+            _initlal = initial;
+            _verify = verify;
         }
         public Mock<Employee> Mock()
         {
@@ -63,7 +73,7 @@ namespace MOQ_Simple
             _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                 .Verifiable();
         }
-        public void Verify(int n = 1)
+        public void Verify(int n)
         {
             if (n == 0)
                 _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
@@ -71,6 +81,10 @@ namespace MOQ_Simple
                 _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
             else
                 _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(n));
+        }
+        public void Assert()
+        {
+            this.Verify(_verify);
         }
     }
 }
