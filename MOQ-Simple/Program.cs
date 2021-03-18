@@ -16,6 +16,7 @@ namespace MOQ_Simple
             employee.Verifyable = true;
             employee.Returns = true;
             Console.WriteLine(employee.Mock.Object.GetDateOfJoining(1));
+            employee.Verify = 1;
             employee.Assert();
 
             Console.ReadLine();
@@ -31,17 +32,17 @@ namespace MOQ_Simple
     }
     public abstract class IMock
     {
-        public abstract bool Verifyable { get; }
-        public abstract bool Returns { get; }
-        public abstract void Verify(int n = 1);
+        public abstract bool Verifyable { set; }
+        public abstract bool Returns { set; }
+        public abstract int Verify { set; }
         public abstract void Assert();
     }
     public class MEmployee
     {
         public Mock<Employee> _mEmployee;
 
-        public DateTime _initlal;
-        public int _verify;
+        //public DateTime _initlal;
+        //public int _verify;
 
         public Mock<Employee> Mock
         {
@@ -51,11 +52,8 @@ namespace MOQ_Simple
         public MEmployee()
         {
             _mEmployee = new Mock<Employee>();
-            //this.SetReturns();
-            //this.SetReturns = 0; // tmp
-            //this.SetVerifyable();
-            _initlal = DateTime.Now;
-            _verify = 1;
+            //_initlal = DateTime.Now;
+            //_verify = 1;
         }
         public bool Returns
         {
@@ -69,18 +67,19 @@ namespace MOQ_Simple
                 _mEmployee.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                     .Verifiable();
         }
-        public void Verify(int n)
+        public int Verify
         {
-            if (n == 0)
-                _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
-            else if (n == 1)
-                _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
-            else
-                _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(n));
+            set =>
+               // if (value == 0)
+               //     _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Never());
+               // else if (n == 1)
+                    _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Once());
+               // else
+               //     _mEmployee.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(n));
         }
         public void Assert()
         {
-            this.Verify(_verify);
+            //this.Verify = _verify;
         }
     }
 }
