@@ -6,4 +6,14 @@
     <RootNamespace>MOQ_Widget</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Moq" Version="4.16.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WIDGET-Model-Core">
+      <HintPath>..\..\WIDGET\WIDGET-Model-Core\bin\Debug\netcoreapp3.1\WIDGET-Model-Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
