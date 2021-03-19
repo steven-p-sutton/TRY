@@ -1,5 +1,6 @@
 ﻿using System;
 using CODERUN.Framework;
+using nsSample;
 
 namespace CODERUN.Sample
 {
@@ -12,7 +13,8 @@ namespace CODERUN.Sample
 
         public void Run()
         {
-            Console.WriteLine("Sample Code Run says Hello");
+            SampleClass sample = new SampleClass();
+            Console.WriteLine(sample.Hello("Steve"));
         }
     }
 }

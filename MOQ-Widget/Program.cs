@@ -13,8 +13,8 @@ namespace MOQ_Widget
             widget.Returns = true;
             //widget.Throws(new Exception(), "Hello world");
 
-            Console.WriteLine(widget.Mock.Object.Ping(2,3));
-            Console.WriteLine(widget.Mock.Object.Display("Unit Test"));
+            Console.WriteLine(widget.Mock.Object.Ping(2,3).ToString());
+            //Console.WriteLine(widget.Mock.Object.Display("Unit Test"));
 
             widget.Verify = 1;
 

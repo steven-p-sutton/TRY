@@ -77,7 +77,6 @@ namespace nsWidget
                 else
                 {
                     _mMock.Setup(x => x.Display(It.IsAny<string>()));
-
                     _mMock.Setup(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()));
                 }
             }
