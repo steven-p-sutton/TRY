@@ -6,7 +6,7 @@ using nsEmployee;
 // Overview: Try an Employee, as yes not fully implemented, using a mocked, test only version
 // 
 
-namespace MOQ_Simple
+namespace MOQ_Employee
 {
     class Program
     {

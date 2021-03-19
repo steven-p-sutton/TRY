@@ -11,6 +11,7 @@ namespace TRY
         static void Main(string[] args)
         {
             Console.WriteLine("Hello TRY World!");
+            Console.ReadLine();
         }
     }
 }
