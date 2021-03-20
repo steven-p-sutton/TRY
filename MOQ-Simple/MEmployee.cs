@@ -67,19 +67,38 @@ namespace nsEmployee
 
             this.message = message;
         }
-        public override void Setup()
+        public override bool Arrange
         {
-            this.Verifyable = true;
-            this.Returns = true;
-            // this.Throws(new Exception(), "Hello world");
+            set
+            {
+                if (value)
+                {
+                    this.Verifyable = true;
+                    this.Returns = true;
+                }
+                else
+                    this.Throws(new Exception(), "Hello world");
+            }
         }
-        public override void Run()
+        public override bool Run
         {
-            Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
+            set
+            {
+                if (value)
+                    Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
+                else
+                    Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
+            }
         }
-        public override void Assert()
+        public override bool Assert
         {
-            this.Verify = 1;
+            set
+            {
+                if (value)
+                    this.Verify = 1;
+                else
+                    this.Verify = 0;
+            }
         }
     }
 }

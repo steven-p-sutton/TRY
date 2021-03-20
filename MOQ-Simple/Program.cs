@@ -12,10 +12,22 @@ namespace MOQ_Employee
     {
         static void Main(string[] args)
         {
-            var employee = new MEmployee();
-            employee.Arrange();
-            employee.Run();
-            employee.Assert();
+            var employee = new MEmployee
+            {
+                Arrange = true,
+                Run = true,
+                Assert = true
+            };
+            //employee.Arrange = true;
+            //employee.Run = true;
+            //employee.Assert = true;
+
+            var employee2 = new MEmployee
+            {
+                Arrange = false,
+                Run = false,
+                Assert = false
+            };
 
             Console.ReadLine();
         }
