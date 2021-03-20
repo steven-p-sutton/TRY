@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.16.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
   </ItemGroup>
 

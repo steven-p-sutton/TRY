@@ -1,5 +1,6 @@
 ﻿using System;
 using CODERUN.Framework;
+using Mock;
 using nsEmployee;
 
 namespace CODERUN.EmployeeNS
@@ -8,13 +9,35 @@ namespace CODERUN.EmployeeNS
     {
         public string Title
         {
-            get { return "Sample Code Run"; }
+            get { return "Employee MOQ Code Run"; }
         }
 
         public void Run()
         {
-            var employee = new Employee();
-            Console.WriteLine(employee.GetDateOfJoining(1));
+            try
+            {
+                var employee = new MEmployee
+                {
+                    Run = IMock.RunType.SUCCESS,
+                    Arrange = IMock.RunType.SUCCESS,
+                    Test = IMock.RunType.SUCCESS,
+                    Assert = IMock.RunType.SUCCESS
+                };
+
+                var employee2 = new MEmployee
+                {
+                    Run = IMock.RunType.EXCEPTION,
+                    Exception = new Exception("Employee Error"),
+                    Throws = IMock.RunType.EXCEPTION,
+                    Arrange = IMock.RunType.EXCEPTION,
+                    Test = IMock.RunType.EXCEPTION,
+                    Assert = IMock.RunType.EXCEPTION
+                };
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
         }
     }
 }
