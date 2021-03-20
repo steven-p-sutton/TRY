@@ -13,14 +13,9 @@ namespace MOQ_Employee
         static void Main(string[] args)
         {
             var employee = new MEmployee();
-
-            employee.Verifyable = true;
-            employee.Returns = true;
-            employee.Throws(new Exception(), "Hello world");
-
-            Console.WriteLine(employee.Mock.Object.GetDateOfJoining(1));
-
-            employee.Verify = 0;
+            employee.Arrange();
+            employee.Run();
+            employee.Assert();
 
             Console.ReadLine();
         }

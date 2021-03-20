@@ -48,13 +48,6 @@ namespace nsEmployee
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
             }
         }
-        public override void Throws(Exception exception, string message)
-        {
-            _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-            .Throws(new Exception(message));
-
-            this.message = message;
-        }
         public override int Verify
         {
             set
@@ -66,6 +59,27 @@ namespace nsEmployee
                 else
                     _mMock.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(value));
             }
+        }
+        public override void Throws(Exception exception, string message)
+        {
+            _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+            .Throws(new Exception(message));
+
+            this.message = message;
+        }
+        public override void Setup()
+        {
+            this.Verifyable = true;
+            this.Returns = true;
+            // this.Throws(new Exception(), "Hello world");
+        }
+        public override void Run()
+        {
+            Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
+        }
+        public override void Assert()
+        {
+            this.Verify = 1;
         }
     }
 }
