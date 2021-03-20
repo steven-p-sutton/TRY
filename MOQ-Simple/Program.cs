@@ -1,5 +1,5 @@
 ﻿using System;
-using Mock;
+using MOQ.Framework;
 using nsEmployee;
 
 // https://www.codeproject.com/articles/991028/using-moq-for-unit-testing

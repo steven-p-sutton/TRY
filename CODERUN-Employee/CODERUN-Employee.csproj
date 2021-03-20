@@ -11,6 +11,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
+    <ProjectReference Include="..\MOQ-Framework\MOQ-Framework.csproj" />
   </ItemGroup>
 
 </Project>

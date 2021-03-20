@@ -1,21 +1,9 @@
-﻿using Moq;
-using nsEmployee;
-using System;
-using System.Collections.Generic;
+﻿using System;
 
-namespace Mock
+namespace MOQ.Framework
 {
-    //public class IMock<T>
     public class IMock
     {
-        //public <T> _mMock;
-        //{
-        //    _mMock = new <T>();
-        //}
-        //public Mock<T> Mock
-        //{
-        //    get => _mMock;
-        //}
         public enum RunType { SUCCESS = 0, EXCEPTION = 1 };
         public Exception Exception { set; get; }
         public RunType Run { set; get; }

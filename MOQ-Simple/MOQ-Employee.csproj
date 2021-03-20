@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MOQ-Framework\MOQ-Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="WIDGET-Model-Core">
       <HintPath>..\..\WIDGET\WIDGET-Model-Core\bin\Debug\netcoreapp3.1\WIDGET-Model-Core.dll</HintPath>
     </Reference>

@@ -1,6 +1,6 @@
 ﻿using System;
 using CODERUN.Framework;
-using Mock;
+using MOQ.Framework;
 using nsEmployee;
 
 namespace CODERUN.EmployeeNS

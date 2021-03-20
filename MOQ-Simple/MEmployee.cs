@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using Moq;
-using Mock;
+using MOQ.Framework;
 
 namespace nsEmployee
 {
