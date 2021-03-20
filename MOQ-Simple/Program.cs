@@ -13,20 +13,30 @@ namespace MOQ_Employee
     {
         static void Main(string[] args)
         {
-            var employee = new MEmployee
+            try
             {
-                Run = IMock.RunType.SUCCESS,Added 
-            };
+                var employee = new MEmployee
+                {
+                    Run = IMock.RunType.SUCCESS,
+                    Arrange = IMock.RunType.SUCCESS,
+                    Test = IMock.RunType.SUCCESS,
+                    Assert = IMock.RunType.SUCCESS
+                };
 
-            var employee2 = new MEmployee
+                var employee2 = new MEmployee
+                {
+                    Run = IMock.RunType.EXCEPTION,
+                    Exception = new Exception("Employee Error"),
+                    Throws = IMock.RunType.EXCEPTION,
+                    Arrange = IMock.RunType.EXCEPTION,
+                    Test = IMock.RunType.EXCEPTION,
+                    Assert = IMock.RunType.EXCEPTION
+                };
+            }
+            catch (Exception e)
             {
-                Run = IMock.RunType.EXCEPTION,
-                Exception = new Exception("Employee Error"),
-                Arrange = IMock.RunType.EXCEPTION,
-                Test = IMock.RunType.EXCEPTION,
-                Assert = IMock.RunType.EXCEPTION,
-            };
-
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         }
     }

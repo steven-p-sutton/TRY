@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Moq;
 using Mock;
 
@@ -88,20 +89,14 @@ namespace nsEmployee
         {
             set
             {
-                if (this.Run == RunType.SUCCESS)
-                    Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
-                else
-                    Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
+                Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
             }
         }
         public override RunType Assert
         {
             set
             {
-                if (this.Run == RunType.SUCCESS)
-                    this.Verify = 1;
-                else
-                    this.Verify = 0;
+                this.Verify = 1;
             }
         }
     }
