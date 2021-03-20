@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CODERUN-Employee\CODERUN-Employee.csproj" />
     <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
     <ProjectReference Include="..\CODERUN-GenericArray\CODERUN-GenericArray.csproj" />
     <ProjectReference Include="..\CODERUN-GenericDelegate\CODERUN-GenericDelegate.csproj" />

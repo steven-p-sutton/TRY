@@ -3,6 +3,7 @@ using CODERUN.Sample;
 using CODERUN.GenericArray;
 using CODERUN.GenericDelegate;
 using CODERUN.GenericMethod;
+using CODERUN.EmployeeNS;
 
 
 namespace CODERUN.Runner
@@ -27,8 +28,11 @@ namespace CODERUN.Runner
             //var gm = new CODERUN.GenericMethod.GenericMethodCodeRun();
             //CodeRunFramework.Run(gm);
 
-            var sa = new SampleCodeRun();
-            CodeRunFramework.Run(sa);
+            //var sa = new SampleCodeRun();
+            //CodeRunFramework.Run(sa);
+
+            var em = new EmployeeCodeRun();
+            CodeRunFramework.Run(em);
         }
     }
 }
