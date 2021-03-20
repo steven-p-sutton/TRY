@@ -13,7 +13,7 @@ namespace CODERUN.Sample
 
         public void Run()
         {
-            SampleClass sample = new SampleClass();
+            var sample = new SampleClass();
             Console.WriteLine(sample.Hello("Steve"));
         }
     }

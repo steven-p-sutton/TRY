@@ -32,7 +32,7 @@ namespace nsWidget
                      .Returns((string x) => "Display called OK");
 
                     _mMock.Setup(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()))
-                     .Returns((int x) => 42);
+                     .Returns((int x, int y) => 42);
                 }
                 else
                 {
@@ -40,7 +40,7 @@ namespace nsWidget
                      .Returns((string x) => string.Empty);
 
                     _mMock.Setup(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()))
-                     .Returns((int x) => 0);
+                     .Returns((int x, int y) => 0);
                 }
             }
         }
@@ -51,13 +51,11 @@ namespace nsWidget
                 if (value)
                 {
                     _mMock.Setup(x => x.Display(It.IsAny<string>()));
-
                     _mMock.Setup(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()));
                 }
                 else
                 {
                     _mMock.Setup(x => x.Display(It.IsAny<string>()));
-
                     _mMock.Setup(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()));
                 }
             }
@@ -98,19 +96,16 @@ namespace nsWidget
                 if (value == 0)
                 {
                     _mMock.Verify(x => x.Display(It.IsAny<string>()), Times.Never());
-
                     _mMock.Verify(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()), Times.Never());
                 }
                 else if (value == 1)
                 {
                     _mMock.Verify(x => x.Display(It.IsAny<string>()), Times.Once());
-
                     _mMock.Verify(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()), Times.Once());
                 }
                 else
                 {
                     _mMock.Verify(x => x.Display(It.IsAny<string>()), Times.Exactly(value));
-
                     _mMock.Verify(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()), Times.Exactly(value));
                 }
             }
