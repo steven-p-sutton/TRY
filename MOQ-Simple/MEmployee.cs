@@ -19,7 +19,7 @@ namespace nsEmployee
         {
             set
             {
-                if (value)
+                if (this.Run == RunType.SUCCESS)
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
                      .Returns((int x) => DateTime.Now);
                 else
@@ -31,7 +31,7 @@ namespace nsEmployee
         {
             set
             {
-                if (value)
+                if (this.Run == RunType.SUCCESS)
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
                 else
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
@@ -60,41 +60,45 @@ namespace nsEmployee
                     _mMock.Verify(x => x.GetDateOfJoining(It.IsAny<int>()), Times.Exactly(value));
             }
         }
-        public override void Throws(Exception exception, string message)
-        {
-            _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-            .Throws(new Exception(message));
-
-            this.message = message;
-        }
-        public override bool Arrange
+        public override RunType Throws
         {
             set
             {
-                if (value)
+                if (value == RunType.SUCCESS)
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
+                    .Throws(this.Exception);
+                else
+                    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
+            }
+        }
+        public override RunType Arrange
+        {
+            set
+            {
+                if (value == RunType.SUCCESS)
                 {
                     this.Verifyable = true;
                     this.Returns = true;
                 }
                 else
-                    this.Throws(new Exception(), "Hello world");
+                    this.Throws = value;
             }
         }
-        public override bool Run
+        public override RunType Test
         {
             set
             {
-                if (value)
+                if (this.Run == RunType.SUCCESS)
                     Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
                 else
                     Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
             }
         }
-        public override bool Assert
+        public override RunType Assert
         {
             set
             {
-                if (value)
+                if (this.Run == RunType.SUCCESS)
                     this.Verify = 1;
                 else
                     this.Verify = 0;

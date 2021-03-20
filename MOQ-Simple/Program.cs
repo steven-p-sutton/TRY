@@ -1,4 +1,5 @@
 ﻿using System;
+using Mock;
 using nsEmployee;
 
 // https://www.codeproject.com/articles/991028/using-moq-for-unit-testing
@@ -14,19 +15,16 @@ namespace MOQ_Employee
         {
             var employee = new MEmployee
             {
-                Arrange = true,
-                Run = true,
-                Assert = true
+                Run = IMock.RunType.SUCCESS,Added 
             };
-            //employee.Arrange = true;
-            //employee.Run = true;
-            //employee.Assert = true;
 
             var employee2 = new MEmployee
             {
-                Arrange = false,
-                Run = false,
-                Assert = false
+                Run = IMock.RunType.EXCEPTION,
+                Exception = new Exception("Employee Error"),
+                Arrange = IMock.RunType.EXCEPTION,
+                Test = IMock.RunType.EXCEPTION,
+                Assert = IMock.RunType.EXCEPTION,
             };
 
             Console.ReadLine();
