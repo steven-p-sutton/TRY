@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using Mock;
+using MOQ.Framework;
 using nsEmployee;
 
 namespace TEST_Employee

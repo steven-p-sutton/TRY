@@ -1,12 +1,19 @@
 ﻿using System;
+using CODERUN.Framework;
+using Conductus.WIDGET.Model.Core;
 using MOQ.Framework;
 using nsWidget;
 
-namespace MOQ_Widget
+namespace CODERUN.WidgetNS
 {
-    class Program
+    public class WidgetCodeRun : ICodeRunModule
     {
-        static void Main(string[] args)
+        public string Title
+        {
+            get { return "Widget MOQ Code Run"; }
+        }
+
+        public void Run()
         {
             try
             {
@@ -32,7 +39,6 @@ namespace MOQ_Widget
             {
                 Console.WriteLine(e.Message);
             }
-            Console.ReadLine();
         }
     }
 }

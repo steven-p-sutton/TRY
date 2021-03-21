@@ -4,6 +4,7 @@ using CODERUN.GenericArray;
 using CODERUN.GenericDelegate;
 using CODERUN.GenericMethod;
 using CODERUN.EmployeeNS;
+using CODERUN.WidgetNS;
 
 
 namespace CODERUN.Runner
@@ -33,6 +34,9 @@ namespace CODERUN.Runner
 
             var em = new EmployeeCodeRun();
             CodeRunFramework.Run(em);
+
+            var wd = new WidgetCodeRun();
+            CodeRunFramework.Run(wd);
         }
     }
 }
