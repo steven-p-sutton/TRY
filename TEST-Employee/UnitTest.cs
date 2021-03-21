@@ -30,9 +30,8 @@ namespace TEST_Employee
                 Arrange = IMock.RunType.EXCEPTION
             };
 
-            Exception ex = Assert.Throws<Exception>(() => employee.Test = IMock.RunType.EXCEPTION);
-            Assert.Equal("Employee Error", ex.Message);
-
+            employee.Exception2 = Assert.Throws<Exception>(() => employee.Test = IMock.RunType.EXCEPTION);
+            Assert.Equal(employee.Exception.Message, employee.Exception2.Message);
             employee.Assert = IMock.RunType.EXCEPTION;
         }
     }
