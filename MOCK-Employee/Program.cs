@@ -2,7 +2,7 @@
 using MOCK.Framework;
 using nsEmployee;
 
-namespace MOCK_Employee
+namespace MOQ_Widget
 {
     class Program
     {
@@ -10,7 +10,7 @@ namespace MOCK_Employee
         {
             try
             {
-                var widget = new MEmployee
+                var employee = new MEmployee
                 {
                     Run = IMock.RunType.SUCCESS,
                     Arrange = IMock.RunType.SUCCESS,
@@ -18,7 +18,7 @@ namespace MOCK_Employee
                     Assert = IMock.RunType.SUCCESS
                 };
 
-                var widget2 = new MEmployee
+                var employee2 = new MEmployee
                 {
                     Run = IMock.RunType.EXCEPTION,
                     Exception = new Exception("Employee Error"),

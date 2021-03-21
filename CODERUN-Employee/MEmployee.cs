@@ -95,7 +95,6 @@ namespace nsEmployee
         {
             set
             {
-                this.Assert = IMock.RunType.EXCEPTION;
                 this.Verify = 1;
             }
         }
