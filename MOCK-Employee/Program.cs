@@ -21,7 +21,7 @@ namespace MOQ_Widget
                 var employee2 = new MEmployee
                 {
                     Run = IMock.RunType.EXCEPTION,
-                    Exception = new Exception("Employee Error"),
+                    ExceptionExpected = new Exception("Employee Error"),
                     Throws = IMock.RunType.EXCEPTION,
                     Arrange = IMock.RunType.EXCEPTION,
                     Test = IMock.RunType.EXCEPTION,

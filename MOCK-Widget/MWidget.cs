@@ -84,10 +84,10 @@ namespace nsWidget
                 if (value == RunType.EXCEPTION)
                 {
                     _mMock.Setup(x => x.Display(It.IsAny<string>()))
-                    .Throws(this.Exception);
+                    .Throws(this.ExceptionExpected);
 
                     _mMock.Setup(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()))
-                    .Throws(this.Exception);
+                    .Throws(this.ExceptionExpected);
                 }
                 else
                 {
