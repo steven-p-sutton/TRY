@@ -1,4 +1,5 @@
 ﻿using System;
+//using System.Diagnostics;
 using Moq;
 using MOCK.Framework;
 
@@ -66,7 +67,7 @@ namespace nsEmployee
             {
                 if (value == RunType.EXCEPTION)
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-                    .Throws(this.Exception);
+                    .Throws(this.ExceptionExpected);
                 else
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
             }
@@ -95,7 +96,11 @@ namespace nsEmployee
         {
             set
             {
-                this.Verify = 1;
+                if (value == RunType.SUCCESS)
+                    this.Verify = 1;
+                else
+                    this.Verify = 0;
+                //Debug.Assert(this.ExceptionExpected.Message == this.ExceptionRaised.Message, "Unexpected Exception message");
             }
         }
     }

@@ -66,7 +66,7 @@ namespace nsEmployee
             {
                 if (value == RunType.EXCEPTION)
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-                    .Throws(this.Exception);
+                    .Throws(this.ExceptionExpected);
                 else
                     _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
             }

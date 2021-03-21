@@ -28,7 +28,7 @@ namespace CODERUN.WidgetNS
                 var widget2 = new MWidget
                 {
                     Run = IMock.RunType.EXCEPTION,
-                    Exception = new Exception("Widget Error"),
+                    ExceptionExpected = new Exception("Widget Error"),
                     Throws = IMock.RunType.EXCEPTION,
                     Arrange = IMock.RunType.EXCEPTION,
                     Test = IMock.RunType.EXCEPTION,

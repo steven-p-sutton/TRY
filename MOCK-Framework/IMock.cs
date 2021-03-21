@@ -13,7 +13,7 @@ namespace MOCK.Framework
         public virtual bool ReturnsAsync { set; get; }
         public virtual int Verify { set; get; }
         public virtual RunType Throws { set; get; }
-        public string Message { set; get; }
+        //public string Message { set; get; }
         public virtual bool Input { set; get; }
         public virtual bool Output { set; get; }
         public virtual RunType Arrange { set; get; }
