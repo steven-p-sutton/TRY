@@ -81,7 +81,7 @@ namespace nsWidget
         {
             set
             {
-                if (value == RunType.EXCEPTION)
+                if (value == RunType.SUCCESS)
                 {
                     _mMock.Setup(x => x.Display(It.IsAny<string>()))
                     .Throws(this.Exception);
