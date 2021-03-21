@@ -102,7 +102,7 @@ namespace nsWidget
             {
                 if (value == 0)
                 {
-                    _mMock.Verify(x => x.Display(It.IsAny<string>()), Times.Never());
+                    _mMock.Verify(x => x.Display(It.IsAny<string>()), Times.Once());
                     _mMock.Verify(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()), Times.Never());
                 }
                 else if (value == 1)
@@ -134,15 +134,26 @@ namespace nsWidget
         {
             set
             {
-                Console.WriteLine(this.Mock.Object.Ping(2, 3));
-                Console.WriteLine(this.Mock.Object.Display("Unit Test"));
+                if (value == RunType.SUCCESS)
+                {
+                    Console.WriteLine(this.Mock.Object.Display("Unit Test"));
+                    Console.WriteLine(this.Mock.Object.Ping(2, 3));
+                }
+                else
+                {
+                    Console.WriteLine(this.Mock.Object.Display("Unit Test"));
+                    Console.WriteLine(this.Mock.Object.Ping(2, 3));
+                }
             }
         }
         public override RunType Assert
         {
             set
             {
-                this.Verify = 1;
+                if (value == RunType.SUCCESS)
+                    this.Verify = 1;
+                else
+                    this.Verify = 0; // TBC
             }
         }
     }

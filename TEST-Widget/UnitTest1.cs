@@ -28,8 +28,6 @@ namespace TEST_Widget
                 Exception = new Exception("Widget Error"),
                 Throws = IMock.RunType.EXCEPTION,
                 Arrange = IMock.RunType.EXCEPTION,
-                Test = IMock.RunType.EXCEPTION,
-                Assert = IMock.RunType.EXCEPTION
             };
 
             Exception ex = Assert.Throws<Exception>(() => widget.Test = IMock.RunType.EXCEPTION);
