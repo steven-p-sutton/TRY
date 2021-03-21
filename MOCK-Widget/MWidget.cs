@@ -102,7 +102,7 @@ namespace nsWidget
             {
                 if (value == 0)
                 {
-                    _mMock.Verify(x => x.Display(It.IsAny<string>()), Times.Once());
+                    _mMock.Verify(x => x.Display(It.IsAny<string>()), Times.Once()); // TBC
                     _mMock.Verify(x => x.Ping(It.IsAny<int>(), It.IsAny<int>()), Times.Never());
                 }
                 else if (value == 1)
