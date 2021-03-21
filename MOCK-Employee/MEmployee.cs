@@ -1,6 +1,6 @@
 ﻿using System;
-using System.Diagnostics;
 using Moq;
+using XUnit;
 using MOCK.Framework;
 
 namespace nsEmployee
@@ -89,14 +89,25 @@ namespace nsEmployee
         {
             set
             {
-                Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
+                if (this.Run == RunType.SUCCESS)
+                    Console.WriteLine(this.Mock.Object.GetDateOfJoining(1));
+                else
+                {
+                    this.Exception2 = Assert.Throws<Exception>(() => this.Mock.Object.GetDateOfJoining(1));
+                }
             }
         }
         public override RunType Assert
         {
             set
             {
-                this.Verify = 1;
+                if (this.Run == RunType.SUCCESS)
+                    this.Verify = 1;
+                else
+                {
+                    Assert.Equal(this.Exception.Message, this.Exception2.Message);
+                    this.Verify = 0;
+                }
             }
         }
     }

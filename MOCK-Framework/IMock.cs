@@ -6,6 +6,7 @@ namespace MOCK.Framework
     {
         public enum RunType { SUCCESS = 0, EXCEPTION = 1 };
         public Exception Exception { set; get; }
+        public Exception Exception2 { set; get; }
         public RunType Run { set; get; }
         public virtual bool Verifyable { set; get; }
         public virtual bool Returns { set; get; }

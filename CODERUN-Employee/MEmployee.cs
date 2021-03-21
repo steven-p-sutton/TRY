@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using Moq;
 using MOCK.Framework;
 
@@ -96,6 +95,7 @@ namespace nsEmployee
         {
             set
             {
+                this.Assert = IMock.RunType.EXCEPTION;
                 this.Verify = 1;
             }
         }
