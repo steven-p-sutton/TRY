@@ -6,8 +6,4 @@
     <RootNamespace>MOQ_Simple</RootNamespace>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\MOQ-Framework\MOQ-Framework.csproj" />
-  </ItemGroup>
-
 </Project>

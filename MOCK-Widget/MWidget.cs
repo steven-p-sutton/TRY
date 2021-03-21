@@ -1,6 +1,6 @@
 ﻿using System;
 using Moq;
-using MOQ.Framework;
+using MOCK.Framework;
 //public interface IWidget
 //{
 //    string Display(string title);

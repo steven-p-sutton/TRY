@@ -1,5 +1,5 @@
 ﻿using System;
-using MOQ.Framework;
+using MOCK.Framework;
 using nsWidget;
 
 namespace MOQ_Widget

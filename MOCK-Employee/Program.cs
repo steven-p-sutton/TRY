@@ -1,13 +1,8 @@
 ﻿using System;
-using MOQ.Framework;
+using MOCK.Framework;
 using nsEmployee;
 
-// https://www.codeproject.com/articles/991028/using-moq-for-unit-testing
-//
-// Overview: Try an Employee, as yes not fully implemented, using a mocked, test only version
-// 
-
-namespace MOQ_Employee
+namespace MOCK_Employee
 {
     class Program
     {
@@ -15,7 +10,7 @@ namespace MOQ_Employee
         {
             try
             {
-                var employee = new MEmployee
+                var widget = new MEmployee
                 {
                     Run = IMock.RunType.SUCCESS,
                     Arrange = IMock.RunType.SUCCESS,
@@ -23,7 +18,7 @@ namespace MOQ_Employee
                     Assert = IMock.RunType.SUCCESS
                 };
 
-                var employee2 = new MEmployee
+                var widget2 = new MEmployee
                 {
                     Run = IMock.RunType.EXCEPTION,
                     Exception = new Exception("Employee Error"),
@@ -41,4 +36,3 @@ namespace MOQ_Employee
         }
     }
 }
-

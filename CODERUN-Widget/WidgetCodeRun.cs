@@ -1,7 +1,7 @@
 ﻿using System;
 using CODERUN.Framework;
 using Conductus.WIDGET.Model.Core;
-using MOQ.Framework;
+using MOCK.Framework;
 using nsWidget;
 
 namespace CODERUN.WidgetNS

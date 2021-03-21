@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MOQ.Framework
+namespace MOCK.Framework
 {
     public class IMock
     {

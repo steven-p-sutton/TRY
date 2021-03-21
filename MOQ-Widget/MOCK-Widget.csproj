@@ -1,14 +1,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CODERUN_Widget</RootNamespace>
+    <RootNamespace>MOQ_Widget</RootNamespace>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
-    <ProjectReference Include="..\MOCK-Framework\MOCK-Framework.csproj" />
-  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="WIDGET-Model-Core">

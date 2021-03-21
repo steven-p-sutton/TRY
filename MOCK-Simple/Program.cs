@@ -1,18 +1,17 @@
 ﻿using System;
-using CODERUN.Framework;
 using MOCK.Framework;
 using nsEmployee;
 
-namespace CODERUN.EmployeeNS
-{
-    public class EmployeeCodeRun : ICodeRunModule
-    {
-        public string Title
-        {
-            get { return "Employee MOQ Code Run"; }
-        }
+// https://www.codeproject.com/articles/991028/using-moq-for-unit-testing
+//
+// Overview: Try an Employee, as yes not fully implemented, using a mocked, test only version
+// 
 
-        public void Run()
+namespace MOQ_Employee
+{
+    class Program
+    {
+        static void Main(string[] args)
         {
             try
             {
@@ -38,6 +37,8 @@ namespace CODERUN.EmployeeNS
             {
                 Console.WriteLine(e.Message);
             }
+            Console.ReadLine();
         }
     }
 }
+
