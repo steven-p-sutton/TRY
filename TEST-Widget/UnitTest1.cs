@@ -10,7 +10,7 @@ namespace TEST_Widget
         [Fact]
         public void Test1()
         {
-            var employee = new MWidget
+            var widget = new MWidget
             {
                 Run = IMock.RunType.SUCCESS,
                 Arrange = IMock.RunType.SUCCESS,
@@ -22,7 +22,7 @@ namespace TEST_Widget
         [Fact]
         public void Test2()
         {
-            var employee = new MWidget
+            var widget = new MWidget
             {
                 Run = IMock.RunType.EXCEPTION,
                 Exception = new Exception("Widget Error"),
@@ -31,6 +31,11 @@ namespace TEST_Widget
                 Test = IMock.RunType.EXCEPTION,
                 Assert = IMock.RunType.EXCEPTION
             };
+
+            Exception ex = Assert.Throws<Exception>(() => widget.Test = IMock.RunType.EXCEPTION);
+            Assert.Equal("Widget Error", ex.Message);
+
+            widget.Assert = IMock.RunType.EXCEPTION;
         }
     }
 }
