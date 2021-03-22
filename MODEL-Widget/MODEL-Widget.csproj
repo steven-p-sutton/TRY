@@ -5,4 +5,14 @@
     <RootNamespace>MODEL_Widget</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MOCK-Framework\MOCK-Framework.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WIDGET-Model-Core">
+      <HintPath>..\..\WIDGET\WIDGET-Model-Core\bin\Debug\netcoreapp3.1\WIDGET-Model-Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
