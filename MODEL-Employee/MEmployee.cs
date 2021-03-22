@@ -1,5 +1,4 @@
 ﻿using System;
-//using System.Diagnostics;
 using Moq;
 using MOCK.Framework;
 
@@ -100,7 +99,6 @@ namespace nsEmployee
                     this.Verify = 1;
                 else
                     this.Verify = 0;
-                //Debug.Assert(this.ExceptionExpected.Message == this.ExceptionRaised.Message, "Unexpected Exception message");
             }
         }
     }

@@ -12,6 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
     <ProjectReference Include="..\MOCK-Framework\MOCK-Framework.csproj" />
+    <ProjectReference Include="..\MODEL-Employee\MODEL-Employee.csproj" />
   </ItemGroup>
 
 </Project>
