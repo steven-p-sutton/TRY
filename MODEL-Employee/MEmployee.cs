@@ -98,7 +98,7 @@ namespace nsEmployee
                 if (value == RunType.SUCCESS)
                     this.Verify = 1;
                 else
-                    this.Verify = 0;
+                    this.Verify = 1;
             }
         }
     }

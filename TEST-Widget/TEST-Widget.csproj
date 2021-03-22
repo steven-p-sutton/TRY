@@ -16,7 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MOCK-Framework\MOCK-Framework.csproj" />
-    <ProjectReference Include="..\MOCK-Widget\MOCK-Widget.csproj" />
+    <ProjectReference Include="..\MOCK-Widget\APP-Widget.csproj" />
     <ProjectReference Include="..\MODEL-Widget\MODEL-Widget.csproj" />
   </ItemGroup>
 
