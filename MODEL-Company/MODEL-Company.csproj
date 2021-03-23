@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>MODEL_Company</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MOCK-Framework\MOCK-Framework.csproj" />
+    <ProjectReference Include="..\MODEL-Employee\MODEL-Employee.csproj" />
+    <ProjectReference Include="..\MODEL-Widget\MODEL-Widget.csproj" />
+  </ItemGroup>
+
+</Project>
