@@ -32,8 +32,8 @@ namespace CODERUN.Runner
             //var sa = new SampleCodeRun();
             //CodeRunFramework.Run(sa);
 
-            var em = new EmployeeCodeRun();
-            CodeRunFramework.Run(em);
+            //var em = new EmployeeCodeRun();
+            //CodeRunFramework.Run(em);
 
             var wd = new WidgetCodeRun();
             CodeRunFramework.Run(wd);

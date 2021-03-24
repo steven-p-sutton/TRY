@@ -11,8 +11,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
-    <ProjectReference Include="..\MOCK-Framework\MOCK-Framework.csproj" />
     <ProjectReference Include="..\MODEL-Employee\MODEL-Employee.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MOCK-Framework-CORE">
+      <HintPath>..\..\INFRASTRUCTURE\MOCK-Framework-CORE\bin\Debug\netcoreapp3.1\MOCK-Framework-CORE.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

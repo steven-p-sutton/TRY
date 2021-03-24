@@ -1,6 +1,6 @@
 ﻿using System;
 using MOCK.Framework;
-using nsWidget;
+//using Conductus.WIDGET.Model.Core;
 
 namespace MOQ_Widget
 {

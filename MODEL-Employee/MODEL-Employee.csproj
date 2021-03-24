@@ -6,7 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MOCK-Framework\MOCK-Framework.csproj" />
+    <PackageReference Include="Moq" Version="4.16.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MOCK-Framework-CORE">
+      <HintPath>..\..\INFRASTRUCTURE\MOCK-Framework-CORE\bin\Debug\netcoreapp3.1\MOCK-Framework-CORE.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
