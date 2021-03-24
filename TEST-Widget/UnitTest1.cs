@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 using MOCK.Framework;
-//using Conductus.WIDGET.Model.Core;
+using Conductus.WIDGET.Model.Core;
 
 namespace TEST_Employee
 {
@@ -30,7 +30,7 @@ namespace TEST_Employee
                 Arrange = IMock.RunType.EXCEPTION
             };
 
-            widget.ExceptionRaised = Assert.Throws<Exception>(() => widget.Test = IMock.RunType.EXCEPTION);
+            widget.ExceptionRaised = Assert.Throws <Exception>(() => widget.Test = IMock.RunType.EXCEPTION);
             Assert.Equal(widget.ExceptionExpected.Message, widget.ExceptionRaised.Message);
             widget.Assert = IMock.RunType.EXCEPTION;
         }
