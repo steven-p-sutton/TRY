@@ -1,7 +1,7 @@
 using System;
 using Xunit;
 using Conductus.MOCK.Framework;
-using nsEmployee;
+using Conductus.MODEL.EMPLOYEE;
 
 namespace TEST_Employee
 {

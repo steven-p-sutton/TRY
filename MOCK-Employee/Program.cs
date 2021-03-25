@@ -1,6 +1,6 @@
 ﻿using System;
 using Conductus.MOCK.Framework.Core;
-using nsEmployee;
+using Conductus.MODEL.EMPLOYEE;
 
 namespace MOQ_Widget
 {

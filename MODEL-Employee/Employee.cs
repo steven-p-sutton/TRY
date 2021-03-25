@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 
-namespace nsEmployee
+namespace Conductus.MODEL.EMPLOYEE
 {
     public class Employee : IEmployee
     {

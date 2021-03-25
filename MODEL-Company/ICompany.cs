@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using nsEmployee;
+using Conductus.MODEL.EMPLOYEE;
 
 namespace nsCompany
 {

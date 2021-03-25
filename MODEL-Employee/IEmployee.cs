@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace nsEmployee
+namespace Conductus.MODEL.EMPLOYEE
 {
     public interface IEmployee
     {

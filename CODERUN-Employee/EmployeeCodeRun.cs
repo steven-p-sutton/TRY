@@ -1,7 +1,7 @@
 ﻿using System;
 using CODERUN.Framework;
 using Conductus.MOCK.Framework.Core;
-using nsEmployee;
+using Conductus.MODEL.EMPLOYEE;
 
 namespace CODERUN.EmployeeNS
 {
