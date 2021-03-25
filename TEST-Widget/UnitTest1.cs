@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using MOCK.Framework;
+using Conductus.MOCK.Framework.Core;
 using Conductus.WIDGET.Model.Core;
 
 namespace TEST_Employee

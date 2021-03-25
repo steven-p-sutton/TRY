@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Moq;
-using MOCK.Framework;
+using Conductus.MOCK.Framework.Core;
 
 namespace nsCompany
 {

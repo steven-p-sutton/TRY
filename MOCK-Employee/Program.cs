@@ -1,5 +1,5 @@
 ﻿using System;
-using MOCK.Framework;
+using Conductus.MOCK.Framework.Core;
 using nsEmployee;
 
 namespace MOQ_Widget

@@ -8,6 +8,6 @@ namespace nsCompany
     {
         public string Name ();
         public List<Employee> Employees();
-        public List<WidgetObject> Widgets();
+        public List<Widget> Widgets();
     }
 }

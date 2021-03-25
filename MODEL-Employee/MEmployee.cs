@@ -1,6 +1,6 @@
 ﻿using System;
 using Moq;
-using MOCK.Framework;
+using Conductus.MOCK.Framework.Core;
 
 namespace nsEmployee
 {
