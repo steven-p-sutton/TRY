@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace APP_Example
+namespace Conductus.APP.EXAMPLE
 {
     class Program
     {

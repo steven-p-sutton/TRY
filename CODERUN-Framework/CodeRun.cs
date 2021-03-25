@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CODERUN.Framework
+namespace Conductus.CODERUN.Framework
 {
     public interface ICodeRunModule
     {

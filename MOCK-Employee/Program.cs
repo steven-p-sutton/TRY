@@ -1,8 +1,7 @@
 ﻿using System;
-using Conductus.MOCK.Framework.Core;
 using Conductus.MODEL.EMPLOYEE;
 
-namespace MOQ_Widget
+namespace Conductus.APP.EMPLOYEE
 {
     class Program
     {

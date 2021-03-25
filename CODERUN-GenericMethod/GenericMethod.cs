@@ -1,4 +1,4 @@
-﻿namespace nsGenericMethod
+﻿namespace GENERICMETHOD
 {
     public static class GenericMethod
     {

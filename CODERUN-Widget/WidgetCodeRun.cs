@@ -1,9 +1,9 @@
 ﻿using System;
-using CODERUN.Framework;
+using Conductus.CODERUN.Framework;
 using Conductus.MOCK.Framework.Core;
 using Conductus.WIDGET.Model.Core;
 
-namespace CODERUN.WidgetNS
+namespace Conductus.CODERUN.WIDGET
 {
     public class WidgetCodeRun : ICodeRunModule
     {

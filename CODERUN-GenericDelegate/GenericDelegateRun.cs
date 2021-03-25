@@ -1,8 +1,8 @@
 ﻿using System;
-using CODERUN.Framework;
-using nsGenericDelegate;
+using Conductus.CODERUN.Framework;
+using GENERICDELEGATE;
 
-namespace CODERUN.GenericDelegate
+namespace Conductus.CODERUN.GENERICDELEGATE
 {
     public class GenericDelegateRun : ICodeRunModule
     {
@@ -13,15 +13,15 @@ namespace CODERUN.GenericDelegate
         public void Run()
         {
             //create delegate instances
-            NumberChanger<int> nc1 = new NumberChanger<int>(nsGenericDelegate.GenericDelegate.AddNum);
-            NumberChanger<int> nc2 = new NumberChanger<int>(nsGenericDelegate.GenericDelegate.MultNum);
+            NumberChanger<int> nc1 = new NumberChanger<int>(GenericDelegate.AddNum);
+            NumberChanger<int> nc2 = new NumberChanger<int>(GenericDelegate.MultNum);
 
             //calling the methods using the delegate objects
             nc1(25);
-            Console.WriteLine("Value of Num: {0}", nsGenericDelegate.GenericDelegate.getNum());
+            Console.WriteLine("Value of Num: {0}", GenericDelegate.getNum());
 
             nc2(5);
-            Console.WriteLine("Value of Num: {0}", nsGenericDelegate.GenericDelegate.getNum());
+            Console.WriteLine("Value of Num: {0}", GenericDelegate.getNum());
 
             Console.WriteLine("\n");
         }

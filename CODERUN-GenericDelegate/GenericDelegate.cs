@@ -1,4 +1,4 @@
-﻿namespace nsGenericDelegate
+﻿namespace GENERICDELEGATE
 {
     public delegate T NumberChanger<T>(T n);
 

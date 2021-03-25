@@ -1,8 +1,8 @@
 ﻿using System;
-using CODERUN.Framework;
-using nsGenericArray;
+using Conductus.CODERUN.Framework;
+using GENERICARRAY;
 
-namespace CODERUN.GenericArray
+namespace Conductus.CODERUN.GENERICARRAY
 {
     public class GenericArrayCodeRun : ICodeRunModule
     {

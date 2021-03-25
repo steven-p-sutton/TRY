@@ -1,8 +1,8 @@
 ﻿using System;
-using CODERUN.Framework;
-using nsGenericMethod;
+using Conductus.CODERUN.Framework;
+using GENERICMETHOD;
 
-namespace CODERUN.GenericMethod
+namespace Conductus.CODERUN.GENERICMETHOD
 {
     public class GenericMethodRun: ICodeRunModule
     {
@@ -26,8 +26,8 @@ namespace CODERUN.GenericMethod
             Console.WriteLine("c = {0}, d = {1}", c, d);
 
             //call swap - why nsGenericMethod needed ?
-            nsGenericMethod.GenericMethod.Swap<int>(ref a, ref b);
-            nsGenericMethod.GenericMethod.Swap<char>(ref c, ref d);
+            GenericMethod.Swap<int>(ref a, ref b);
+            GenericMethod.Swap<char>(ref c, ref d);
 
             //display values after swap:
             Console.WriteLine("Int values after calling swap:");

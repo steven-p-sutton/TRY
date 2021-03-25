@@ -12,7 +12,7 @@
     <ProjectReference Include="..\CODERUN-GenericArray\CODERUN-GenericArray.csproj" />
     <ProjectReference Include="..\CODERUN-GenericDelegate\CODERUN-GenericDelegate.csproj" />
     <ProjectReference Include="..\CODERUN-GenericMethod\CODERUN-GenericMethod.csproj" />
-    <ProjectReference Include="..\CODERUN-Sample\CODERUN-Example.csproj" />
+    <ProjectReference Include="..\CODERUN-Sample\CODERUN-Sample.csproj" />
     <ProjectReference Include="..\CODERUN-Widget\CODERUN-Widget.csproj" />
   </ItemGroup>
 

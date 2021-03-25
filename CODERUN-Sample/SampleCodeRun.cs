@@ -1,8 +1,8 @@
 ﻿using System;
-using CODERUN.Framework;
-using nsSample;
+using Conductus.CODERUN.Framework;
+using SAMPLE;
 
-namespace CODERUN.Sample
+namespace Conductus.CODERUN.SAMPLE
 {
     public class SampleCodeRun : ICodeRunModule
     {

@@ -1,4 +1,4 @@
-﻿namespace nsSample
+﻿namespace SAMPLE
 {
     public class SampleClass
     {

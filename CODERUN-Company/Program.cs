@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CODERUN_Company
+namespace Conductus.CODERUN.COMPANY
 {
     class Program
     {

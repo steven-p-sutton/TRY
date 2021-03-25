@@ -1,9 +1,8 @@
 ﻿using System;
-using CODERUN.Framework;
-using Conductus.MOCK.Framework.Core;
+using Conductus.CODERUN.Framework;
 using Conductus.MODEL.EMPLOYEE;
 
-namespace CODERUN.EmployeeNS
+namespace Conductus.CODERUN.EMPLOYEE
 {
     public class EmployeeCodeRun : ICodeRunModule
     {

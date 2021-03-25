@@ -1,4 +1,4 @@
-﻿namespace nsGenericArray
+﻿namespace GENERICARRAY
 {
     public class GenericArray<T>
     {
