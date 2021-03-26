@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
     <ProjectReference Include="..\MODEL-Company\MODEL-Company.csproj" />
   </ItemGroup>
 

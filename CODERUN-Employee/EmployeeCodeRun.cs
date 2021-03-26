@@ -1,5 +1,5 @@
 ﻿using System;
-using Conductus.CODERUN.Framework;
+using Conductus.CODERUN.Library.Core;
 using Conductus.MODEL.EMPLOYEE;
 
 namespace Conductus.CODERUN.EMPLOYEE

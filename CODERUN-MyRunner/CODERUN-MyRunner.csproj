@@ -3,15 +3,22 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CODERUN_Runner</RootNamespace>
+    <RootNamespace>CODERUN_MyRunner</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CODERUN-Company\CODERUN-Company.csproj" />
     <ProjectReference Include="..\CODERUN-Employee\CODERUN-Employee.csproj" />
     <ProjectReference Include="..\CODERUN-GenericArray\CODERUN-GenericArray.csproj" />
     <ProjectReference Include="..\CODERUN-GenericDelegate\CODERUN-GenericDelegate.csproj" />
     <ProjectReference Include="..\CODERUN-GenericMethod\CODERUN-GenericMethod.csproj" />
     <ProjectReference Include="..\CODERUN-Widget\CODERUN-Widget.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="CODERUN-Library-Core">
+      <HintPath>..\..\INFRASTRUCTURE\CODERUN-Model-Core\bin\Debug\netcoreapp3.1\CODERUN-Library-Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

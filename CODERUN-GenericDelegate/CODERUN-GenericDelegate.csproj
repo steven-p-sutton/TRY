@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CODERUN-Framework\CODERUN-Framework.csproj" />
+    <Reference Include="CODERUN-Library-Core">
+      <HintPath>..\..\INFRASTRUCTURE\CODERUN-Model-Core\bin\Debug\netcoreapp3.1\CODERUN-Library-Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
