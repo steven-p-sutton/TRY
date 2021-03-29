@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -9,7 +9,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CODERUN-Company\CODERUN-Company.csproj" />
     <ProjectReference Include="..\CODERUN-Employee\CODERUN-Employee.csproj" />
-    <ProjectReference Include="..\CODERUN-Widget\CODERUN-Widget.csproj" />
   </ItemGroup>
 
   <ItemGroup>
