@@ -6,6 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="CODERUN-Library-Core">
       <HintPath>..\..\INFRASTRUCTURE\CODERUN-Model-Core\bin\Debug\netcoreapp3.1\CODERUN-Library-Core.dll</HintPath>
     </Reference>

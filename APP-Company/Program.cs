@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Conductus.MODEL.EMPLOYEE;
 using Conductus.MODEL.COMPANY;
 
@@ -10,6 +11,13 @@ namespace Conductus.APP.COMPANY
         public static void Main(string[] args)
         {
             var widget = new Widget()
+            {
+                Id = 1,
+                Date = DateTime.Today,
+                Name = "Widget",
+                Count = 99
+            };
+
             var widgets = new List<Widget>();
             widgets.Add(widget);
 
@@ -19,9 +27,8 @@ namespace Conductus.APP.COMPANY
 
             var company = new Company("Conductus", employees, widgets);
 
-            Console.WriteLine (company.Name());
-            company.Employees();
-            company.Widgets();
+            string json = JsonConvert.SerializeObject(company.Employees(), Formatting.Indented);
+            Console.WriteLine (json);
         }
     }
 }

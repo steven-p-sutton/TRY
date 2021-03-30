@@ -7,7 +7,8 @@ namespace Conductus.MODEL.COMPANY
 {
     public interface ICompany
     {
-        public string Name ();
+        //public string Name ();
+        public string Name { get; set; }
         public List<Employee> Employees();
         public List<Widget> Widgets();
     }
