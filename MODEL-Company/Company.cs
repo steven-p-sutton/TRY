@@ -18,10 +18,27 @@ namespace Conductus.MODEL.COMPANY
             _employees = employees;
             _widgets = widgets;
         }
+
         //public string Name() { return _name; }
         [JsonProperty("name")]
         public string Name { get; set; }
+
+        [JsonProperty("employeeList")]
+        public List<Employee> EmployeeList 
+        {
+            get{ return _employees; }
+            set{ _employees = value; } 
+        }
+
+        [JsonProperty("widgetList")]
+        public List<Widget> WidgetList 
+        {
+            get { return _widgets; }
+            set { _widgets = value; }
+        }
+
         public List<Employee> Employees() { return _employees; }
+
         public List<Widget> Widgets() { return _widgets; }
     }
 }

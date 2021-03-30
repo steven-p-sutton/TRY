@@ -9,6 +9,8 @@ namespace Conductus.MODEL.COMPANY
     {
         //public string Name ();
         public string Name { get; set; }
+        public List<Employee> EmployeeList { get; set; }
+        public List<Widget> WidgetList { get; set; }
         public List<Employee> Employees();
         public List<Widget> Widgets();
     }
