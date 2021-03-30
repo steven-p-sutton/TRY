@@ -4,7 +4,7 @@ using System.Text;
 using Moq;
 using Conductus.MOCK.Framework.Core;
 
-namespace nsCompany
+namespace Conductus.MODEL.COMPANY
 {
     public class MCompany : IMock
     {

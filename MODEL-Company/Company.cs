@@ -1,13 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 using Conductus.MODEL.EMPLOYEE;
 
-namespace nsCompany
+namespace Conductus.MODEL.COMPANY
 {
     public class Company : ICompany
     {
-        public string Name() { throw new NotImplementedException("Name"); }
-        public List<Employee> Employees() { throw new NotImplementedException("Employees"); }
-        public List<Widget> Widgets() { throw new NotImplementedException("Widgets"); }
+        private string _name;
+        private List<Employee> _employees;
+        private List<Widget> _widgets;
+
+        public Company(string name, List<Employee> employees, List<Widget> widgets)
+        {
+            _name = name;
+            _employees = employees;
+            _widgets = widgets;
+        }
+        public string Name() { return _name; }
+        public List<Employee> Employees() { return _employees; }
+        public List<Widget> Widgets() { return _widgets; }
     }
 }

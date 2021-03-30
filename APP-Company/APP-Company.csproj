@@ -8,6 +8,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MODEL-Company\MODEL-Company.csproj" />
+    <ProjectReference Include="..\MODEL-Employee\MODEL-Employee.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="WIDGET-Model-Core">
+      <HintPath>..\..\WIDGET\WIDGET-Model-Core\bin\Debug\netcoreapp3.1\WIDGET-Model-Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

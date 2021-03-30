@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Conductus.MODEL.EMPLOYEE;
+using Conductus.WIDGET.Model.Core;
 
-namespace nsCompany
+namespace Conductus.MODEL.COMPANY
 {
     public interface ICompany
     {
