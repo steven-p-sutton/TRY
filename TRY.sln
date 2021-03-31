@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MODEL-Company", "MODEL-Comp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEST-Company", "TEST-Company\TEST-Company.csproj", "{4D8E7974-142F-4C89-AF4D-BD44ED799393}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CODERUN-MyRunner", "CODERUN-MyRunner\CODERUN-MyRunner.csproj", "{FC28F3C8-51F5-4B7E-B153-6EBD2345ED2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CODERUN-Try", "CODERUN-MyRunner\CODERUN-Try.csproj", "{FC28F3C8-51F5-4B7E-B153-6EBD2345ED2A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

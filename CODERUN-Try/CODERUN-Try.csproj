@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>CODERUN_Try</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="CODERUN-Library-Core">
+      <HintPath>..\..\INFRASTRUCTURE\CODERUN-Library-Core\bin\Debug\netcoreapp3.1\CODERUN-Library-Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
