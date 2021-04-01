@@ -1,7 +1,7 @@
 ﻿using System;
-using Conductus.MODEL.EMPLOYEE;
+using Conductus.EMPLOYEE.Model;
 
-namespace Conductus.APP.EMPLOYEE
+namespace Conductus.EMPLOYEE.App
 {
     class Program
     {

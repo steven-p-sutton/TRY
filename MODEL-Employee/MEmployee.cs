@@ -2,7 +2,7 @@
 using Moq;
 using Conductus.MOCK.Framework.Core;
 
-namespace Conductus.MODEL.EMPLOYEE
+namespace Conductus.EMPLOYEE.Model
 {
     public class MEmployee : IMock
     {

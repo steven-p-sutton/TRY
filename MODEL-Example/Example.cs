@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace Conductus.MODEL.EXAMPLE
+namespace Conductus.EXAMPLE.Model
 {
     public class Example
     {

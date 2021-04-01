@@ -1,9 +1,8 @@
 using System;
 using Xunit;
-using Conductus.MOCK.Framework;
-using Conductus.MODEL.EMPLOYEE;
+using Conductus.EMPLOYEE.Model;
 
-namespace TEST_Employee
+namespace Conductus.EMPLOYEE.Test
 {
     public class UnitTest
     {

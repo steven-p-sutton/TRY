@@ -18,4 +18,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\APP-Example\APP-Example.csproj" />
+  </ItemGroup>
+
 </Project>

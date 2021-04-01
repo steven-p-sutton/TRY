@@ -1,8 +1,8 @@
 ﻿using System;
 using Conductus.CODERUN.Library.Core;
-using Conductus.MODEL.EMPLOYEE;
+using Conductus.EMPLOYEE.Model;
 
-namespace Conductus.CODERUN.EMPLOYEE
+namespace Conductus.EMPLOYEE.CodeRun
 {
     public class EmployeeCodeRun : ICodeRunModule
     {

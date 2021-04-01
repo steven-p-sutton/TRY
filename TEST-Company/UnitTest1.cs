@@ -1,8 +1,9 @@
 using System;
 using Xunit;
+using Conductus.COMPANY.Model;
 
-namespace TEST_Company
-{
+namespace Conductus.COMPANY.Test
+{ 
     public class UnitTest1
     {
         [Fact]

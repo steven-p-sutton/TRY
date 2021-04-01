@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Conductus.MODEL.EMPLOYEE;
+using Conductus.EMPLOYEE.Model;
 
-namespace Conductus.MODEL.COMPANY
+namespace Conductus.COMPANY.Model
 {
     public class Company : ICompany
     {

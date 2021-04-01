@@ -1,7 +1,8 @@
 using System;
 using Xunit;
+//using Conductus.EXAMPLE.Model;
 
-namespace TEST_Example
+namespace Conductus.EXAMPLE.Test
 {
     public class UnitTest1
     {

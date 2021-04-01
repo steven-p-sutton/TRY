@@ -1,7 +1,7 @@
 ﻿using System;
 using Conductus.CODERUN.Library.Core;
 
-namespace Conductus.CODERUN.TRY
+namespace Conductus.TRY.CodeRunIt
 {
     public class Module : ICodeRunModule
     {

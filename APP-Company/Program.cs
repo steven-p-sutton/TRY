@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using Newtonsoft.Json;
-using Conductus.MODEL.EMPLOYEE;
-using Conductus.MODEL.COMPANY;
+using Conductus.EMPLOYEE.Model;
+using Conductus.WIDGET.Model.Core;
+using Conductus.COMPANY.Model;
 
-namespace Conductus.APP.COMPANY
+namespace Conductus.COMPANY.App
 {
-    public class Program
+    class Program
     {
         public static void Main(string[] args)
         {
             var widgets = new List<Widget>();
-
             var widget1 = new Widget()
             {
                 Id = 1,
@@ -19,7 +19,6 @@ namespace Conductus.APP.COMPANY
                 Name = "Widget1",
                 Count = 99
             };
-
             var widget2 = new Widget()
             {
                 Id = 2,
@@ -32,7 +31,6 @@ namespace Conductus.APP.COMPANY
             widgets.Add(widget2);
 
             var employees = new List<Employee>();
-
             var employee = new Employee("Steve", DateTime.Parse("17-03-1963"));
             employees.Add(employee);
 

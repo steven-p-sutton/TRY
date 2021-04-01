@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Conductus.MODEL.EXAMPLE
+namespace Conductus.EXAMPLE.Model
 {
     public interface  IExample
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Conductus.MODEL.EMPLOYEE
+namespace Conductus.EMPLOYEE.Model
 {
     public class Employee : IEmployee
     {
