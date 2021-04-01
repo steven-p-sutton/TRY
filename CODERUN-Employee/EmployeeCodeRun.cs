@@ -2,7 +2,7 @@
 using Conductus.CODERUN.Library.Core;
 using Conductus.EMPLOYEE.Model;
 
-namespace Conductus.EMPLOYEE.CodeRun
+namespace Conductus.EMPLOYEE.CODERUN
 {
     public class EmployeeCodeRun : ICodeRunModule
     {
