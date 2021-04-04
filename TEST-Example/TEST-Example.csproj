@@ -22,4 +22,10 @@
     <ProjectReference Include="..\APP-Example\APP-Example.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="MOCK-Model-Core">
+      <HintPath>..\..\INFRASTRUCTURE\MOCK-Model-Core\bin\Debug\netcoreapp3.1\MOCK-Model-Core.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

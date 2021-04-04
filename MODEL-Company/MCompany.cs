@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Moq;
-using Conductus.MOCK.Framework.Core;
+using Conductus.MOCK.Model.Core;
 
 namespace Conductus.COMPANY.Model
 {

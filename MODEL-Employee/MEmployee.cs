@@ -1,6 +1,6 @@
 ﻿using System;
 using Moq;
-using Conductus.MOCK.Framework.Core;
+using Conductus.MOCK.Model.Core;
 
 namespace Conductus.EMPLOYEE.Model
 {
