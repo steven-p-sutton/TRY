@@ -6,7 +6,15 @@ namespace Conductus.EXAMPLE.App
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            try
+            {
+                Console.WriteLine("EXAMPLE.App");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            Console.ReadLine();
         }
     }
 }

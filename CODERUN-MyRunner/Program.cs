@@ -1,7 +1,7 @@
 ﻿using System;
 //using Conductus.CODERUN.Library.Core;
 
-namespace Conductus.TRY.CODERUN
+namespace Conductus.CODERUN.Try
 {
     class Program
     {
