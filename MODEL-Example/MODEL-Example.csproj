@@ -6,7 +6,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Moq" Version="4.16.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="MOCK-Model-Core">
+      <HintPath>..\..\INFRASTRUCTURE\MOCK-Model-Core\bin\Debug\netcoreapp3.1\MOCK-Model-Core.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

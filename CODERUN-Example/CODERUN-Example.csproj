@@ -1,22 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>CODERUN_MyRunner</RootNamespace>
+    <RootNamespace>CODERUN_Example</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\CODERUN-Example\CODERUN-Example.csproj" />
+    <ProjectReference Include="..\MODEL-Example\MODEL-Example.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="CODERUN-Model-Core">
       <HintPath>..\..\INFRASTRUCTURE\CODERUN-Model-Core\bin\Debug\netcoreapp3.1\CODERUN-Model-Core.dll</HintPath>
+    </Reference>
+    <Reference Include="MOCK-Model-Core">
+      <HintPath>..\..\INFRASTRUCTURE\MOCK-Model-Core\bin\Debug\netcoreapp3.1\MOCK-Model-Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 

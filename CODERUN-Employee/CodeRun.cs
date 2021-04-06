@@ -1,14 +1,14 @@
 ﻿using System;
-using Conductus.CODERUN.Library.Core;
+using Conductus.CODERUN.Model.Core;
 using Conductus.EMPLOYEE.Model;
 
 namespace Conductus.EMPLOYEE.CODERUN
 {
-    public class EmployeeCodeRun : ICodeRunModule
+    public class CodeRun : ICodeRunModule
     {
         public string Title
         {
-            get { return "Employee MOQ Code Run"; }
+            get { return "RunCode Employee"; }
         }
 
         public void Run()

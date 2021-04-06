@@ -1,13 +1,13 @@
 ﻿using System;
-//using Conductus.CODERUN.Library.Core;
+using Conductus.CODERUN.Model.Core;
 
 namespace Conductus.CODERUN.Try
 {
-    public class Module : ICodeRunModule
+    public class CodeRunTry : ICodeRunModule
     {
         public string Title
         {
-            get { return "Try Code Run"; }
+            get { return "CodeRun Try"; }
         }
 
         public void Run()
