@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-//using Conductus.EXAMPLE.Model;
+using Conductus.EXAMPLE.Model;
 
 namespace Conductus.EXAMPLE.Test
 {
