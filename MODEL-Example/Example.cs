@@ -5,6 +5,10 @@ namespace Conductus.EXAMPLE.Model
 {
     public class Example : IExample
     {
+        public Example()
+        {
+            Repository = new List<string>();
+        }
         [JsonProperty("str")]
         public string Str { get; set; }
         [JsonProperty("int")]

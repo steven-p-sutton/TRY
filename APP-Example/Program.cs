@@ -1,4 +1,5 @@
 ﻿using System;
+using Conductus.EXAMPLE.Model;
 
 namespace Conductus.EXAMPLE.App
 {
@@ -8,7 +9,15 @@ namespace Conductus.EXAMPLE.App
         {
             try
             {
-                Console.WriteLine("EXAMPLE.App");
+                var example = new Example();
+
+                example.Str = "APP-Example";
+                example.Int = 99;
+                example.Add(example.Str);
+                example.Add(example.Int.ToString());
+
+                foreach (var item in example.Repository)
+                    Console.WriteLine(item);
             }
             catch (Exception e)
             {
