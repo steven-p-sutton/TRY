@@ -1,15 +1,45 @@
-using System;
 using Xunit;
 using Conductus.EXAMPLE.Model;
+using System;
 
 namespace Conductus.EXAMPLE.Test
 {
     public class UnitTest1
     {
         [Fact]
-        public void Test1()
+        public void Test1_Example()
         {
+            var module = new Example();
 
+            module.Str = "APP-Example";
+            module.Int = 99;
+
+            var idxStr = module.Add(module.Str);
+            Assert.Equal(idxStr, module.Find(module.Str));
+
+            var idxInt = module.Add(module.Int.ToString());
+            Assert.Equal(idxInt, module.Find(module.Int.ToString()));
+
+            var idxItem = module.Add("Item");
+            Assert.Equal(idxItem, module.Find("Item"));
+
+            var str = module.Remove(idxItem);
+            Assert.False(idxItem == module.Find("Item"));
+        }
+        [Fact]
+        public void Test2_MExample()
+        {
+            var mock = new MExample();
+        }
+        [Fact]
+        public void Test3_EExample()
+        {
+            var empty = new EExample();
+        }
+        [Fact]
+        public void Test4_HExample()
+        {
+            var host = new HExample();
         }
     }
 }
