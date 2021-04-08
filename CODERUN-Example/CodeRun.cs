@@ -1,22 +1,70 @@
-﻿using System;
-using Conductus.CODERUN.Model.Core;
+﻿//using Conductus.CODERUN.Model.Core;
+using Conductus.MOCK.Model.Core;
 using Conductus.EXAMPLE.Model;
 
 namespace Conductus.EXAMPLE.CODERUN
 {
     public class CodeRunExample : ICodeRunModule
     {
-        public string Title
+        public override string Title
         {
             get { return "RunCode Example"; }
         }
 
-        public void Run()
+        public override void Run()
         {
-            var module = new Example();
-            var mock = new MExample();
-            var empty = new EExample();
-            var host = new HExample();
+            Msg("Example");
+
+            try
+            {
+                var module = new Example();
+
+                module.Str = "CODERUN_Example";
+                module.Int = 99;
+
+                var idxStr = module.Add(module.Str);
+                var idxInt = module.Add(module.Int.ToString());
+                var idxItem = module.Add("Item");
+                var str = module.Remove(idxItem);
+            }
+            catch
+            {
+            }
+
+            Msg("MExample");
+
+            try
+            {
+                var mock = new MExample
+                {
+                    Run = IMock.RunType.SUCCESS,
+                    Arrange = IMock.RunType.SUCCESS,
+                    Test = IMock.RunType.SUCCESS,
+                    Assert = IMock.RunType.SUCCESS
+                };
+            }
+            catch
+            {
+            }
+
+            Msg("EExample");
+
+            try
+            {
+                var empty = new EExample();
+            }
+            catch
+            {
+            }
+
+            // HExample
+            try
+            {
+                var host = new HExample();
+            }
+            catch
+            {
+            }
         }
     }
 }

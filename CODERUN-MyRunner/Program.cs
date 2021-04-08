@@ -1,5 +1,5 @@
-﻿using System;
-using Conductus.CODERUN.Model.Core;
+﻿using Conductus.CODERUN.Model.Core;
+using Conductus.TRY.CODERUN;
 using Conductus.EXAMPLE.CODERUN;
 
 namespace Conductus.CODERUN.Try
@@ -8,8 +8,8 @@ namespace Conductus.CODERUN.Try
     {
         static void Main(string[] args)
         {
-            global::CodeRun.Run(new CodeRunTry());
-            global::CodeRun.Run(new CodeRunExample());
+            //CodeRun.Run(new CodeRunTry());
+            CodeRun.Run(new CodeRunExample());
         }
     }
 }

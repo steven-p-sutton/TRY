@@ -6,15 +6,17 @@ namespace Conductus.EMPLOYEE.CODERUN
 {
     public class CodeRun : ICodeRunModule
     {
-        public string Title
+        public override string Title
         {
             get { return "RunCode Employee"; }
         }
 
-        public void Run()
-        {
+        public override void Run()
+        { 
             try
             {
+                Msg("MEmployee - OK");
+
                 var employee = new MEmployee
                 {
                     Run = IMock.RunType.SUCCESS,
@@ -22,6 +24,8 @@ namespace Conductus.EMPLOYEE.CODERUN
                     Test = IMock.RunType.SUCCESS,
                     Assert = IMock.RunType.SUCCESS
                 };
+
+                Msg("MEmployee - ERROR");
 
                 var employee2 = new MEmployee
                 {

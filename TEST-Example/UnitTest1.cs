@@ -1,13 +1,12 @@
 using Xunit;
 using Conductus.EXAMPLE.Model;
-using System;
 
 namespace Conductus.EXAMPLE.Test
 {
     public class UnitTest1
     {
         [Fact]
-        public void Test1_Example()
+        public void Example()
         {
             var module = new Example();
 
@@ -27,17 +26,17 @@ namespace Conductus.EXAMPLE.Test
             Assert.False(idxItem == module.Find("Item"));
         }
         [Fact]
-        public void Test2_MExample()
+        public void MExample()
         {
             var mock = new MExample();
         }
         [Fact]
-        public void Test3_EExample()
+        public void EExample()
         {
             var empty = new EExample();
         }
         [Fact]
-        public void Test4_HExample()
+        public void HExample()
         {
             var host = new HExample();
         }
