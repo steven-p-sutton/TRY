@@ -3,7 +3,7 @@ using Conductus.CODERUN.Model.Core;
 
 namespace Conductus.TRY.CODERUN
 {
-    public class CodeRunTry : ICodeRunModule
+    public class CodeRunTry : ACodeRunModule
     {
         public override string Title
         {

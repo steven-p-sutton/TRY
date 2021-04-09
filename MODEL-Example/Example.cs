@@ -28,7 +28,9 @@ namespace Conductus.EXAMPLE.Model
         }
         public int Find (string item)
         {
-            return this.Repository.IndexOf(item);
+            var idx = this.Repository.IndexOf(item);
+            if (idx == -1) throw new ExampleNotFoundException();
+            return idx;
         }
     }
 }

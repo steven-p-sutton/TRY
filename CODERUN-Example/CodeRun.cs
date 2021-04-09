@@ -4,7 +4,7 @@ using Conductus.EXAMPLE.Model;
 
 namespace Conductus.EXAMPLE.CODERUN
 {
-    public class CodeRunExample : ICodeRunModule
+    public class CodeRunExample : ACodeRunModule
     {
         public override string Title
         {

@@ -4,7 +4,7 @@ using Conductus.EMPLOYEE.Model;
 
 namespace Conductus.EMPLOYEE.CODERUN
 {
-    public class CodeRun : ICodeRunModule
+    public class CodeRun : ACodeRunModule
     {
         public override string Title
         {

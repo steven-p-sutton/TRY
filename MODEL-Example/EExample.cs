@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace Conductus.EXAMPLE.Model
@@ -11,12 +10,12 @@ namespace Conductus.EXAMPLE.Model
         {
             get
             {
-                throw new NotImplementedException(); 
+                throw new ExampleNotImplentedException(); 
             }
             
             set
             {
-                throw new NotImplementedException(); 
+                throw new ExampleNotImplentedException(); 
             }
         }
         [JsonProperty("int")]
@@ -24,11 +23,11 @@ namespace Conductus.EXAMPLE.Model
         {
             get
             {
-                throw new NotImplementedException();
+                throw new ExampleNotImplentedException();
             }
             set
             {
-                throw new NotImplementedException();
+                throw new ExampleNotImplentedException();
             }
         }
         [JsonProperty("list")]
@@ -36,24 +35,24 @@ namespace Conductus.EXAMPLE.Model
         {
             get
             {
-                throw new NotImplementedException();
+                throw new ExampleNotImplentedException();
             }
             set
             {
-                throw new NotImplementedException();
+                throw new ExampleNotImplentedException();
             } 
         }
         public int Add(string item)
         {
-            throw new NotImplementedException();
+            throw new ExampleNotImplentedException();
         }
         public string Remove(int idx)
         {
-            throw new NotImplementedException();
+            throw new ExampleNotImplentedException();
         }
         public int Find(string item)
         {
-            throw new NotImplementedException();
+            throw new ExampleNotImplentedException();
         }
     }
 }
