@@ -30,6 +30,16 @@ namespace Conductus.EXAMPLE.App
 
             try
             {
+                var host = new HExample();
+
+                var s = host.Str();
+                var i = host.Int();
+
+                host.Add();
+                host.Find();
+                host.Remove();
+
+                host.Try = true;
             }
             catch (Exception e)
             {
@@ -40,6 +50,9 @@ namespace Conductus.EXAMPLE.App
 
             try
             {
+                var empty = new EExample();
+
+                empty.Add("Item");
             }
             catch (Exception e)
             {
@@ -50,11 +63,22 @@ namespace Conductus.EXAMPLE.App
 
             try
             {
+                var mock = new MExample
+                {
+                    Run = IMock.RunType.SUCCESS,
+                    Arrange = IMock.RunType.SUCCESS,
+                    Test = IMock.RunType.SUCCESS,
+                    Assert = IMock.RunType.SUCCESS
+                };
             }
+
             catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
+            //catch (ExampleNotImplentedException)
+            //{
+            //}
 
             Console.ReadLine();
         }
