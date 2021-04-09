@@ -26,19 +26,21 @@ namespace Conductus.EXAMPLE.Test
             Assert.False(idxItem == module.Find("Item"));
         }
         [Fact]
-        public void MExample()
+        public void HExample()
         {
-            var mock = new MExample();
+            var host = new HExample();
         }
+
         [Fact]
         public void EExample()
         {
             var empty = new EExample();
         }
+
         [Fact]
-        public void HExample()
+        public void MExample()
         {
-            var host = new HExample();
+            var mock = new MExample();
         }
     }
 }

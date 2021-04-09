@@ -31,17 +31,11 @@ namespace Conductus.EXAMPLE.CODERUN
             {
             }
 
-            Msg("MExample");
+            Msg("HExample");
 
             try
             {
-                var mock = new MExample
-                {
-                    Run = IMock.RunType.SUCCESS,
-                    Arrange = IMock.RunType.SUCCESS,
-                    Test = IMock.RunType.SUCCESS,
-                    Assert = IMock.RunType.SUCCESS
-                };
+                var host = new HExample();
             }
             catch
             {
@@ -57,10 +51,17 @@ namespace Conductus.EXAMPLE.CODERUN
             {
             }
 
-            // HExample
+            Msg("MExample");
+
             try
             {
-                var host = new HExample();
+                var mock = new MExample
+                {
+                    Run = IMock.RunType.SUCCESS,
+                    Arrange = IMock.RunType.SUCCESS,
+                    Test = IMock.RunType.SUCCESS,
+                    Assert = IMock.RunType.SUCCESS
+                };
             }
             catch
             {

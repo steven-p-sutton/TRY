@@ -7,6 +7,8 @@ namespace Conductus.EXAMPLE.App
     {
         static void Main(string[] args)
         {
+            // Example
+
             try
             {
                 var example = new Example();
@@ -23,6 +25,37 @@ namespace Conductus.EXAMPLE.App
             {
                 Console.WriteLine(e.Message);
             }
+
+            // HExample
+
+            try
+            {
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            // EExample
+
+            try
+            {
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+            // MEXample
+
+            try
+            {
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
             Console.ReadLine();
         }
     }
