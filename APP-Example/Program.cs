@@ -1,5 +1,6 @@
 ﻿using System;
 using Conductus.EXAMPLE.Model;
+using Conductus.EXCEPTION.Model.Core;
 
 namespace Conductus.EXAMPLE.App
 {
@@ -53,6 +54,11 @@ namespace Conductus.EXAMPLE.App
                 var empty = new EExample();
 
                 empty.Add("Item");
+                empty.Remove(empty.Find("Item"));
+            }
+            catch (ExampleNotImplentedException e)
+            {
+                Console.WriteLine(e.Message);
             }
             catch (Exception e)
             {
@@ -76,9 +82,6 @@ namespace Conductus.EXAMPLE.App
             {
                 Console.WriteLine(e.Message);
             }
-            //catch (ExampleNotImplentedException)
-            //{
-            //}
 
             Console.ReadLine();
         }
