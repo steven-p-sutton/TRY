@@ -5,6 +5,8 @@ namespace Conductus.EXAMPLE.Model
 {
     public class MExample : IMock
     {
+        public enum VerifyTimes { NEVER = 0, ONCE = 1, EXACTLY = 3 };
+
         public Mock<IExample> _mMock;
         public MExample()
         {
@@ -87,13 +89,13 @@ namespace Conductus.EXAMPLE.Model
         {
             set
             {
-                if (value == 0)
+                if (value == (int)VerifyTimes.NEVER)
                 {
                     _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Never());
                     _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Never());
                     _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Never());
                 }
-                else if (value == 1)
+                else if (value == (int)VerifyTimes.ONCE)
                 {
                     _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
                     _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
@@ -159,11 +161,11 @@ namespace Conductus.EXAMPLE.Model
             {
                 if (value == RunType.SUCCESS)
                 {
-                    this.Verify = 1;
+                    this.Verify = (int)VerifyTimes.ONCE;
                 }
                 else
                 {
-                    this.Verify = 1;
+                    this.Verify = (int)VerifyTimes.ONCE;
                 }
             }
         }
