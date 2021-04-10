@@ -6,12 +6,12 @@ namespace Conductus.EMPLOYEE.Model
 {
     public class MEmployee : IMock
     {
-        public Mock<Employee> _mMock;
+        public Mock<IEmployee> _mMock;
         public MEmployee()
         {
-            _mMock = new Mock<Employee>();
+            _mMock = new Mock<IEmployee>();
         }
-        public Mock<Employee> Mock
+        public Mock<IEmployee> Mock
         {
             get => _mMock;
         }
