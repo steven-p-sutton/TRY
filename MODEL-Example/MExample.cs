@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Moq;
+﻿using Moq;
 using Conductus.MOCK.Model.Core;
 
 namespace Conductus.EXAMPLE.Model
@@ -23,25 +20,25 @@ namespace Conductus.EXAMPLE.Model
             {
                 if (this.Run == RunType.SUCCESS)
                 {
-                    _mMock.Setup(o => o.Add(It.IsAny<string>()))
-                     .Returns((int x) => 0);
+                    _mMock.Setup(x => x.Add(It.IsAny<string>()))
+                     .Returns(0);
 
-                    _mMock.Setup(o => o.Find(It.IsAny<string>()))
-                    .Returns((int x) => 0);
+                    _mMock.Setup(x => x.Find(It.IsAny<string>()))
+                    .Returns(0);
 
-                    _mMock.Setup(o => o.Remove(It.IsAny<int>()))
-                    .Returns((string x) => "Item");
+                    _mMock.Setup(x => x.Remove(It.IsAny<int>()))
+                    .Returns("Mock");
                 }
                 else
                 {
                     _mMock.Setup(x => x.Add(It.IsAny<string>()))
-                     .Returns((int x) => int.MinValue);
+                     .Returns(int.MinValue);
 
                     _mMock.Setup(x => x.Find(It.IsAny<string>()))
-                    .Returns((int x) => int.MinValue);
+                    .Returns(int.MinValue);
 
                     _mMock.Setup(x => x.Remove(It.IsAny<int>()))
-                    .Returns((string x) => "");
+                    .Returns(string.Empty);
                 }
             }
         }
@@ -114,11 +111,23 @@ namespace Conductus.EXAMPLE.Model
         {
             set
             {
-                //if (value == RunType.EXCEPTION)
-                //    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()))
-                //    .Throws(this.ExceptionExpected);
-                //else
-                //    _mMock.Setup(x => x.GetDateOfJoining(It.IsAny<int>()));
+                if (value == RunType.EXCEPTION)
+                {
+                    _mMock.Setup(x => x.Add(It.IsAny<string>()))
+                    .Throws(this.ExceptionExpected);
+
+                    _mMock.Setup(x => x.Find(It.IsAny<string>()))
+                    .Throws(this.ExceptionExpected);
+
+                    _mMock.Setup(x => x.Remove(It.IsAny<int>()))
+                    .Throws(this.ExceptionExpected);
+                }
+                else
+                {
+                    _mMock.Setup(x => x.Add(It.IsAny<string>()));
+                    _mMock.Setup(x => x.Find(It.IsAny<string>()));
+                    _mMock.Setup(x => x.Remove(It.IsAny<int>()));
+                }
             }
         }
         public override RunType Arrange
@@ -131,16 +140,17 @@ namespace Conductus.EXAMPLE.Model
                     this.Returns = true;
                 }
                 else
+                {
                     this.Throws = value;
+                }
             }
         }
         public override RunType Test
         {
             set
             {
-                this.Mock.Object.Find("Item");
-                var idx = this.Mock.Object.Add("Item");
-                this.Mock.Object.Remove(idx);
+                this.Mock.Object.Add("Item");
+                this.Mock.Object.Remove(this.Mock.Object.Find("Item"));
             }
         }
         public override RunType Assert
@@ -148,9 +158,13 @@ namespace Conductus.EXAMPLE.Model
             set
             {
                 if (value == RunType.SUCCESS)
+                {
                     this.Verify = 1;
+                }
                 else
+                {
                     this.Verify = 1;
+                }
             }
         }
     }
