@@ -5,7 +5,7 @@ namespace Conductus.EXAMPLE.Model
 {
     public class MExample : IMock
     {
-        public enum VerifyTimes { NEVER = 0, ONCE = 1, EXACTLY = 3 };
+        public new enum VerifyTimes { NEVER = 0, ONCE = 1, FAIL_Add = 4, FAIL_Find = 5, FAIL_Remove = 6 };
 
         public Mock<IExample> _mMock;
         public MExample()
@@ -96,6 +96,24 @@ namespace Conductus.EXAMPLE.Model
                     _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Never());
                 }
                 else if (value == (int)VerifyTimes.ONCE)
+                {
+                    _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
+                    _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
+                    _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Once());
+                }
+                else if (value == (int)VerifyTimes.FAIL_Add)
+                {
+                    _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
+                    _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
+                    _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Once());
+                }
+                else if (value == (int)VerifyTimes.FAIL_Find)
+                {
+                    _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
+                    _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
+                    _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Once());
+                }
+                else if (value == (int)VerifyTimes.FAIL_Remove)
                 {
                     _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
                     _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
