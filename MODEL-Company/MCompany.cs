@@ -26,31 +26,31 @@ namespace Conductus.COMPANY.Model
             {
             }
         }
-        public override int Verify
+        public override bool Verify
         {
             set
             {
             }
         }
-        public override RunType Throws
+        public override bool Throws
         {
             set
             {
             }
         }
-        public override RunType Arrange
+        public override bool Arrange
         {
             set
             {
             }
         }
-        public override RunType Test
+        public override bool Test
         {
             set
             {
             }
         }
-        public override RunType Assert
+        public override bool Assert
         {
             set
             {

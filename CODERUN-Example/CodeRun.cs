@@ -58,9 +58,9 @@ namespace Conductus.EXAMPLE.CODERUN
                 var mock = new MExample
                 {
                     Run = IMock.RunType.SUCCESS,
-                    Arrange = IMock.RunType.SUCCESS,
-                    Test = IMock.RunType.SUCCESS,
-                    Assert = IMock.RunType.SUCCESS
+                    Arrange = true,
+                    Test = true,
+                    Assert = true
                 };
             }
             catch

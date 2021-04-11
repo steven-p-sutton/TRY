@@ -12,9 +12,9 @@ namespace Conductus.EMPLOYEE.Test
             var employee = new MEmployee
             {
                 Run = IMock.RunType.SUCCESS,
-                Arrange = IMock.RunType.SUCCESS,
-                Test = IMock.RunType.SUCCESS,
-                Assert = IMock.RunType.SUCCESS
+                Arrange = true,
+                Test = true,
+                Assert = true
             };
         }
 
@@ -25,13 +25,13 @@ namespace Conductus.EMPLOYEE.Test
             {
                 Run = IMock.RunType.EXCEPTION,
                 ExceptionExpected = new Exception("Employee Error"),
-                Throws = IMock.RunType.EXCEPTION,
-                Arrange = IMock.RunType.EXCEPTION
+                Throws = true,
+                Arrange = true
             };
 
-            employee.ExceptionRaised = Assert.Throws<Exception>(() => employee.Test = IMock.RunType.EXCEPTION);
+            employee.ExceptionRaised = Assert.Throws<Exception>(() => employee.Test = true);
             Assert.Equal(employee.ExceptionExpected.Message, employee.ExceptionRaised.Message);
-            employee.Assert = IMock.RunType.EXCEPTION;
+            employee.Assert = true;
         }
     }
 }

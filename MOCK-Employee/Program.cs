@@ -12,19 +12,19 @@ namespace Conductus.EMPLOYEE.App
                 var employee = new MEmployee
                 {
                     Run = IMock.RunType.SUCCESS,
-                    Arrange = IMock.RunType.SUCCESS,
-                    Test = IMock.RunType.SUCCESS,
-                    Assert = IMock.RunType.SUCCESS
+                    Arrange = true,
+                    Test = true,
+                    Assert = true
                 };
 
                 var employee2 = new MEmployee
                 {
                     Run = IMock.RunType.EXCEPTION,
                     ExceptionExpected = new Exception("Employee Error"),
-                    Throws = IMock.RunType.EXCEPTION,
-                    Arrange = IMock.RunType.EXCEPTION,
-                    Test = IMock.RunType.EXCEPTION,
-                    Assert = IMock.RunType.EXCEPTION
+                    Throws = true,
+                    Arrange = true,
+                    Test = true,
+                    Assert = true
                 };
             }
             catch (Exception e)

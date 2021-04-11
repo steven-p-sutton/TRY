@@ -81,10 +81,10 @@ namespace Conductus.EXAMPLE.App
                 {
                     Run = IMock.RunType.EXCEPTION,
                     ExceptionExpected = new ExampleAlreadyExistsException("Mock ERROR"),
-                    Throws = IMock.RunType.EXCEPTION,
-                    Arrange = IMock.RunType.EXCEPTION,
-                    Test = IMock.RunType.EXCEPTION,
-                    Assert = IMock.RunType.EXCEPTION
+                    Throws = true,
+                    Arrange = true,
+                    Test = true,
+                    Assert = true
                 };
             }
 
