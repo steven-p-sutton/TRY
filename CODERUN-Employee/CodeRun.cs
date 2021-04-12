@@ -19,7 +19,7 @@ namespace Conductus.EMPLOYEE.CODERUN
 
                 var employee = new MEmployee
                 {
-                    Run = IMock.RunType.SUCCESS,
+                    Run = IRunType.SUCCESS,
                     Arrange = true,
                     Test = true,
                     Assert = true
@@ -29,7 +29,7 @@ namespace Conductus.EMPLOYEE.CODERUN
 
                 var employee2 = new MEmployee
                 {
-                    Run = IMock.RunType.EXCEPTION,
+                    Run = IRunType.EXCEPTION,
                     ExceptionExpected = new Exception("Employee Error"),
                     Throws = true,
                     Arrange = true,

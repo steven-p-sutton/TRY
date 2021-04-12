@@ -79,7 +79,7 @@ namespace Conductus.EXAMPLE.App
 
                 var  mockERROR= new MExample
                 {
-                    Run = IMock.RunType.EXCEPTION,
+                    Run = IRunType.EXCEPTION,
                     ExceptionExpected = new ExampleAlreadyExistsException("Mock ERROR"),
                     Throws = true,
                     Arrange = true,
