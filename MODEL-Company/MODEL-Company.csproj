@@ -15,6 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Reference Include="EXCEPTION-Model-Core">
+      <HintPath>..\..\INFRASTRUCTURE\EXCEPTION-Model-Core\bin\Debug\netcoreapp3.1\EXCEPTION-Model-Core.dll</HintPath>
+    </Reference>
     <Reference Include="MOCK-Model-Core">
       <HintPath>..\..\INFRASTRUCTURE\MOCK-Model-Core\bin\Debug\netcoreapp3.1\MOCK-Model-Core.dll</HintPath>
     </Reference>

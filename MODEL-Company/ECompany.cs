@@ -11,36 +11,36 @@ namespace Conductus.COMPANY.Model
         public string Name { 
             get
             {
-                throw new NotImplementedException("get:Name");
+                throw new CompanyNotImplentedException("get:Name");
             } 
             set 
             {
-                throw new NotImplementedException("set:Name");
+                throw new CompanyNotImplentedException("set:Name");
             }
         }
         public List<Employee> EmployeeList
         {
             get
             {
-                throw new NotImplementedException("get:EmployeeList");
+                throw new CompanyNotImplentedException("get:EmployeeList");
             }
             set
             {
-                throw new NotImplementedException("set:EmployeeList");
+                throw new CompanyNotImplentedException("set:EmployeeList");
             }
         }
         public List<Widget> WidgetList
         {
             get
             {
-                throw new NotImplementedException("get:WidgetList");
+                throw new CompanyNotImplentedException("get:WidgetList");
             }
             set
             {
-                throw new NotImplementedException("set:WidgetList");
+                throw new CompanyNotImplentedException("set:WidgetList");
             }
         }
-        public List<Employee> Employees() { throw new NotImplementedException("Employees"); }
-        public List<Widget> Widgets() { throw new NotImplementedException("Widgets"); }
+        public List<Employee> Employees() { throw new CompanyNotImplentedException("Employees"); }
+        public List<Widget> Widgets() { throw new CompanyNotImplentedException("Widgets"); }
     }
 }

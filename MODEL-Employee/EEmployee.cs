@@ -4,7 +4,7 @@ namespace Conductus.EMPLOYEE.Model
 {
     public class EEmployee : IEmployee
     {
-        public string Name() { throw new NotImplementedException(); }
-        public virtual DateTime GetDateOfJoining(int id) { throw new NotImplementedException(); }
+        public string Name() { throw new EmployeeNotImplentedException(); }
+        public virtual DateTime GetDateOfJoining(int id) { throw new EmployeeNotImplentedException(); }
     }
 }
