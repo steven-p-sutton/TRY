@@ -11,7 +11,7 @@ namespace Conductus.EMPLOYEE.Test
         {
             var employee = new MEmployee
             {
-                Run = IRunType.SUCCESS,
+                Run = RunType.SUCCESS,
                 Arrange = true,
                 Test = true,
                 Assert = true
@@ -23,7 +23,7 @@ namespace Conductus.EMPLOYEE.Test
         {
             var employee = new MEmployee
             {
-                Run = IRunType.EXCEPTION,
+                Run = RunType.EXCEPTION,
                 ExceptionExpected = new Exception("Employee Error"),
                 Throws = true,
                 Arrange = true
