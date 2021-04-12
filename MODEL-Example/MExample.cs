@@ -5,7 +5,14 @@ namespace Conductus.EXAMPLE.Model
 {
     public class MExample : IMock
     {
-        //public new enum VerifyTimes { NEVER = 0, ONCE = 1, FAIL_Add =-1, FAIL_Find = -2, FAIL_Remove = -3 };
+        /// <summary>
+        /// RunType - A means to partition the stages of the object semantics. 
+        /// Since used only in the derrived object it can be declared withing the object with object specific names
+        /// Used within the overriden properties to set such things as Verify times, return values & exceptions raised
+        /// for non-success scenarios
+        /// </summary>
+        public enum RunType { SUCCESS = 0, EXCEPTION = 1, FAIL_Add = -1, FAIL_Find = -2, FAIL_Remove = -3 };
+        //public new enum RunType { NEVER = 0, ONCE = 1, FAIL_Add =-1, FAIL_Find = -2, FAIL_Remove = -3 };
 
         public Mock<IExample> _mMock;
         public MExample()
@@ -20,7 +27,7 @@ namespace Conductus.EXAMPLE.Model
         {
             set
             {
-                if (this.Run == RunType.SUCCESS)
+                if (this.Run.ToString()== RunType.SUCCESS.ToString())
                 {
                     _mMock.Setup(x => x.Add(It.IsAny<string>()))
                      .Returns(0);
@@ -48,7 +55,7 @@ namespace Conductus.EXAMPLE.Model
         {
             set
             {
-                if (this.Run == RunType.SUCCESS)
+                if (this.Run.ToString() == RunType.SUCCESS.ToString())
                 {
                     _mMock.Setup(x => x.Add(It.IsAny<string>()));
                     _mMock.Setup(x => x.Find(It.IsAny<string>()));
@@ -91,31 +98,31 @@ namespace Conductus.EXAMPLE.Model
             {
                 if (value)
                 {
-                    if (this.Run == RunType.EXCEPTION)
+                    if (this.Run.ToString() == RunType.EXCEPTION.ToString())
                     {
                         _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Never());
                         _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Never());
                         _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Never());
                     }
-                    else if (this.Run == RunType.SUCCESS)
+                    else if (this.Run.ToString() == RunType.SUCCESS.ToString())
                     {
                         _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
                         _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
                         _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Once());
                     }
-                    else if (this.Run == RunType.ONE)
+                    else if (this.Run.ToString() == RunType.FAIL_Add.ToString())
                     {
                         _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
                         _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Never());
                         _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Never());
                     }
-                    else if (this.Run == RunType.TWO)
+                    else if (this.Run.ToString() == RunType.FAIL_Find.ToString())
                     {
                         _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
                         _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
                         _mMock.Verify(x => x.Remove(It.IsAny<int>()), Times.Never());
                     }
-                    else if (this.Run == RunType.THREE)
+                    else if (this.Run.ToString() == RunType.FAIL_Remove.ToString())
                     {
                         _mMock.Verify(x => x.Add(It.IsAny<string>()), Times.Once());
                         _mMock.Verify(x => x.Find(It.IsAny<string>()), Times.Once());
@@ -136,7 +143,7 @@ namespace Conductus.EXAMPLE.Model
             {
                 if (value)
                 {
-                    if (this.Run == RunType.EXCEPTION)
+                    if (this.Run.ToString() == RunType.EXCEPTION.ToString())
                     {
                         _mMock.Setup(x => x.Add(It.IsAny<string>()))
                         .Throws(this.ExceptionExpected);
@@ -160,7 +167,7 @@ namespace Conductus.EXAMPLE.Model
         {
             set
             {
-                if (this.Run == RunType.SUCCESS)
+                if (this.Run.ToString() == RunType.SUCCESS.ToString())
                 {
                     this.Verifyable = true;
                     this.Returns = true;
