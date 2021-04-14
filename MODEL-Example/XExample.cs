@@ -12,7 +12,7 @@
         : base(message, inner)
     {
     }
-    public string Display()
+    public override string Display()
     {
         return this.Display();
     }

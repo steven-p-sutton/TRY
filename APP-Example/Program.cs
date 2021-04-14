@@ -69,13 +69,13 @@ namespace Conductus.EXAMPLE.App
 
             try
             {
-                //var mockOK = new MExample
-                //{
-                //    Run = IMock.RunType.SUCCESS,
-                //    Arrange = IMock.RunType.SUCCESS,
-                //    Test = IMock.RunType.SUCCESS,
-                //    Assert = IMock.RunType.SUCCESS
-                //};
+                var mockOK = new MExample
+                {
+                    Run = IMock.RunType.SUCCESS,
+                    Arrange = IMock.RunType.SUCCESS,
+                    Test = IMock.RunType.SUCCESS,
+                    Assert = IMock.RunType.SUCCESS
+                };
 
                 var  mockERROR= new MExample
                 {
