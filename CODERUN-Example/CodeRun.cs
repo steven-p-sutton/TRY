@@ -57,7 +57,7 @@ namespace Conductus.EXAMPLE.CODERUN
             {
                 var mock = new MExample
                 {
-                    Run = IRunType.SUCCESS,
+                    Run = RunType.SUCCESS,
                     Arrange = true,
                     Test = true,
                     Assert = true

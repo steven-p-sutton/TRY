@@ -1,5 +1,5 @@
 using Xunit;
-using Conductus.EXAMPLE.Model;
+using Conductus.EXAMPLE.Model.Core;
 
 namespace Conductus.EXAMPLE.Test
 {
