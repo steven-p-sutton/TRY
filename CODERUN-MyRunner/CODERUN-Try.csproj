@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\CODERUN-Example\CODERUN-Example.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Reference Include="CODERUN-Model-Core">
       <HintPath>..\..\INFRASTRUCTURE\CODERUN-Model-Core\bin\Debug\netcoreapp3.1\CODERUN-Model-Core.dll</HintPath>
     </Reference>
