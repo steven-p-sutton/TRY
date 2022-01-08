@@ -4,7 +4,7 @@ using Conductus.MOCK.Model.Core;
 
 namespace Conductus.EMPLOYEE.Model
 {
-    public class MEmployee : IMock
+    public class MEmployee : IMock<IEmployee>
     {
         public Mock<IEmployee> _mMock;
         public MEmployee()

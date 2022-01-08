@@ -6,8 +6,13 @@ using Conductus.MOCK.Model.Core;
 
 namespace Conductus.COMPANY.Model
 {
-    public class MCompany : IMock
+    public class MCompany : IMock<ICompany>
     {
+        public Mock<ICompany> _mMock;
+        public MCompany()
+        {
+            _mMock = new Mock<ICompany>();
+        }
         public override bool Returns
         {
             set
