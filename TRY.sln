@@ -25,7 +25,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TEST-Company", "TEST-Compan
 EndProject
 Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PYTHON-ConsoleApp", "PYTHON-ConsoleApp\PYTHON-ConsoleApp.pyproj", "{09E893BD-D9DE-49CB-8D21-537D759688E9}"
 EndProject
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Implementing-Smart-Blockchain", "Implementing-Smart-Blockchain\Implementing-Smart-Blockchain.pyproj", "{6FF57600-860A-40EB-9F48-DD227E0B066B}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Implementing-Smart-Blockchain", "Implementing-Smart-Blockchain\Implementing-Smart-Blockchain.pyproj", "{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -251,16 +251,16 @@ Global
 		{09E893BD-D9DE-49CB-8D21-537D759688E9}.Release|ARM64.ActiveCfg = Release|Any CPU
 		{09E893BD-D9DE-49CB-8D21-537D759688E9}.Release|x64.ActiveCfg = Release|Any CPU
 		{09E893BD-D9DE-49CB-8D21-537D759688E9}.Release|x86.ActiveCfg = Release|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Debug|ARM64.ActiveCfg = Debug|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Release|ARM.ActiveCfg = Release|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Release|ARM64.ActiveCfg = Release|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Release|x64.ActiveCfg = Release|Any CPU
-		{6FF57600-860A-40EB-9F48-DD227E0B066B}.Release|x86.ActiveCfg = Release|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Debug|ARM64.ActiveCfg = Debug|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Release|ARM.ActiveCfg = Release|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Release|ARM64.ActiveCfg = Release|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Release|x64.ActiveCfg = Release|Any CPU
+		{FD54192C-354F-42E1-9E82-ADFF0FD8BFA9}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
