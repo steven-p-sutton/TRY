@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from datetime import datetime
 import re
 
@@ -7,6 +7,10 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     return "Try, Flask!"
+
+@app.route("/about/")
+def about():
+    return render_template("about.html")
 
 @app.route("/hello/<name>")
 def hello_there(name):
